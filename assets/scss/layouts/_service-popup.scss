@@ -1,0 +1,636 @@
+/* ============================================================
+   Service Popup — scroll ngoài, right panel sticky
+   ============================================================ */
+
+$popup-bg      : #faf8f4;
+$popup-sage    : #4d7358;
+$popup-green   : #1d5c32;
+$popup-border  : rgba(18, 10, 0, 0.1);
+
+/* ── Popup wrapper (IS the scroll container) ─────────────────── */
+.service-popup {
+	position: fixed;
+	inset: 0;
+	z-index: 9000;
+	overflow-y: auto;
+	overflow-x: hidden;
+	visibility: hidden;
+
+	&.is-active {
+		visibility: visible;
+
+		.service-popup__overlay {
+			opacity: 1;
+		}
+
+		.service-popup__panel {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+}
+
+/* ── Overlay — fixed so it covers viewport during scroll ─────── */
+.service-popup__overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(18, 10, 0, 0.6);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.35s ease;
+}
+
+/* ── Panel ───────────────────────────────────────────────────── */
+.service-popup__panel {
+	position: relative;
+	z-index: 1;
+	height: 90vh;
+    top: 50px;
+    overflow-y: scroll;
+	width: min(1100px, 100%);
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	background: $popup-bg;
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.35s ease,
+		transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+		min-height: unset;
+	}
+}
+
+/* ── Left — natural flow, NO inner scroll ────────────────────── */
+.service-popup__left {
+	flex: 1 1 0;
+	min-width: 0;
+	padding: 52px 48px 80px;
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+
+	@include media-breakpoint-down(lg) {
+		padding: 44px 36px 64px;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 36px 24px 56px;
+		order: 2;
+	}
+}
+
+/* ── Right — sticky, always visible ──────────────────────────── */
+.service-popup__right {
+	flex: 0 0 380px;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	background: #f0ece4;
+
+	@include media-breakpoint-down(lg) {
+		flex: 0 0 320px;
+	}
+
+	@include media-breakpoint-down(md) {
+		position: relative;
+		flex: none;
+		height: 260px;
+		order: 1;
+	}
+}
+
+/* ── Close button — inside sticky right panel ────────────────── */
+.service-popup__close {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	z-index: 10;
+	width: 36px;
+	height: 36px;
+	border: 1.5px solid rgba(255, 255, 255, 0.6);
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(4px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: $color-dark;
+	transition: background 0.2s ease, border-color 0.2s ease;
+	flex-shrink: 0;
+
+	&:hover {
+		background: $color-dark;
+		border-color: $color-dark;
+		color: #fff;
+	}
+}
+
+/* ── Image ────────────────────────────────────────────────────── */
+.service-popup__image-wrap {
+	flex: 1;
+	overflow: hidden;
+	min-height: 0;
+
+	@include media-breakpoint-down(md) {
+		flex: none;
+		height: 100%;
+	}
+}
+
+.service-popup__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: top center;
+	display: block;
+}
+
+/* ── Features list ────────────────────────────────────────────── */
+.service-popup__features {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	padding-top: 4px;
+
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+}
+
+.service-popup__feature-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 13px 0;
+	border-bottom: 1px solid $popup-border;
+	font-family: $font-second;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: $color-dark;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.service-popup__feature-icon {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   LEFT CONTENT STYLES
+   ════════════════════════════════════════════════════════════ */
+
+/* ── Header ───────────────────────────────────────────────────── */
+.service-popup__header {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.service-popup__label {
+	display: inline-block;
+	font-family: $font-second;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: $popup-sage;
+	border: 1px solid $popup-sage;
+	padding: 4px 10px;
+	border-radius: 20px;
+	width: fit-content;
+}
+
+.service-popup__title {
+	font-family: $font-primary;
+	font-size: clamp(36px, 5vw, 58px);
+	font-weight: 400;
+	line-height: 1.05;
+	color: $color-dark;
+	margin: 0;
+}
+
+.service-popup__desc {
+	font-family: $font-second;
+	font-size: 14px;
+	line-height: 1.75;
+	color: rgba(18, 10, 0, 0.7);
+}
+
+.service-popup__tagline {
+	font-family: $font-second;
+	font-size: 13px;
+	font-style: italic;
+	color: $popup-sage;
+	margin: 0;
+	padding-left: 14px;
+	border-left: 3px solid $popup-sage;
+	line-height: 1.6;
+}
+
+/* ── Section block ────────────────────────────────────────────── */
+.service-popup__section {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.service-popup__section-title {
+	font-family: $font-second;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: $color-dark;
+	margin: 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid $popup-border;
+}
+
+/* ── Overview grid ────────────────────────────────────────────── */
+.service-popup__overview {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+
+	@include media-breakpoint-down(sm) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.service-popup__overview-item {
+	background: #fff;
+	border: 1px solid $popup-border;
+	border-radius: 12px;
+	padding: 16px 10px 14px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 7px;
+}
+
+.service-popup__overview-icon {
+	width: 38px;
+	height: 38px;
+	object-fit: contain;
+}
+
+.service-popup__overview-label {
+	font-family: $font-second;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: $popup-sage;
+}
+
+.service-popup__overview-value {
+	font-family: $font-second;
+	font-size: 11.5px;
+	line-height: 1.55;
+	color: $color-dark;
+	margin: 0;
+}
+
+/* ── Journey steps ────────────────────────────────────────────── */
+.service-popup__journey-wrap {
+	background: #f0ece4;
+	border-radius: 14px;
+	padding: 20px;
+}
+
+.service-popup__journey {
+	display: grid;
+	grid-template-columns: repeat(var(--journey-cols, 4), 1fr);
+	gap: 10px;
+
+	@include media-breakpoint-down(sm) {
+		grid-template-columns: repeat(min(var(--journey-cols, 4), 2), 1fr);
+	}
+}
+
+.journey-step {
+	background: #fff;
+	border: 1px solid $popup-border;
+	border-radius: 12px;
+	padding: 16px 10px 14px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 8px;
+}
+
+.journey-step__number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	border: 1.5px solid $popup-border;
+	font-family: $font-second;
+	font-size: 11px;
+	font-weight: 600;
+	color: rgba(18, 10, 0, 0.5);
+	flex-shrink: 0;
+	line-height: 1;
+}
+
+.journey-step__icon {
+	width: 34px;
+	height: 34px;
+	object-fit: contain;
+}
+
+.journey-step__title {
+	font-family: $font-second;
+	font-size: 9.5px;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: $color-dark;
+	margin: 0;
+	line-height: 1.4;
+}
+
+.journey-step__desc {
+	font-family: $font-second;
+	font-size: 11px;
+	line-height: 1.55;
+	color: rgba(18, 10, 0, 0.6);
+	margin: 0;
+}
+
+/* ── Pricing table ────────────────────────────────────────────── */
+.service-popup__pricing {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid $popup-border;
+}
+
+.pricing-row {
+	display: grid;
+	grid-template-columns: 1.1fr 1.6fr 1.3fr;
+	padding: 13px 20px;
+	align-items: center;
+	background: #fff;
+	transition: background 0.2s ease;
+	gap: 8px;
+
+	& + & {
+		border-top: 1px solid $popup-border;
+	}
+
+	&:nth-child(even) {
+		background: #faf8f4;
+	}
+
+	&:hover {
+		background: #f2ede4;
+	}
+
+	@include media-breakpoint-down(sm) {
+		grid-template-columns: 1fr;
+		gap: 2px;
+		padding: 12px 16px;
+	}
+}
+
+.pricing-row__level {
+	font-family: $font-second;
+	font-size: 13px;
+	font-weight: 600;
+	color: $color-dark;
+}
+
+.pricing-row__duration {
+	font-family: $font-second;
+	font-size: 12px;
+	color: rgba(18, 10, 0, 0.55);
+}
+
+.pricing-row__price {
+	font-family: $font-second;
+	font-size: 13px;
+	font-weight: 700;
+	color: $popup-green;
+	text-align: right;
+
+	@include media-breakpoint-down(sm) {
+		text-align: left;
+		color: $color-dark;
+	}
+}
+
+/* Column-style pricing grid */
+.service-popup__pricing--columns {
+	display: grid;
+	grid-template-columns: repeat(var(--pricing-cols, 3), 1fr);
+	gap: 12px;
+	border: none;
+	border-radius: 0;
+	overflow: visible;
+
+	@include media-breakpoint-down(sm) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.pricing-col {
+	background: #fff;
+	border: 1px solid $popup-border;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.pricing-col__title {
+	background: $popup-green;
+	color: #fff;
+	font-family: $font-second;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	padding: 10px 14px;
+	text-align: center;
+}
+
+.pricing-col__items {
+	display: flex;
+	flex-direction: column;
+}
+
+.pricing-col__item {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 12px 14px;
+
+	& + & {
+		border-top: 1px solid $popup-border;
+	}
+
+	&:nth-child(even) {
+		background: #faf8f4;
+	}
+}
+
+.pricing-col__item-label {
+	font-family: $font-second;
+	font-size: 12px;
+	color: $color-dark;
+	line-height: 1.4;
+}
+
+.pricing-col__item-price {
+	font-family: $font-second;
+	font-size: 12px;
+	font-weight: 700;
+	color: $popup-green;
+}
+
+.service-popup__pricing-note {
+	font-family: $font-second;
+	font-size: 11px;
+	font-style: italic;
+	color: rgba(18, 10, 0, 0.45);
+	padding: 10px 20px 0;
+	margin: 0;
+}
+
+/* ── Footer text ──────────────────────────────────────────────── */
+.service-popup__footer-text {
+	font-family: $font-second;
+	font-size: 13px;
+	font-style: italic;
+	line-height: 1.75;
+	color: rgba(18, 10, 0, 0.55);
+	margin: 0;
+}
+
+/* ── Right bottom (features + CTA) ───────────────────────────── */
+.service-popup__right-bottom {
+	display: flex;
+	flex-direction: column;
+	flex-shrink: 0;
+	background: #fff center / cover no-repeat;
+	border-top: 1px solid $popup-border;
+	padding: 0 20px 20px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(255, 255, 255, 0.82);
+		pointer-events: none;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+
+	@include media-breakpoint-down(md) {
+		display: none;
+	}
+}
+
+/* ── CTA button ───────────────────────────────────────────────── */
+.service-popup__cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	padding: 14px 32px;
+	background: $popup-green;
+	color: #fff;
+	font-family: $font-second;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	border-radius: 50px;
+	text-decoration: none;
+	align-self: flex-start;
+	transition: background 0.25s ease, transform 0.2s ease;
+
+	svg {
+		width: 20px;
+		height: 20px;
+		flex-shrink: 0;
+	}
+
+	&:hover {
+		background: #163f24;
+		color: #fff;
+		transform: translateY(-2px);
+	}
+
+	&--desktop {
+		display: flex;
+		margin-top: 16px;
+		align-self: stretch;
+		justify-content: center;
+		border-radius: 10px;
+		padding: 16px 24px;
+		font-size: 15px;
+
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+
+	&--mobile {
+		display: none;
+
+		@include media-breakpoint-down(md) {
+			display: inline-flex;
+		}
+	}
+}
+
+.service-popup__cta-note {
+	font-family: $font-second;
+	font-size: 10px;
+	font-style: italic;
+	color: rgba(18, 10, 0, 0.45);
+	text-align: center;
+	margin: 10px 0 0;
+	line-height: 1.5;
+}
+
+/* ════════════════════════════════════════════════════════════
+   Service card grid (frontend)
+   ════════════════════════════════════════════════════════════ */
+.block-services-list__grid {
+	display: grid;
+	grid-template-columns: repeat(var(--service-cols, 3), 1fr);
+
+	@include media-breakpoint-down(lg) {
+		grid-template-columns: repeat(min(var(--service-cols, 3), 2), 1fr);
+	}
+
+	@include media-breakpoint-down(sm) {
+		grid-template-columns: 1fr;
+	}
+}

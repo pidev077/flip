@@ -72,3 +72,36 @@ if (!function_exists('flip_create_custom_taxonomy')) {
 
 	add_action('init', 'flip_create_custom_taxonomy', 0);
 }
+
+if (!function_exists('flip_register_dichvu_post_type')) {
+	function flip_register_dichvu_post_type()
+	{
+		register_post_type('dichvu', [
+			'labels' => [
+				'name'          => 'Dịch vụ',
+				'singular_name' => 'Dịch vụ',
+				'add_new'       => 'Thêm mới',
+				'add_new_item'  => 'Thêm dịch vụ mới',
+				'edit_item'     => 'Chỉnh sửa dịch vụ',
+				'new_item'      => 'Dịch vụ mới',
+				'view_item'     => 'Xem dịch vụ',
+				'search_items'  => 'Tìm dịch vụ',
+				'not_found'     => 'Không tìm thấy dịch vụ',
+				'menu_name'     => 'Dịch vụ',
+			],
+			'public'             => true,
+			'publicly_queryable' => false,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'menu_position'      => 22,
+			'menu_icon'          => 'dashicons-heart',
+			'supports'           => ['title', 'thumbnail', 'excerpt', 'page-attributes'],
+			'show_in_rest'       => true,
+		]);
+	}
+	add_action('init', 'flip_register_dichvu_post_type', 0);
+}
