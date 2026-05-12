@@ -19,4 +19,5 @@ require get_template_directory() . '/inc/template-func.php';
 require get_template_directory() . '/inc/hooks.php';
 require get_template_directory() . '/inc/menus.php';
 require get_template_directory() . '/inc/acf-fields-dichvu.php';
+require get_template_directory() . '/inc/acf-fields-sanpham.php';
 

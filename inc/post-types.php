@@ -105,3 +105,37 @@ if (!function_exists('flip_register_dichvu_post_type')) {
 	}
 	add_action('init', 'flip_register_dichvu_post_type', 0);
 }
+
+if (!function_exists('flip_register_sanpham_post_type')) {
+	function flip_register_sanpham_post_type()
+	{
+		register_post_type('sanpham', [
+			'labels' => [
+				'name'          => 'Sản phẩm',
+				'singular_name' => 'Sản phẩm',
+				'add_new'       => 'Thêm mới',
+				'add_new_item'  => 'Thêm sản phẩm mới',
+				'edit_item'     => 'Chỉnh sửa sản phẩm',
+				'new_item'      => 'Sản phẩm mới',
+				'view_item'     => 'Xem sản phẩm',
+				'search_items'  => 'Tìm sản phẩm',
+				'not_found'     => 'Không tìm thấy sản phẩm',
+				'menu_name'     => 'Sản phẩm',
+			],
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'menu_position'      => 23,
+			'menu_icon'          => 'dashicons-products',
+			'supports'           => ['title', 'thumbnail', 'excerpt', 'page-attributes'],
+			'show_in_rest'       => true,
+			'rest_base'          => 'sanpham',
+		]);
+	}
+	add_action('init', 'flip_register_sanpham_post_type', 0);
+}

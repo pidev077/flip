@@ -46,11 +46,10 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 .service-popup__panel {
 	position: relative;
 	z-index: 1;
-	height: 90vh;
-    top: 50px;
-    overflow-y: scroll;
-	width: min(1100px, 100%);
-	margin: 0 auto;
+	width: min(1300px, 100%);
+	border-radius: 15px;
+	overflow: hidden;
+    margin: 50px auto;
 	display: flex;
 	flex-direction: row;
 	background: $popup-bg;
@@ -70,14 +69,14 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 .service-popup__left {
 	flex: 1 1 0;
 	min-width: 0;
-	padding: 52px 48px 80px;
+	padding: 50px;
 	display: flex;
-	flex-direction: column;
-	gap: 32px;
-
+	flex-direction: column; 
+	gap: 50px;
+	background: #fff; 
 	@include media-breakpoint-down(lg) {
 		padding: 44px 36px 64px;
-	}
+	} 
 
 	@include media-breakpoint-down(md) {
 		padding: 36px 24px 56px;
@@ -88,9 +87,6 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 /* ── Right — sticky, always visible ──────────────────────────── */
 .service-popup__right {
 	flex: 0 0 380px;
-	position: sticky;
-	top: 0;
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
@@ -103,7 +99,7 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	@include media-breakpoint-down(md) {
 		position: relative;
 		flex: none;
-		height: 260px;
+		height: auto;
 		order: 1;
 	}
 }
@@ -140,10 +136,10 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	flex: 1;
 	overflow: hidden;
 	min-height: 0;
-
+	height: 50%;
 	@include media-breakpoint-down(md) {
 		flex: none;
-		height: 100%;
+		height: 300px;
 	}
 }
 
@@ -151,7 +147,7 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: top center;
+	object-position: center;
 	display: block;
 }
 
@@ -160,10 +156,26 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
-	padding-top: 4px;
-
+	padding: 15px 30px;
+    border-radius: 15px 15px 0 0px;
+    margin: 0 15px;
+	background: #F5EEE7;
 	@include media-breakpoint-down(md) {
-		display: none;
+		display: flex;
+		padding: 8px 15px;
+		margin: 0 10px;
+		border-radius: 10px;
+
+		.service-popup__feature-item {
+			padding: 8px 0;
+			font-size: 14px;
+			gap: 8px;
+		}
+
+		.service-popup__feature-icon {
+			width: 24px;
+			height: 24px;
+		}
 	}
 }
 
@@ -171,13 +183,13 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	display: flex;
 	align-items: center;
 	gap: 12px;
-	padding: 13px 0;
+	padding: 15px 0;
 	border-bottom: 1px solid $popup-border;
 	font-family: $font-second;
-	font-size: 13px;
+	font-size: 17px;
 	font-weight: 600;
 	line-height: 1.4;
-	color: $color-dark;
+	color: #6A3F0B;
 
 	&:last-child {
 		border-bottom: none;
@@ -205,41 +217,41 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 .service-popup__label {
 	display: inline-block;
 	font-family: $font-second;
-	font-size: 10px;
-	font-weight: 700;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
-	color: $popup-sage;
-	border: 1px solid $popup-sage;
-	padding: 4px 10px;
-	border-radius: 20px;
-	width: fit-content;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6A3F0B;
+    padding: 10px 20px;
+    border-radius: 15px;
+    width: fit-content;
+    background: #F5EEE7;
 }
 
 .service-popup__title {
 	font-family: $font-primary;
-	font-size: clamp(36px, 5vw, 58px);
-	font-weight: 400;
-	line-height: 1.05;
-	color: $color-dark;
+	font-size: clamp(44px, 10vw, 120px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: #47622B;
 	margin: 0;
 }
 
 .service-popup__desc {
 	font-family: $font-second;
-	font-size: 14px;
-	line-height: 1.75;
-	color: rgba(18, 10, 0, 0.7);
+	font-size: 18px;
+    line-height: 1.75;
+    color: #000;
 }
 
 .service-popup__tagline {
 	font-family: $font-second;
-	font-size: 13px;
+	font-size: 18px;
 	font-style: italic;
-	color: $popup-sage;
-	margin: 0;
-	padding-left: 14px;
-	border-left: 3px solid $popup-sage;
+	color: #6A3F0B;
+	margin: 0 -50px;
+	padding: 10px 50px;
+	background: #F5EEE7;
 	line-height: 1.6;
 }
 
@@ -252,21 +264,32 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 
 .service-popup__section-title {
 	font-family: $font-second;
-	font-size: 10px;
+	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 0.13em;
 	text-transform: uppercase;
-	color: $color-dark;
+	color: #47622B;
 	margin: 0;
 	padding-bottom: 10px;
-	border-bottom: 1px solid $popup-border;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+}
+.service-popup__section-title:after {
+	position: relative;
+	background-color: #47622B;
+	flex: 1;
+    height: 1px;
+    content: "";
 }
 
 /* ── Overview grid ────────────────────────────────────────────── */
 .service-popup__overview {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 10px;
+	gap: 15px;
 
 	@include media-breakpoint-down(sm) {
 		grid-template-columns: repeat(2, 1fr);
@@ -274,10 +297,10 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 }
 
 .service-popup__overview-item {
-	background: #fff;
-	border: 1px solid $popup-border;
-	border-radius: 12px;
-	padding: 16px 10px 14px;
+	background: #FFFCF6;
+	border: 1px solid #CAB7A0;
+	border-radius: 15px;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -286,95 +309,102 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 }
 
 .service-popup__overview-icon {
-	width: 38px;
-	height: 38px;
+	width: 70px;
+    height: 90px;
 	object-fit: contain;
 }
 
 .service-popup__overview-label {
 	font-family: $font-second;
-	font-size: 9px;
+	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: $popup-sage;
+	color: #47622B;
 }
 
 .service-popup__overview-value {
 	font-family: $font-second;
-	font-size: 11.5px;
+	font-size: 17px;
 	line-height: 1.55;
-	color: $color-dark;
+	color: #000;
 	margin: 0;
 }
 
 /* ── Journey steps ────────────────────────────────────────────── */
 .service-popup__journey-wrap {
-	background: #f0ece4;
-	border-radius: 14px;
-	padding: 20px;
+	background: #FFFCF6;
+	border-radius: 15px;
+	border: 1px solid #CAB7A0;
+	margin-top: 20px;
 }
 
 .service-popup__journey {
 	display: grid;
 	grid-template-columns: repeat(var(--journey-cols, 4), 1fr);
-	gap: 10px;
-
+	padding: 20px 0;
 	@include media-breakpoint-down(sm) {
 		grid-template-columns: repeat(min(var(--journey-cols, 4), 2), 1fr);
 	}
 }
 
 .journey-step {
-	background: #fff;
-	border: 1px solid $popup-border;
-	border-radius: 12px;
-	padding: 16px 10px 14px;
+	border-right: 1px dashed #CCA48A;
+	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	gap: 8px;
+	&:last-child{
+		border-right: none;
+	}
 }
 
 .journey-step__number {
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 22px;
-	height: 22px;
-	border-radius: 50%;
-	border: 1.5px solid $popup-border;
-	font-family: $font-second;
-	font-size: 11px;
-	font-weight: 600;
-	color: rgba(18, 10, 0, 0.5);
-	flex-shrink: 0;
-	line-height: 1;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1.5px solid #CAB7A0;
+    font-family: $font-second;
+    font-size: 20px;
+    font-weight: 400;
+    color: #CAB7A0;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: -65px;
+    z-index: 9999;
+    position: relative;
+    background: #FFFFFF;
 }
 
 .journey-step__icon {
-	width: 34px;
-	height: 34px;
-	object-fit: contain;
+	width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .journey-step__title {
 	font-family: $font-second;
-	font-size: 9.5px;
-	font-weight: 700;
+	font-size: 14px;
+	font-weight: 400;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
-	color: $color-dark;
+	color: #573915;
 	margin: 0;
 	line-height: 1.4;
 }
 
 .journey-step__desc {
 	font-family: $font-second;
-	font-size: 11px;
+	font-size: 17px;
 	line-height: 1.55;
-	color: rgba(18, 10, 0, 0.6);
+	color: #000;
 	margin: 0;
 }
 
@@ -382,26 +412,22 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 .service-popup__pricing {
 	display: flex;
 	flex-direction: column;
-	border-radius: 10px;
 	overflow: hidden;
-	border: 1px solid $popup-border;
+    gap: 10px;
 }
 
 .pricing-row {
 	display: grid;
 	grid-template-columns: 1.1fr 1.6fr 1.3fr;
-	padding: 13px 20px;
+	padding: 20px;
 	align-items: center;
-	background: #fff;
+	background: #FFFCF6;
 	transition: background 0.2s ease;
 	gap: 8px;
-
+	border: 1px solid #CAB7A0;
+	border-radius: 15px;
 	& + & {
 		border-top: 1px solid $popup-border;
-	}
-
-	&:nth-child(even) {
-		background: #faf8f4;
 	}
 
 	&:hover {
@@ -417,22 +443,23 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 
 .pricing-row__level {
 	font-family: $font-second;
-	font-size: 13px;
-	font-weight: 600;
-	color: $color-dark;
+	font-size: 17px;
+	font-weight: 400;
+	color: #47622B;
+	text-transform: uppercase;
 }
 
 .pricing-row__duration {
 	font-family: $font-second;
-	font-size: 12px;
-	color: rgba(18, 10, 0, 0.55);
+	font-size: 17px;
+	color: #47622B;
 }
 
 .pricing-row__price {
 	font-family: $font-second;
-	font-size: 13px;
-	font-weight: 700;
-	color: $popup-green;
+	font-size: 17px;
+	font-weight: 600;
+	color: #47622B;
 	text-align: right;
 
 	@include media-breakpoint-down(sm) {
@@ -456,18 +483,17 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 }
 
 .pricing-col {
-	background: #fff;
-	border: 1px solid $popup-border;
-	border-radius: 10px;
-	overflow: hidden;
+	background: #FFFCF6;
+    border: 1px solid #CAB7A0;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .pricing-col__title {
-	background: $popup-green;
-	color: #fff;
+	color: #573915;
 	font-family: $font-second;
-	font-size: 10px;
-	font-weight: 700;
+	font-size: 20px;
+	font-weight: 400;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	padding: 10px 14px;
@@ -496,34 +522,34 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 
 .pricing-col__item-label {
 	font-family: $font-second;
-	font-size: 12px;
+	font-size: 16px;
 	color: $color-dark;
 	line-height: 1.4;
 }
 
 .pricing-col__item-price {
 	font-family: $font-second;
-	font-size: 12px;
-	font-weight: 700;
-	color: $popup-green;
+	font-size: 16px;
+	font-weight: 500;
+	color: #47622B;
 }
 
 .service-popup__pricing-note {
 	font-family: $font-second;
-	font-size: 11px;
+	font-size: 14px;
 	font-style: italic;
-	color: rgba(18, 10, 0, 0.45);
-	padding: 10px 20px 0;
-	margin: 0;
+	color: #E0A500;
+    margin: 0;
+    text-align: right;
 }
 
 /* ── Footer text ──────────────────────────────────────────────── */
 .service-popup__footer-text {
 	font-family: $font-second;
-	font-size: 13px;
-	font-style: italic;
-	line-height: 1.75;
-	color: rgba(18, 10, 0, 0.55);
+	font-size: 20px;
+    font-style: italic;
+    line-height: 1.75;
+    color: #47622B;
 	margin: 0;
 }
 
@@ -532,18 +558,12 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	display: flex;
 	flex-direction: column;
 	flex-shrink: 0;
-	background: #fff center / cover no-repeat;
+	background: center / cover no-repeat;
 	border-top: 1px solid $popup-border;
 	padding: 0 20px 20px;
 	position: relative;
-
-	&::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: rgba(255, 255, 255, 0.82);
-		pointer-events: none;
-	}
+	height: 50%;
+	justify-content: flex-end;
 
 	> * {
 		position: relative;
@@ -551,7 +571,13 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	}
 
 	@include media-breakpoint-down(md) {
-		display: none;
+		display: flex;
+		height: auto;
+		padding: 15px;
+
+		.service-popup__cta--desktop {
+			display: flex;
+		}
 	}
 }
 
@@ -562,21 +588,21 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	justify-content: center;
 	gap: 9px;
 	padding: 14px 32px;
-	background: $popup-green;
+	background: #47622B;
 	color: #fff;
 	font-family: $font-second;
-	font-size: 14px;
+	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	border-radius: 50px;
+	border-radius: 15px;
 	text-decoration: none;
 	align-self: flex-start;
 	transition: background 0.25s ease, transform 0.2s ease;
 
 	svg {
-		width: 20px;
-		height: 20px;
+		width: 40px;
+		height: 40px;
 		flex-shrink: 0;
 	}
 
@@ -588,12 +614,11 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 
 	&--desktop {
 		display: flex;
-		margin-top: 16px;
 		align-self: stretch;
 		justify-content: center;
-		border-radius: 10px;
+		border-radius: 15px;
 		padding: 16px 24px;
-		font-size: 15px;
+		font-size: 24px;
 
 		@include media-breakpoint-down(md) {
 			display: none;
@@ -611,9 +636,9 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 
 .service-popup__cta-note {
 	font-family: $font-second;
-	font-size: 10px;
-	font-style: italic;
-	color: rgba(18, 10, 0, 0.45);
+	font-size: 17px;
+    font-weight: 200;
+    color: #fff;
 	text-align: center;
 	margin: 10px 0 0;
 	line-height: 1.5;
@@ -623,14 +648,10 @@ $popup-border  : rgba(18, 10, 0, 0.1);
    Service card grid (frontend)
    ════════════════════════════════════════════════════════════ */
 .block-services-list__grid {
-	display: grid;
-	grid-template-columns: repeat(var(--service-cols, 3), 1fr);
 
 	@include media-breakpoint-down(lg) {
-		grid-template-columns: repeat(min(var(--service-cols, 3), 2), 1fr);
 	}
 
 	@include media-breakpoint-down(sm) {
-		grid-template-columns: 1fr;
 	}
 }
