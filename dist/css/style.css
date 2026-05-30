@@ -7043,6 +7043,9 @@ html {
   scrollbar-gutter: stable;
 }
 
+body {
+  background-color: #F6F5EF;
+}
 @media (min-width: 768px) {
   body {
     font-size: 1.375rem;
