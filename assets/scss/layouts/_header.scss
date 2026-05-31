@@ -6,11 +6,11 @@
 	height: auto;
 	z-index: 9;
 	padding: 20px 0;
-	background: #FFFFFFCC;
 	backdrop-filter: blur(4px);
 	transition: $transition-base;
 	.home &{
 		position: fixed;
+		background: #FFFFFFCC;
 	}
 	.home.logged-in & {
 			top: 32px;

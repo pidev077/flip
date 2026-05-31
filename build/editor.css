@@ -1,0 +1,85 @@
+/* SVN-Ogg font-face declarations for block editor */
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Regular-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Bold-Italic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Light.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Light-Italic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Medium-Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'SVN-Ogg';
+    src: url('../dist/fonts/SVN-Ogg-Thin-Italic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Apply SVN-Ogg to all headings in the block editor */
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6,
+.editor-styles-wrapper .wp-block-heading {
+    font-family: 'SVN-Ogg', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
