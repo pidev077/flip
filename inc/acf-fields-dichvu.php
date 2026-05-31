@@ -89,6 +89,19 @@ add_action('acf/init', function () {
 
 			/* ── Hành trình chữa lành ──────────────── */
 			[
+				'key'     => 'field_service_journey_label',
+				'label'   => 'Tiêu đề hành trình',
+				'name'    => 'service_journey_label',
+				'type'    => 'select',
+				'choices' => [
+					'healing' => 'Hành trình chữa lành',
+					'mini'    => 'Quy trình mini',
+				],
+				'default_value' => 'healing',
+				'allow_null'    => 0,
+				'ui'            => 1,
+			],
+			[
 				'key'        => 'field_service_journey',
 				'label'      => 'Hành trình chữa lành',
 				'name'       => 'service_journey',
