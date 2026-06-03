@@ -6,6 +6,10 @@ module.exports = {
   entry: {
     main: './assets/js/index.js',
     style: './assets/scss/style.scss',
+    'page-booking': './assets/scss/page-booking.scss',
+    'page-lien-he': './assets/scss/page-lien-he.scss',
+    'page-daotao':  './assets/scss/page-daotao.scss',
+    'page-thanks':  './assets/scss/page-thanks.scss',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

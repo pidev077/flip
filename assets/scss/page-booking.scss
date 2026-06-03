@@ -1,0 +1,432 @@
+// =============================================================
+//  PAGE BOOKING – Tamya
+// =============================================================
+
+$color-bg:        #F0EBE0;
+$color-dark:      #2C3320;
+$color-dark-hover:#3D4A2E;
+$color-muted:     #6B7A5A;
+$color-label:     #8B6F47;
+$color-border:    #C8BFA8;
+$color-border-lt: #D6CEBC;
+$color-border-card:#E0D8C8;
+$color-placeholder:#B0A88A;
+$color-optional:  #A09070;
+$color-note:      #8B8070;
+$color-error:     #c0392b;
+$font-sans:       'be-vietnam-pro', sans-serif;
+$font-serif:      'SVN-Ogg', serif;
+
+// ── Page wrapper ──────────────────────────────
+.page-booking {
+    background: $color-bg;
+}
+
+// ── Hero ──────────────────────────────────────
+.bk-hero {
+    padding: 72px 0 56px;
+    text-align: center;
+
+    &__inner {
+        max-width:630px!important;
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        font-family: $font-sans;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .18em;
+        color: $color-muted;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1.2;
+        color: $color-dark;
+        margin: 0 0 20px;
+    }
+
+    &__desc {
+        font-family: $font-sans;
+        font-size: 13px;
+        color: $color-muted;
+        line-height: 1.7;
+        margin: 0 0 36px;
+    }
+
+    &__badges {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+}
+
+.bk-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: $font-sans;
+    font-size: 12px;
+    color: $color-muted;
+
+    svg {
+        opacity: .7;
+        flex-shrink: 0;
+    }
+}
+
+// ── Form Section ──────────────────────────────
+.bk-form-section {
+    padding-bottom: 80px;
+
+    &__inner {
+        max-width: 630px !important;
+    }
+}
+
+.bk-divider {
+    border: none;
+    border-top: 1px solid $color-border-lt;
+    margin: 0 0 36px;
+
+    &--social {
+        margin: 48px 0 36px;
+    }
+}
+
+.bk-section-label {
+    font-family: $font-sans;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    color: $color-label;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+}
+
+// ── CF7 Form ──────────────────────────────────
+.page-booking .wpcf7-form {
+    font-family: $font-sans;
+}
+
+.bk-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 28px;
+    margin-bottom: 24px;
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bk-col {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 8px;
+}
+
+.bk-field {
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+
+    &--last {
+        border-bottom: none;
+    }
+}
+
+.bk-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: $color-label;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    cursor: default;
+}
+
+.bk-optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: $color-optional;
+    font-size: 10px;
+}
+
+// Inputs
+.page-booking .wpcf7-form {
+    input[type="text"],
+    input[type="tel"],
+    input[type="date"] {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 4px 0;
+        font-family: $font-sans;
+        font-size: 15px;
+        color: $color-dark;
+        line-height: 1.5;
+        box-shadow: none;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="tel"]::placeholder {
+        color: $color-placeholder;
+    }
+
+    input[type="date"] {
+        color-scheme: light;
+        color: $color-dark;
+    }
+
+    // Select
+    select {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 4px 0;
+        font-family: $font-sans;
+        font-size: 15px;
+        color: $color-placeholder;
+        cursor: pointer;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 2px center;
+        padding-right: 20px;
+
+        &.has-value {
+            color: $color-dark;
+        }
+    }
+
+    // Textarea
+    textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 4px 0;
+        font-family: $font-sans;
+        font-size: 14px;
+        color: $color-dark;
+        resize: none;
+        min-height: 56px;
+        box-shadow: none;
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+    }
+
+    // Submit
+    input[type="submit"] {
+        display: inline-block;
+        width: 100%;
+        padding: 16px 32px;
+        background: $color-dark;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-family: $font-sans;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background .2s, transform .1s;
+
+        &:hover  { background: $color-dark-hover; }
+        &:active { transform: scale(.98); }
+    }
+
+    // CF7 validation
+    .wpcf7-not-valid-tip {
+        font-size: 11px;
+        color: $color-error;
+        display: block;
+        margin-top: 3px;
+    }
+
+    .wpcf7-response-output {
+        margin: 16px 0 0 !important;
+        padding: 10px 16px !important;
+        border-radius: 6px !important;
+        font-size: 13px !important;
+        border: 1px solid currentColor !important;
+    }
+}
+
+// Branch toggle
+.bk-branch-wrap {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0 4px;
+
+    // CF7 thêm <p> và <br> — loại bỏ ảnh hưởng layout
+    p  { display: contents; }
+    br { display: none; }
+}
+
+.bk-branch-btn {
+    padding: 6px 20px;
+    border: 1px solid $color-border;
+    border-radius: 100px;
+    font-family: $font-sans;
+    font-size: 14px;
+    color: $color-dark;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    transition: background .18s, border-color .18s, color .18s;
+
+    &.is-active {
+        background: $color-dark;
+        border-color: $color-dark;
+        color: #fff;
+    }
+}
+
+// Time slot grid
+.bk-timeslot-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 8px 0 4px;
+
+    // CF7 thêm <p> và <br> — loại bỏ ảnh hưởng layout
+    p  { display: contents; }
+    br { display: none; }
+
+    @media (max-width: 400px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.bk-slot-btn {
+    padding: 10px 4px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    font-family: $font-sans;
+    font-size: 12px;
+    color: $color-dark;
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2;
+    transition: background .18s, border-color .18s, color .18s;
+
+    &.is-active {
+        background: $color-dark;
+        border-color: $color-dark;
+        color: #fff;
+    }
+
+    &.is-unavailable {
+        color: $color-border;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+// Submit wrap
+.bk-submit-wrap {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.bk-submit-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: $color-note;
+    line-height: 1.5;
+
+    strong {
+        color: $color-dark;
+        font-weight: 600;
+    }
+}
+
+// ── Social CTA ────────────────────────────────
+.bk-social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__label {
+        font-family: $font-sans;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .2em;
+        color: $color-label;
+        text-transform: uppercase;
+        margin: 0 0 4px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 18px;
+        background: #fff;
+        border-radius: 10px;
+        text-decoration: none;
+        color: $color-dark;
+        border: 1px solid $color-border-card;
+        transition: box-shadow .2s, border-color .2s;
+
+        &:hover {
+            border-color: $color-border;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+            color: $color-dark;
+            text-decoration: none;
+        }
+    }
+
+    &__icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+
+        &--fb   { background: #1877F2; }
+        &--zalo { background: #0068FF; }
+    }
+
+    &__text {
+        flex: 1;
+        line-height: 1.4;
+
+        strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        small {
+            font-size: 12px;
+            color: $color-note;
+        }
+    }
+
+    &__arrow {
+        color: $color-note;
+        flex-shrink: 0;
+    }
+}

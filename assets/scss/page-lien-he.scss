@@ -1,0 +1,613 @@
+// =============================================================
+//  PAGE LIÊN HỆ – Tamya
+// =============================================================
+
+$color-bg:          #F0EBE0;
+$color-dark:        #2C3320;
+$color-dark-hover:  #3D4A2E;
+$color-muted:       #6B7A5A;
+$color-label:       #8B6F47;
+$color-border:      #C8BFA8;
+$color-border-lt:   #D6CEBC;
+$color-border-card: #E0D8C8;
+$color-placeholder: #B0A88A;
+$color-optional:    #A09070;
+$color-note:        #8B8070;
+$color-error:       #c0392b;
+$color-branch-bg:   #EEF2E8;
+$font-sans:         'be-vietnam-pro', sans-serif;
+$font-serif:        'SVN-Ogg', serif;
+
+// ── Page wrapper ──────────────────────────────
+.page-lien-he {
+    background: $color-bg;
+}
+
+// ── Hero ──────────────────────────────────────
+.ct-hero {
+    padding: 72px 0 56px;
+    text-align: center;
+
+    &__inner {
+        max-width: 660px !important;
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        font-family: $font-sans;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .18em;
+        color: $color-muted;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1.2;
+        color: $color-dark;
+        margin: 0 0 20px;
+
+        em {
+            font-style: italic;
+        }
+    }
+
+    &__desc {
+        font-family: $font-sans;
+        font-size: 13px;
+        color: $color-muted;
+        line-height: 1.7;
+        margin: 0;
+    }
+}
+
+// ── Shared divider & section label ────────────
+.ct-divider {
+    border: none;
+    border-top: 1px solid $color-border-lt;
+    margin: 0 0 36px;
+
+    &--wide {
+        margin: 64px 0 36px;
+    }
+}
+
+.ct-section-label {
+    font-family: $font-sans;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .2em;
+    color: $color-label;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+}
+
+// ── Form Section ──────────────────────────────
+.ct-form-section {
+    padding-bottom: 0;
+
+    &__inner {
+        max-width: 660px !important;
+    }
+}
+
+// ── CF7 form rows/fields ───────────────────────
+.ct-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 28px;
+    margin-bottom: 24px;
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ct-col {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 8px;
+}
+
+.ct-field {
+    border-bottom: 1px solid $color-border;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+
+    &--last {
+        border-bottom: none;
+    }
+}
+
+.ct-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    color: $color-label;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    cursor: default;
+    font-family: $font-sans;
+}
+
+.ct-optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: $color-optional;
+    font-size: 10px;
+}
+
+// ── CF7 input/select/textarea/submit ──────────
+.page-lien-he .wpcf7-form {
+    font-family: $font-sans;
+
+    input[type="text"],
+    input[type="tel"] {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 4px 0;
+        font-family: $font-sans;
+        font-size: 15px;
+        color: $color-dark;
+        line-height: 1.5;
+        box-shadow: none;
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+    }
+
+    select {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 4px 0;
+        font-family: $font-sans;
+        font-size: 15px;
+        color: $color-placeholder;
+        cursor: pointer;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 2px center;
+        padding-right: 20px;
+
+        &.has-value {
+            color: $color-dark;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 4px 0;
+        font-family: $font-sans;
+        font-size: 14px;
+        color: $color-dark;
+        resize: none;
+        min-height: 60px;
+        box-shadow: none;
+
+        &::placeholder {
+            color: $color-placeholder;
+        }
+    }
+
+    input[type="submit"] {
+        display: inline-block;
+        width: 100%;
+        padding: 16px 32px;
+        background: $color-dark;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-family: $font-sans;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background .2s, transform .1s;
+
+        &:hover  { background: $color-dark-hover; }
+        &:active { transform: scale(.98); }
+    }
+
+    .wpcf7-not-valid-tip {
+        font-size: 11px;
+        color: $color-error;
+        display: block;
+        margin-top: 3px;
+    }
+
+    .wpcf7-response-output {
+        margin: 16px 0 0 !important;
+        padding: 10px 16px !important;
+        border-radius: 6px !important;
+        font-size: 13px !important;
+        border: 1px solid currentColor !important;
+    }
+}
+
+// Branch toggle inside form
+.ct-branch-wrap {
+    display: flex;
+    gap: 8px;
+    padding: 8px 0 4px;
+
+    p  { display: contents; }
+    br { display: none; }
+}
+
+.ct-branch-btn {
+    padding: 6px 20px;
+    border: 1px solid $color-border;
+    border-radius: 100px;
+    font-family: $font-sans;
+    font-size: 14px;
+    color: $color-dark;
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+    transition: background .18s, border-color .18s, color .18s;
+
+    &.is-active {
+        background: $color-dark;
+        border-color: $color-dark;
+        color: #fff;
+    }
+}
+
+// Submit wrap
+.ct-submit-wrap {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.ct-submit-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: $color-note;
+    line-height: 1.5;
+    font-family: $font-sans;
+}
+
+// ── Hotline Section ───────────────────────────
+.ct-hotline-section {
+    padding-bottom: 0;
+
+    &__inner {
+        max-width: 660px !important;
+    }
+}
+
+.ct-hotline {
+    display: block;
+    background: $color-dark;
+    border-radius: 12px;
+    padding: 40px 48px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    transition: background .2s;
+
+    &:hover {
+        background: $color-dark-hover;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &__label {
+        font-family: $font-sans;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .2em;
+        color: rgba(255, 255, 255, .55);
+        text-transform: uppercase;
+        margin: 0 0 16px;
+    }
+
+    &__number {
+        font-family: $font-serif;
+        font-size: clamp(1.8rem, 5vw, 2.6rem);
+        font-weight: normal;
+        letter-spacing: .03em;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+
+    &__hours {
+        font-family: $font-sans;
+        font-size: 12px;
+        color: rgba(255, 255, 255, .45);
+        margin: 0;
+        letter-spacing: .05em;
+    }
+}
+
+// ── Chi Nhánh Section ─────────────────────────
+.ct-branch-section {
+    padding-top: 0;
+
+    .container {
+        // inherits container max-width
+    }
+}
+
+// Map tab navigation
+.ct-map-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 18px;
+        border: 1px solid $color-border;
+        border-radius: 100px;
+        font-family: $font-sans;
+        font-size: 13px;
+        color: $color-dark;
+        background: transparent;
+        cursor: pointer;
+        transition: background .18s, border-color .18s, color .18s;
+
+        &.is-active {
+            background: $color-dark;
+            border-color: $color-dark;
+            color: #fff;
+
+            .ct-map-nav__dot {
+                background: #9DC183;
+            }
+        }
+    }
+
+    &__dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $color-border;
+        flex-shrink: 0;
+        transition: background .18s;
+    }
+}
+
+// Map panes
+.ct-map-wrap {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.ct-map-pane {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+
+    iframe {
+        display: block;
+        width: 100%;
+    }
+}
+
+// Branch cards
+.ct-branch-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px 0 64px;
+
+    @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ct-branch-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 22px;
+    background: #fff;
+    border: 1px solid $color-border-card;
+    border-radius: 12px;
+    transition: box-shadow .2s, border-color .2s;
+
+    &.is-active {
+        background: $color-branch-bg;
+        border-color: #C8D8B8;
+    }
+
+    &__pin {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: $color-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+
+        svg {
+            color: #fff;
+        }
+    }
+
+    &__body {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__city {
+        display: block;
+        font-family: $font-sans;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .15em;
+        color: $color-muted;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    &__name {
+        display: block;
+        font-family: $font-sans;
+        font-size: 15px;
+        font-weight: 700;
+        color: $color-dark;
+        margin-bottom: 4px;
+    }
+
+    &__addr {
+        font-family: $font-sans;
+        font-size: 12px;
+        color: $color-note;
+        line-height: 1.5;
+        margin: 0 0 10px;
+    }
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-family: $font-sans;
+        font-size: 11px;
+        color: $color-muted;
+    }
+}
+
+// ── Social Section ────────────────────────────
+.ct-social-section {
+    &__inner {
+        max-width: 660px !important;
+    }
+}
+
+.ct-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding-bottom: 16px;
+
+    @media (max-width: 480px) {
+        gap: 20px;
+    }
+}
+
+.ct-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: $font-sans;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    color: $color-muted;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .18s;
+
+    svg {
+        opacity: .75;
+        flex-shrink: 0;
+    }
+
+    &:hover {
+        color: $color-dark;
+        text-decoration: none;
+
+        svg {
+            opacity: 1;
+        }
+    }
+}
+
+// ── FAQ Section ───────────────────────────────
+.ct-faq-section {
+    padding-bottom: 80px;
+
+    &__inner {
+        max-width: 660px !important;
+    }
+}
+
+.ct-faq {
+    border-top: 1px solid $color-border-lt;
+}
+
+.ct-faq-item {
+    border-bottom: 1px solid $color-border-lt;
+
+    &.is-open .ct-faq-toggle {
+        color: $color-dark;
+    }
+}
+
+.ct-faq-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: $font-sans;
+    font-size: 14px;
+    color: $color-dark;
+    text-align: left;
+    gap: 16px;
+    transition: color .18s;
+
+    &:hover {
+        color: $color-muted;
+    }
+}
+
+.ct-faq-icon {
+    font-size: 18px;
+    font-weight: 300;
+    color: $color-muted;
+    flex-shrink: 0;
+    line-height: 1;
+    width: 20px;
+    text-align: center;
+    transition: transform .25s;
+}
+
+.ct-faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease;
+
+    p {
+        font-family: $font-sans;
+        font-size: 13px;
+        color: $color-muted;
+        line-height: 1.7;
+        padding: 0 0 20px;
+        margin: 0;
+    }
+}

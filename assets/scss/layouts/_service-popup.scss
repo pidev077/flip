@@ -139,7 +139,7 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	height: 50%;
 	@include media-breakpoint-down(md) {
 		flex: none;
-		height: 300px;
+		height: 500px;
 	}
 }
 
@@ -359,6 +359,9 @@ $popup-border  : rgba(18, 10, 0, 0.1);
 	&:last-child{
 		border-right: none;
 	}
+	@include media-breakpoint-down(md) {
+		border-right:none;
+	}
 }
 
 .journey-step__number {
@@ -379,6 +382,9 @@ $popup-border  : rgba(18, 10, 0, 0.1);
     z-index: 9999;
     position: relative;
     background: #FFFFFF;
+	@include media-breakpoint-down(md) {
+		margin-top: 0px;
+	}
 }
 
 .journey-step__icon {
@@ -387,6 +393,9 @@ $popup-border  : rgba(18, 10, 0, 0.1);
     object-fit: contain;
     margin-top: 20px;
     margin-bottom: 15px;
+	@include media-breakpoint-down(md) {
+		margin-top: 10px;
+	}
 }
 
 .journey-step__title {

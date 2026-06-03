@@ -1,0 +1,204 @@
+// Functions
+@import "~bootstrap/scss/functions";
+
+// Variables
+@import "variables-bootstrap";
+@import "~bootstrap/scss/variables-dark";
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// Layout & components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/utilities/api";
+
+// ── Thanks Page ───────────────────────────────────────────────────────────────
+
+.page-thanks {
+    background: #f5f0ea;
+    min-height: 100vh;
+}
+
+.tk-section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 60px 0;
+    }
+}
+
+.tk-wrap {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+// Checkmark icon
+.tk-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #a8c0a4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+// "ĐÃ NHẬN THÔNG TIN"
+.tk-label {
+    font-family: $font-second;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8a9b88;
+    margin-bottom: 18px;
+}
+
+// Heading
+.tk-title {
+    font-family: $font-primary;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.15;
+    color: #2c2927;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-down(md) {
+        font-size: 36px;
+    }
+}
+
+// Subtitle
+.tk-desc {
+    font-family: $font-second;
+    font-size: 16px;
+    line-height: 1.65;
+    color: #2c2927;
+    margin-bottom: 28px;
+
+    strong {
+        font-weight: 600;
+    }
+}
+
+// Thin divider line
+.tk-divider {
+    width: 40px;
+    height: 1px;
+    background: #c8c2b8;
+    margin: 0 auto 28px;
+}
+
+// Info card
+.tk-info-card {
+    border: 1px solid #ddd8d0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.tk-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    gap: 12px;
+
+    & + & {
+        border-top: 1px solid #e8e3da;
+    }
+}
+
+.tk-info-label {
+    font-family: $font-second;
+    font-size: 14px;
+    color: #8a9b88;
+    flex-shrink: 0;
+}
+
+.tk-info-value {
+    font-family: $font-second;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c2927;
+    text-align: right;
+    text-decoration: none;
+
+    &--accent {
+        color: #4e7258;
+        font-weight: 600;
+    }
+}
+
+// Buttons
+.tk-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 17px 24px;
+    border-radius: 9999px;
+    font-family: $font-second;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    margin-bottom: 10px;
+
+    &--primary {
+        background: #2b4333;
+        color: #f5f0ea;
+
+        &:hover {
+            background: #1e3126;
+            color: #f5f0ea;
+        }
+    }
+
+    &--secondary {
+        background: transparent;
+        color: #2c2927;
+        border: 1px solid #c8c2b8;
+
+        &:hover {
+            background: #2c2927;
+            color: #f5f0ea;
+            border-color: #2c2927;
+        }
+    }
+}
+
+// Social note
+.tk-social-note {
+    margin-top: 20px;
+    font-family: $font-second;
+    font-size: 14px;
+    color: #7a8878;
+    line-height: 1.6;
+
+    a {
+        color: #2c2927;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

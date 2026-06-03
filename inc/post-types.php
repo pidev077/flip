@@ -139,3 +139,4 @@ if (!function_exists('flip_register_sanpham_post_type')) {
 	}
 	add_action('init', 'flip_register_sanpham_post_type', 0);
 }
+
