@@ -10,6 +10,7 @@ module.exports = {
     'page-lien-he': './assets/scss/page-lien-he.scss',
     'page-daotao':  './assets/scss/page-daotao.scss',
     'page-thanks':  './assets/scss/page-thanks.scss',
+    'page-chinh-sach-bao-mat': './assets/scss/page-chinh-sach-bao-mat.scss',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

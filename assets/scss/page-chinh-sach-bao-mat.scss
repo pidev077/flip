@@ -1,0 +1,350 @@
+// Functions
+@import "~bootstrap/scss/functions";
+
+// Variables
+@import "variables-bootstrap";
+@import "~bootstrap/scss/variables-dark";
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+// Layout & components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/utilities/api";
+
+// =============================================================
+//  PAGE CHÍNH SÁCH BẢO MẬT – Tamya
+// =============================================================
+
+$pp-bg:          #F0EBE0;
+$pp-dark:        #2C3320;
+$pp-muted:       #6B7A5A;
+$pp-label:       #8B6F47;
+$pp-border:      #C8BFA8;
+$pp-note-bg:     #EEF2E8;
+$pp-note-border: #B8CCB0;
+$pp-num:         #C5BBA8;
+$pp-toc-active:  #4E7258;
+$pp-cta-bg:      #2B4333;
+$font-sans:      'be-vietnam-pro', sans-serif;
+$font-serif:     'SVN-Ogg', serif;
+
+// ── Page wrapper ──────────────────────────────────
+.page-privacy {
+    background: $pp-bg;
+}
+
+// ── Hero ──────────────────────────────────────────
+.pp-hero {
+    padding: 72px 0 48px;
+    text-align: center;
+
+    &__inner {
+        max-width: 680px !important;
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        font-family: $font-sans;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: .18em;
+        color: $pp-muted;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(2.4rem, 6vw, 3.6rem);
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1.15;
+        color: $pp-dark;
+        margin-bottom: 20px;
+    }
+
+    &__meta {
+        font-family: $font-sans;
+        font-size: 13px;
+        color: $pp-muted;
+        margin: 0;
+    }
+}
+
+// ── Body: two-column layout ───────────────────────
+.pp-body {
+    padding-bottom: 80px;
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 64px;
+        align-items: start;
+
+        @include media-breakpoint-down(lg) {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+}
+
+// ── Table of Contents ─────────────────────────────
+.pp-toc {
+    position: sticky;
+    top: 100px;
+
+    @include media-breakpoint-down(lg) {
+        position: static;
+        border: 1px solid $pp-border;
+        border-radius: 12px;
+        padding: 24px;
+    }
+
+    &__label {
+        font-family: $font-sans;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: .2em;
+        color: $pp-label;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: toc;
+
+        li {
+            counter-increment: toc;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 4px;
+
+            &::before {
+                content: counter(toc, decimal-leading-zero);
+                font-family: $font-sans;
+                font-size: 10px;
+                font-weight: 500;
+                color: $pp-num;
+                flex-shrink: 0;
+                width: 22px;
+            }
+
+            a {
+                font-family: $font-sans;
+                font-size: 13px;
+                line-height: 1.5;
+                color: $pp-muted;
+                text-decoration: none;
+                transition: color 0.2s ease;
+
+                &:hover,
+                &.is-active {
+                    color: $pp-toc-active;
+                }
+
+                &.is-active {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+// ── Content area ──────────────────────────────────
+.pp-content {
+    max-width: 680px;
+}
+
+// ── Individual section ────────────────────────────
+.pp-section {
+    padding-bottom: 48px;
+    border-bottom: 1px solid $pp-border;
+    margin-bottom: 48px;
+
+    &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    &__head {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    &__num {
+        font-family: $font-sans;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: .12em;
+        color: $pp-num;
+        flex-shrink: 0;
+    }
+
+    &__title {
+        font-family: $font-serif;
+        font-size: clamp(1.3rem, 3vw, 1.7rem);
+        font-weight: normal;
+        font-style: italic;
+        color: $pp-dark;
+        margin: 0;
+    }
+
+    &__body {
+        p {
+            font-family: $font-sans;
+            font-size: 15px;
+            line-height: 1.75;
+            color: darken($pp-muted, 8%);
+            margin-bottom: 16px;
+
+            &:last-child { margin-bottom: 0; }
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 16px;
+
+            li {
+                font-family: $font-sans;
+                font-size: 15px;
+                line-height: 1.7;
+                color: darken($pp-muted, 8%);
+                margin-bottom: 8px;
+            }
+        }
+
+        strong {
+            color: $pp-dark;
+            font-weight: 600;
+        }
+
+        a {
+            color: $pp-toc-active;
+            text-decoration: underline;
+        }
+    }
+}
+
+// ── Highlighted note box ──────────────────────────
+.pp-note {
+    background: $pp-note-bg;
+    border-left: 3px solid $pp-note-border;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-family: $font-sans;
+    font-size: 14px;
+    line-height: 1.7;
+    color: darken($pp-muted, 5%);
+
+    strong {
+        color: $pp-dark;
+        font-weight: 600;
+    }
+}
+
+// ── Two-column definition list ────────────────────
+.pp-list--table {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+
+    li {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 12px 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid lighten($pp-border, 8%);
+        font-family: $font-sans;
+        font-size: 14px;
+        line-height: 1.65;
+        color: darken($pp-muted, 8%);
+        margin: 0 !important;
+
+        &:first-child { border-top: 1px solid lighten($pp-border, 8%); }
+
+        strong {
+            color: $pp-dark;
+            font-weight: 600;
+        }
+
+        span {
+            color: darken($pp-muted, 4%);
+        }
+
+        @include media-breakpoint-down(sm) {
+            grid-template-columns: 1fr;
+            gap: 4px;
+        }
+    }
+}
+
+// ── CTA bar ───────────────────────────────────────
+.pp-cta {
+    background: $pp-cta-bg;
+    padding: 40px 0;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        font-family: $font-serif;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        font-style: italic;
+        font-weight: normal;
+        color: #F0EBE0;
+        margin: 0;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 32px;
+        border-radius: 9999px;
+        border: 1.5px solid rgba(#F0EBE0, .45);
+        font-family: $font-sans;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #F0EBE0;
+        white-space: nowrap;
+        transition: background 0.25s ease, border-color 0.25s ease;
+
+        &:hover {
+            background: rgba(#F0EBE0, .12);
+            border-color: rgba(#F0EBE0, .8);
+            color: #F0EBE0;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 260px;
+        }
+    }
+}
