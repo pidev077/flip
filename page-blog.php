@@ -68,9 +68,8 @@ $featured_query = new WP_Query([
             <div class="pbt-featured__body">
                 <div class="pbt-featured__cats">
                     <span class="pbt-badge pbt-badge--white">Nổi bật</span>
-                    <?php foreach (get_the_category() as $cat) :
-                        if ($cat->slug === 'noi-bat') continue; ?>
-                    <span class="pbt-badge pbt-badge--white"><?= esc_html($cat->name) ?></span>
+                    <?php foreach ((get_the_tags() ?: []) as $tag) : ?>
+                    <span class="pbt-badge pbt-badge--white"><?= esc_html($tag->name) ?></span>
                     <?php endforeach; ?>
                     <span class="pbt-featured__date"><?= get_the_date('d.m.Y') ?></span>
                 </div>
@@ -110,9 +109,9 @@ $featured_query = new WP_Query([
         <?php if ($is_horizontal) : ?>
         <div class="pbt-list">
             <?php while ($posts_query->have_posts()) : $posts_query->the_post();
-                $cats = get_the_category();
-                $c    = $cats[0] ?? null;
-                $bg   = $c ? get_term_meta($c->term_id, 'bg_category', true) : '#799852';
+                $tags = get_the_tags();
+                $t    = $tags ? $tags[0] : null;
+                $bg   = $t ? get_term_meta($t->term_id, 'bg_tag', true) : '#799852';
                 $bg   = $bg ?: '#799852';
             ?>
             <a href="<?= esc_url(get_permalink()) ?>" class="pbt-hcard">
@@ -121,7 +120,7 @@ $featured_query = new WP_Query([
                 </div>
                 <div class="pbt-hcard__body">
                     <div class="pbt-hcard__meta">
-                        <span class="pbt-badge" style="background:<?= esc_attr($bg) ?>"><?= esc_html($cat['label']) ?></span>
+                        <span class="pbt-badge" style="background:<?= esc_attr($bg) ?>"><?= $t ? esc_html($t->name) : esc_html($cat['label']) ?></span>
                         <span class="pbt-hcard__date"><?= get_the_date('d.m.Y') ?></span>
                     </div>
                     <h3 class="pbt-hcard__title"><?php the_title(); ?></h3>
@@ -134,9 +133,9 @@ $featured_query = new WP_Query([
         <?php else : ?>
         <div class="pbt-grid">
             <?php while ($posts_query->have_posts()) : $posts_query->the_post();
-                $cats = get_the_category();
-                $c    = $cats[0] ?? null;
-                $bg   = $c ? get_term_meta($c->term_id, 'bg_category', true) : '#799852';
+                $tags = get_the_tags();
+                $t    = $tags ? $tags[0] : null;
+                $bg   = $t ? get_term_meta($t->term_id, 'bg_tag', true) : '#799852';
                 $bg   = $bg ?: '#799852';
             ?>
             <a href="<?= esc_url(get_permalink()) ?>" class="pbt-card">
@@ -145,7 +144,7 @@ $featured_query = new WP_Query([
                 </div>
                 <div class="pbt-card__body">
                     <div class="pbt-card__meta">
-                        <span class="pbt-badge" style="background:<?= esc_attr($bg) ?>"><?= esc_html($cat['label']) ?></span>
+                        <span class="pbt-badge" style="background:<?= esc_attr($bg) ?>"><?= $t ? esc_html($t->name) : esc_html($cat['label']) ?></span>
                         <span class="pbt-card__date"><?= get_the_date('d.m.Y') ?></span>
                     </div>
                     <h3 class="pbt-card__title"><?php the_title(); ?></h3>
