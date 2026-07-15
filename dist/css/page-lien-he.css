@@ -23,7 +23,7 @@
   margin-bottom: 20px;
 }
 .ct-hero__title {
-  font-family: "SVN-Ogg", serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: normal;
   font-style: italic;
@@ -282,7 +282,7 @@
   margin: 0 0 16px;
 }
 .ct-hotline__number {
-  font-family: "SVN-Ogg", serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: normal;
   letter-spacing: 0.03em;

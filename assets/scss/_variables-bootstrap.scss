@@ -591,7 +591,7 @@ $aspect-ratios: (
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: "Be_Vietnam_Pro", sans-serif !default;
-$font-family-monospace: "SVN-Ogg", sans-serif !default;
+$font-family-monospace: "Playfair Display", sans-serif !default;
 // stylelint-enable value-keyword-case
 $font-family-base: var(--#{$prefix}font-sans-serif) !default;
 $font-family-code: var(--#{$prefix}font-monospace) !default;

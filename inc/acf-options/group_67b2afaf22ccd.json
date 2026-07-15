@@ -3,12 +3,109 @@
     "title": "Footer Options",
     "fields": [
         {
-            "key": "field_6927b66f4f746",
-            "label": "Info",
-            "name": "info_group",
-            "aria-label": "",
-            "type": "group",
+            "key": "field_footer_tab_intro",
+            "label": "Giới thiệu & Mạng xã hội",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_69b2b17c7ed10",
+            "label": "Logo Footer",
+            "name": "logo_footer",
+            "type": "image",
             "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_69b2b1467ed0f",
+            "label": "Background Image",
+            "name": "background_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_footer_tagline",
+            "label": "Câu tagline",
+            "name": "footer_tagline",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Tiếp nối hành trình chữa lành.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_social_heading",
+            "label": "Tiêu đề mạng xã hội",
+            "name": "social_heading",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Kết nối với Tamya",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_social_links",
+            "label": "Danh sách mạng xã hội",
+            "name": "social_links",
+            "type": "repeater",
+            "instructions": "Nếu không tải icon riêng, hệ thống sẽ dùng icon mặc định theo Nền tảng.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -17,100 +114,68 @@
                 "id": ""
             },
             "layout": "table",
+            "button_label": "Thêm mạng xã hội",
+            "collapsed": "field_footer_social_label",
+            "min": 0,
+            "max": 0,
             "sub_fields": [
                 {
-                    "key": "field_6927b66f4f74a",
-                    "label": "Address 1",
-                    "name": "address_1",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
+                    "key": "field_footer_social_platform",
+                    "label": "Nền tảng",
+                    "name": "platform",
+                    "type": "select",
+                    "choices": {
+                        "facebook": "Facebook",
+                        "tiktok": "TikTok",
+                        "zalo": "Zalo",
+                        "instagram": "Instagram",
+                        "youtube": "YouTube"
                     },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "default_value": "facebook",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "return_format": "value",
+                    "column_width": "25"
                 },
                 {
-                    "key": "field_6927b66f4f749",
-                    "label": "Phone Number",
-                    "name": "phone_number",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "allow_in_bindings": 0
+                    "key": "field_footer_social_label",
+                    "label": "Nhãn hiển thị",
+                    "name": "label",
+                    "type": "text",
+                    "column_width": "25"
                 },
                 {
-                    "key": "field_6927b66f4f748",
-                    "label": "Address 2",
-                    "name": "address_2",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
+                    "key": "field_footer_social_url",
+                    "label": "Đường dẫn",
+                    "name": "url",
+                    "type": "url",
+                    "column_width": "30"
+                },
+                {
+                    "key": "field_footer_social_icon",
+                    "label": "Icon tuỳ chỉnh (tuỳ chọn)",
+                    "name": "icon",
+                    "type": "image",
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "column_width": "20"
                 }
             ]
         },
         {
-            "key": "field_69b2b1467ed0f",
-            "label": "Background Image",
-            "name": "background_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
+            "key": "field_footer_tab_contact",
+            "label": "Liên hệ",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_69b2b17c7ed10",
-            "label": "Logo Footer",
-            "name": "logo_footer",
-            "aria-label": "",
-            "type": "image",
+            "key": "field_footer_contact_heading",
+            "label": "Tiêu đề liên hệ",
+            "name": "contact_heading",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -119,17 +184,276 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
+            "default_value": "Liên hệ",
+            "maxlength": "",
             "allow_in_bindings": 0,
-            "preview_size": "medium"
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_hotline_label",
+            "label": "Nhãn hotline",
+            "name": "hotline_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Hotline tổng - đặt hẹn & tư vấn",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6927b66f4f749",
+            "label": "Số điện thoại",
+            "name": "phone_number",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_footer_email",
+            "label": "Email",
+            "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "allow_in_bindings": 0
+        },
+        {
+            "key": "field_footer_hours_label",
+            "label": "Nhãn giờ làm việc",
+            "name": "hours_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Giờ làm việc",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_hours_value",
+            "label": "Giờ làm việc",
+            "name": "hours_value",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "08:30 - 17:30 (T2-CN)",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_tab_explore",
+            "label": "Khám phá",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_footer_explore_heading",
+            "label": "Tiêu đề cột khám phá",
+            "name": "explore_heading",
+            "type": "text",
+            "instructions": "Các liên kết bên dưới tiêu đề này được quản lý tại Giao diện > Menu, vị trí \"Footer Menu\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Khám phá",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_tab_branches",
+            "label": "Chi nhánh",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_footer_branch_groups",
+            "label": "Nhóm chi nhánh",
+            "name": "branch_groups",
+            "type": "repeater",
+            "instructions": "Mỗi nhóm hiển thị thành một cột riêng ở footer, ví dụ \"Chi nhánh HCM\", \"Chi nhánh Hà Nội\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Thêm khu vực",
+            "collapsed": "field_footer_branch_region_title",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_footer_branch_region_title",
+                    "label": "Tên khu vực",
+                    "name": "region_title",
+                    "type": "text",
+                    "placeholder": "VD: Chi nhánh HCM"
+                },
+                {
+                    "key": "field_footer_branch_locations",
+                    "label": "Danh sách chi nhánh",
+                    "name": "locations",
+                    "type": "repeater",
+                    "layout": "table",
+                    "button_label": "Thêm chi nhánh",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_footer_branch_location_name",
+                            "label": "Tên chi nhánh",
+                            "name": "name",
+                            "type": "text",
+                            "column_width": "25"
+                        },
+                        {
+                            "key": "field_footer_branch_location_address",
+                            "label": "Địa chỉ",
+                            "name": "address",
+                            "type": "textarea",
+                            "rows": 2,
+                            "column_width": "45"
+                        },
+                        {
+                            "key": "field_footer_branch_location_hotline_label",
+                            "label": "Nhãn hotline (tuỳ chọn)",
+                            "name": "hotline_label",
+                            "type": "text",
+                            "placeholder": "VD: Hotline chi nhánh",
+                            "column_width": "15"
+                        },
+                        {
+                            "key": "field_footer_branch_location_hotline",
+                            "label": "Hotline chi nhánh (tuỳ chọn)",
+                            "name": "hotline",
+                            "type": "link",
+                            "return_format": "array",
+                            "column_width": "15"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_footer_tab_bottom",
+            "label": "Chân trang",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_footer_copyright_text",
+            "label": "Nội dung bản quyền",
+            "name": "copyright_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "© 2026 Tamya Clinic. Bảo lưu mọi quyền.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_footer_bottom_links",
+            "label": "Liên kết chân trang",
+            "name": "bottom_links",
+            "type": "repeater",
+            "instructions": "VD: Chính sách bảo mật, Điều khoản dịch vụ.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Thêm liên kết",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_footer_bottom_link_label",
+                    "label": "Nhãn",
+                    "name": "label",
+                    "type": "text",
+                    "column_width": "40"
+                },
+                {
+                    "key": "field_footer_bottom_link_url",
+                    "label": "Đường dẫn",
+                    "name": "url",
+                    "type": "url",
+                    "column_width": "60"
+                }
+            ]
         }
     ],
     "location": [

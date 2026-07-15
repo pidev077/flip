@@ -23,7 +23,7 @@
   margin-bottom: 20px;
 }
 .bk-hero__title {
-  font-family: "SVN-Ogg", serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 5vw, 2.8rem);
   font-weight: normal;
   font-style: italic;

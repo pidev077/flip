@@ -47,19 +47,19 @@ if (!function_exists('flip_create_custom_taxonomy')) {
 
 		
 
-		register_taxonomy('team-location', array('teams'), array(
+		register_taxonomy('team-category', array('teams'), array(
 			'labels' => array(
-				'name'              => 'Locations',
-				'singular_name'     => 'location',
-				'search_items'      => 'Search Locations',
-				'all_items'         => 'All Locations',
-				'parent_item'       => 'Parent Location',
-				'parent_item_colon' => 'Parent Location:',
-				'edit_item'         => 'Edit Location',
-				'update_item'       => 'Update Location',
-				'add_new_item'      => 'Add New Location',
-				'new_item_name'     => 'New Location Name',
-				'menu_name'         => 'Locations',
+				'name'              => 'Chuyên mục',
+				'singular_name'     => 'Chuyên mục',
+				'search_items'      => 'Tìm chuyên mục',
+				'all_items'         => 'Tất cả chuyên mục',
+				'parent_item'       => 'Chuyên mục cha',
+				'parent_item_colon' => 'Chuyên mục cha:',
+				'edit_item'         => 'Sửa chuyên mục',
+				'update_item'       => 'Cập nhật chuyên mục',
+				'add_new_item'      => 'Thêm chuyên mục mới',
+				'new_item_name'     => 'Tên chuyên mục mới',
+				'menu_name'         => 'Chuyên mục',
 			),
 			'hierarchical'      => true,
 			'show_ui'           => true,
@@ -71,6 +71,62 @@ if (!function_exists('flip_create_custom_taxonomy')) {
 	}
 
 	add_action('init', 'flip_create_custom_taxonomy', 0);
+}
+
+if (!function_exists('flip_seed_team_category_terms')) {
+	// Default job-title categories for the "teams" post type (Chuyên gia / Bác sĩ / Chuyên viên).
+	function flip_seed_team_category_terms()
+	{
+		if (!taxonomy_exists('team-category')) {
+			return;
+		}
+
+		$defaults = ['Chuyên gia', 'Bác sĩ', 'Chuyên viên'];
+
+		foreach ($defaults as $term_name) {
+			if (!term_exists($term_name, 'team-category')) {
+				wp_insert_term($term_name, 'team-category');
+			}
+		}
+	}
+
+	add_action('init', 'flip_seed_team_category_terms', 5);
+}
+
+if (!function_exists('flip_register_team_category_acf_fields')) {
+	// Group photo shown per tab in the "Đội ngũ chuyên môn" block.
+	function flip_register_team_category_acf_fields()
+	{
+		if (!function_exists('acf_add_local_field_group')) {
+			return;
+		}
+
+		acf_add_local_field_group(array(
+			'key' => 'group_team_category_fields',
+			'title' => 'Ảnh nhóm chuyên mục',
+			'fields' => array(
+				array(
+					'key' => 'field_team_category_group_image',
+					'label' => 'Ảnh nhóm',
+					'name' => 'team_category_group_image',
+					'type' => 'image',
+					'return_format' => 'url',
+					'preview_size' => 'medium',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'taxonomy',
+						'operator' => '==',
+						'value' => 'team-category',
+					),
+				),
+			),
+		));
+	}
+
+	add_action('acf/init', 'flip_register_team_category_acf_fields');
 }
 
 if (!function_exists('flip_register_dichvu_post_type')) {

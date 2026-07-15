@@ -1,6 +1,7 @@
 <?php
 
 add_action('wp_enqueue_scripts', function () {
+	wp_enqueue_style('google-font-playfair-display', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap', array(), null);
 	wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.css', array(), uniqid());
 	wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/js/main.bundle.js', array('jquery'), uniqid(), true);
 
@@ -43,6 +44,7 @@ if (!function_exists('flip_load_fonts')) {
 	function flip_load_fonts()
 	{
 		wp_enqueue_style('primary-font', get_template_directory_uri() . '/assets/fonts/stylesheet.css', [], FLIP_WP_TOOLKIT_VER);
+		wp_enqueue_style('google-font-playfair-display', 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap', [], null);
 	}
 }
 

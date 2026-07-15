@@ -73,7 +73,7 @@
   }
 }
 .page-daotao .pdt-zoom__title {
-  font-family: "SVN-Ogg", serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(30px, 3.5vw, 50px);
   line-height: 1.15;
   color: #1A2E0A;
@@ -172,7 +172,7 @@
   margin: 0 auto 52px;
 }
 .page-daotao .pdt-workshop__title {
-  font-family: "SVN-Ogg", serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(36px, 5vw, 60px);
   line-height: 1.1;
   color: #1A2E0A;
