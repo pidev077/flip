@@ -7030,9 +7030,6 @@ body {
   transition: all 0.3s ease;
   border-radius: 50%;
 }
-.floating-contact__item:not(:last-child) {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-}
 .floating-contact__item svg {
   width: 30px;
   height: 30px;
@@ -7214,10 +7211,6 @@ body {
     color: #fff;
     font-size: 20px;
   }
-}
-.header__menu ul li a:hover {
-  color: #24341E;
-  font-weight: 700;
 }
 @media (max-width: 1023.98px) {
   .header__menu ul li a:hover {

@@ -21,9 +21,6 @@
 		text-decoration: none;
 		transition: $transition-base;
 		border-radius: 50%;
-		&:not(:last-child) {
-			border-bottom: 2px solid rgba(255, 255, 255, 0.85);
-		}
 
 		svg {
 			width: 30px;
