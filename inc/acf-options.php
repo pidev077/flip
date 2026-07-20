@@ -13,13 +13,6 @@ function flip_acf_init()
 
 			// Add child page under the main options page
 			acf_add_options_sub_page(array(
-				'page_title' => 'General Settings',
-				'menu_title' => 'General',
-				'parent_slug' => 'theme-options',
-			));
-
-			// Add child page under the main options page
-			acf_add_options_sub_page(array(
 				'page_title' => 'Header Settings',
 				'menu_title' => 'Header',
 				'parent_slug' => 'theme-options',
@@ -29,6 +22,13 @@ function flip_acf_init()
 			acf_add_options_sub_page(array(
 				'page_title' => 'Footer Settings',
 				'menu_title' => 'Footer',
+				'parent_slug' => 'theme-options',
+			));
+
+			// Add floating contact buttons page
+			acf_add_options_sub_page(array(
+				'page_title' => 'Floating Contact Settings',
+				'menu_title' => 'Floating Contact',
 				'parent_slug' => 'theme-options',
 			));
 		endif;

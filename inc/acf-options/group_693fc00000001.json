@@ -1,0 +1,256 @@
+{
+    "key": "group_693fc00000001",
+    "title": "Floating Contact",
+    "fields": [
+        {
+            "key": "field_693fc00000002",
+            "label": "Bật nút liên hệ nổi",
+            "name": "floating_contact_enable",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_693fc00000003",
+            "label": "Danh sách nút liên hệ",
+            "name": "floating_contact_buttons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Các nút sẽ hiển thị cố định (fixed) bên phải màn hình, xếp từ trên xuống theo thứ tự.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_693fc00000002",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 6,
+            "collapsed": "field_693fc00000004",
+            "button_label": "Thêm nút liên hệ",
+            "rows_per_page": 20,
+            "allow_in_bindings": 0,
+            "sub_fields": [
+                {
+                    "key": "field_693fc00000004",
+                    "label": "Loại",
+                    "name": "type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "phone": "Điện thoại",
+                        "zalo": "Zalo",
+                        "messenger": "Messenger",
+                        "custom": "Khác (tuỳ chỉnh)"
+                    },
+                    "default_value": "phone",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_693fc00000003"
+                },
+                {
+                    "key": "field_693fc00000005",
+                    "label": "Số điện thoại",
+                    "name": "phone",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_693fc00000004",
+                                "operator": "==",
+                                "value": "phone"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "0964 202 040",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_693fc00000003"
+                },
+                {
+                    "key": "field_693fc00000006",
+                    "label": "Liên kết",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Đường dẫn Zalo (zalo.me/...), Messenger (m.me/...) hoặc liên kết tuỳ chỉnh.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_693fc00000004",
+                                "operator": "==",
+                                "value": "zalo"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_693fc00000004",
+                                "operator": "==",
+                                "value": "messenger"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_693fc00000004",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_693fc00000003"
+                },
+                {
+                    "key": "field_693fc00000007",
+                    "label": "Icon tuỳ chỉnh",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_693fc00000004",
+                                "operator": "==",
+                                "value": "custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_693fc00000003"
+                },
+                {
+                    "key": "field_693fc00000008",
+                    "label": "Nhãn (tooltip)",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Hiển thị khi di chuột vào nút.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_693fc00000003"
+                },
+                {
+                    "key": "field_693fc00000009",
+                    "label": "Màu nền",
+                    "name": "bg_color",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "34",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_693fc00000003"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-floating-contact"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1784419200
+}

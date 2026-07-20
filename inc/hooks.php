@@ -49,6 +49,16 @@ function flip_footer_template()
 	load_template(get_template_directory() . '/template-parts/footer.php', false);
 }
 
+/**
+ * Floating contact buttons (fixed, right side)
+ * @return void
+ */
+add_action('wp_footer', 'flip_floating_contact_template');
+function flip_floating_contact_template()
+{
+	load_template(get_template_directory() . '/template-parts/floating-contact.php', false);
+}
+
 
 /**
  * Post loop item template
