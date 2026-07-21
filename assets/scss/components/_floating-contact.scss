@@ -1,6 +1,6 @@
 .floating-contact {
 	position: fixed;
-	top: 50%;
+	bottom: 20px;
 	right: 20px;
 	z-index: 999;
 	display: flex;
@@ -68,7 +68,7 @@
 	}
 
 	@media (max-width: 767px) {
-		right: 12px;
+		right: 10px;
 
 		&__item {
 			width: 46px;

@@ -7008,7 +7008,7 @@ body {
 
 .floating-contact {
   position: fixed;
-  top: 50%;
+  bottom: 20px;
   right: 20px;
   z-index: 999;
   display: flex;
@@ -7068,7 +7068,7 @@ body {
 }
 @media (max-width: 767px) {
   .floating-contact {
-    right: 12px;
+    right: 10px;
   }
   .floating-contact__item {
     width: 46px;
