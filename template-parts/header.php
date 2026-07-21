@@ -99,24 +99,35 @@ if (!empty($phone_number_hd)) {
                 <?php get_template_part('template-parts/language-switcher'); ?>
             </div>
 
-            <button id="btn-toggle-menu-mobile" class="header__hamberger d-flex d-lg-none flex-wrap"
-                aria-label="Toggle menu" aria-expanded="false">
-                <span class="header__hamberger--open">
-                    <svg width="34" height="14" viewBox="0 0 34 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1H33" stroke="#2C3320" stroke-width="2" stroke-linecap="round" />
-                        <path d="M1 13H33" stroke="#2C3320" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </span>
+            <div class="header__mobile-actions d-flex d-lg-none align-items-center gap-3">
+                <?php if (!empty($link_contact)): ?>
+                    <div class="header__button header__button--compact d-flex">
+                        <a class="flip-btn" href="<?= $link_contact['url'] ?>" target="<?= $link_contact['target'] ?>">
+                            <?= $link_contact['title'] ?>
+                        </a>
+                    </div>
+                <?php endif; ?>
 
-                <span class="header__hamberger--close">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.00497 24.995L25.005 1.2338" stroke="#2C3320" stroke-width="2"
-                            stroke-linecap="round" />
-                        <path d="M1.00497 0.994987L25.005 24.7562" stroke="#2C3320" stroke-width="2"
-                            stroke-linecap="round" />
-                    </svg>
-                </span>
-            </button>
+                <button id="btn-toggle-menu-mobile" class="header__hamberger d-flex flex-wrap"
+                    aria-label="Toggle menu" aria-expanded="false">
+                    <span class="header__hamberger--open">
+                        <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1H23" stroke="#2C3320" stroke-width="2" stroke-linecap="round" />
+                            <path d="M1 8H23" stroke="#2C3320" stroke-width="2" stroke-linecap="round" />
+                            <path d="M1 15H23" stroke="#2C3320" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </span>
+
+                    <span class="header__hamberger--close">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.00497 24.995L25.005 1.2338" stroke="#2C3320" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M1.00497 0.994987L25.005 24.7562" stroke="#2C3320" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
         </div>
     </div>
 </header>
