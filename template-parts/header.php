@@ -6,6 +6,7 @@
 $logo = get_theme_mod('custom_logo');
 $white_logo = get_theme_mod('white_logo');
 $link_contact = get_field('link_contact_hd', 'option');
+$social_links = get_field('social_links', 'option');
 
 $phone_number_hd = get_field('phone_number_hd', 'option');
 if (!empty($phone_number_hd)) {
@@ -44,22 +45,37 @@ if (!empty($phone_number_hd)) {
                 }
                 ?>
 
-                <?php if (!empty($phone)): ?>
-                    <a class="header__phone d-flex d-lg-none align-items-center gap-2" href="<?= esc_url($phone['url']) ?>">
-                        <span class="header__phone-icon"><?= flip_svg_icon('phone'); ?></span>
-                        <span class="header__phone-number"><?= esc_html($phone['title']) ?></span>
-                    </a>
-                <?php endif; ?>
+                <div class="header__menu-footer d-flex d-lg-none flex-column">
+                    <?php if (!empty($phone)): ?>
+                        <div class="header__hotline">
+                            <span class="header__hotline-label"><?php esc_html_e('Hotline', 'flip'); ?></span>
+                            <a class="header__hotline-number" href="<?= esc_url($phone['url']) ?>"><?= esc_html($phone['title']) ?></a>
+                        </div>
+                    <?php endif; ?>
 
-                <?php if (!empty($link_contact)): ?>
-                    <div class="header__button d-block d-lg-none">
-                        <a class="flip-btn lg" href="<?= $link_contact['url'] ?>" target=" <?= $link_contact['target'] ?>">
-                            <?= $link_contact['title'] ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
+                    <?php if (!empty($link_contact)): ?>
+                        <div class="header__button d-block">
+                            <a class="flip-btn lg" href="<?= $link_contact['url'] ?>" target=" <?= $link_contact['target'] ?>">
+                                <?= $link_contact['title'] ?>
+                            </a>
+                        </div>
+                    <?php endif; ?>
 
-                <div class="d-block d-lg-none">
+                    <?php if (!empty($social_links)): ?>
+                        <div class="header__socials">
+                            <?php foreach ($social_links as $social):
+                                $platform = $social['platform'] ?: 'facebook';
+                                $label    = $social['label'] ?: ucfirst($platform);
+                                $url      = $social['url'];
+                                if (!$url) continue;
+                            ?>
+                                <a class="header__social-link" href="<?= esc_url($url) ?>" target="_blank" rel="noopener">
+                                    <?= esc_html($label) ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+
                     <?php get_template_part('template-parts/language-switcher'); ?>
                 </div>
             </div>

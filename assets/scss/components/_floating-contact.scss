@@ -9,6 +9,13 @@
 	border-radius: 999px;
 	overflow: hidden;
 	gap: 10px;
+	transition: $transition-base;
+
+	.mobile-opened & {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
 
 	&__item {
 		display: flex;
