@@ -7511,6 +7511,11 @@ body {
   padding-top: 70px;
   padding-bottom: 22px;
 }
+@media (max-width: 575.98px) {
+  .footer .footer-main {
+    padding-top: 50px;
+  }
+}
 .footer .footer-columns {
   display: grid;
   grid-template-columns: 1.7fr 1fr 1fr 1fr 1fr;
@@ -7525,6 +7530,7 @@ body {
 @media (max-width: 575.98px) {
   .footer .footer-columns {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 .footer .footer-col {
@@ -7545,6 +7551,11 @@ body {
   font-family: "be-vietnam-pro";
   margin-bottom: 10px;
   line-height: 1.5;
+}
+@media (max-width: 767.98px) {
+  .footer .footer-col__heading {
+    font-size: 11px;
+  }
 }
 .footer .footer-logo {
   max-width: 160px;
@@ -7575,6 +7586,11 @@ body {
   font-weight: 500;
   transition: all 0.3s ease;
 }
+@media (max-width: 767.98px) {
+  .footer .social-link {
+    font-size: 14px;
+  }
+}
 .footer .social-link:hover {
   background: rgba(255, 255, 255, 0.18);
 }
@@ -7586,6 +7602,12 @@ body {
   height: 26px;
   border-radius: 50%;
   flex-shrink: 0;
+}
+@media (max-width: 767.98px) {
+  .footer .social-link__icon {
+    width: 22px;
+    height: 22px;
+  }
 }
 .footer .social-link__icon svg {
   width: 15px;
@@ -7633,10 +7655,20 @@ body {
   color: #fff;
   text-decoration: none;
 }
+@media (max-width: 767.98px) {
+  .footer .footer-field__value {
+    font-size: 14px;
+  }
+}
 .footer .footer-field__value--accent {
   color: #FFDF7F;
   font-size: 32px;
   font-weight: 600;
+}
+@media (max-width: 767.98px) {
+  .footer .footer-field__value--accent {
+    font-size: 24px;
+  }
 }
 .footer .footer-field__value:hover {
   text-decoration: underline;
@@ -7655,6 +7687,11 @@ body {
   font-weight: 400;
   line-height: 100%;
 }
+@media (max-width: 767.98px) {
+  .footer .footer-explore-menu a {
+    font-size: 14px;
+  }
+}
 .footer .footer-explore-menu a:hover {
   color: #ffe071;
 }
@@ -7669,6 +7706,11 @@ body {
   font-weight: 600;
   color: #fff;
   margin-bottom: 4px !important;
+}
+@media (max-width: 767.98px) {
+  .footer .footer-branch__name {
+    font-size: 14px;
+  }
 }
 .footer .footer-branch__address {
   font-size: 16px;
@@ -7702,6 +7744,7 @@ body {
   .footer .footer-bottom__inner {
     flex-direction: column;
     text-align: center;
+    align-items: flex-start;
   }
 }
 .footer .footer-copyright {
