@@ -7119,14 +7119,6 @@ body {
   font-size: 16px;
   height: 48px;
 }
-.logged-in .header.scrolled {
-  top: 32px;
-}
-@media screen and (max-width: 782px) {
-  .logged-in .header.scrolled {
-    top: 46px;
-  }
-}
 .header__logo {
   position: relative;
 }
