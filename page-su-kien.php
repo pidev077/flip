@@ -163,12 +163,6 @@ $visible_count = 5; // Số thẻ hiển thị trước khi bấm "Xem thêm s�
                 </article>
                 <?php endwhile; wp_reset_postdata(); ?>
             </div>
-
-            <?php if ($i > $visible_count) : ?>
-            <div class="psk-loadmore">
-                <button type="button" class="psk-btn-outline" data-psk-loadmore>Xem thêm sự kiện</button>
-            </div>
-            <?php endif; ?>
             <?php endif; ?>
 
         </div>
@@ -237,6 +231,13 @@ $visible_count = 5; // Số thẻ hiển thị trước khi bấm "Xem thêm s�
 
         </div>
     </section>
+    <?php endif; ?>
+
+    <!-- ── Xem thêm sự kiện (load thêm thẻ đã ẩn trong lưới) ─── -->
+    <?php if ($i > 0) : ?>
+    <div class="psk-loadmore">
+        <button type="button" class="psk-btn-outline" data-psk-loadmore>Xem thêm sự kiện</button>
+    </div>
     <?php endif; ?>
 
 </main>
