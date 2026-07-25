@@ -17,6 +17,10 @@ add_action('wp_enqueue_scripts', function () {
 		wp_enqueue_style('page-daotao', get_template_directory_uri() . '/dist/css/page-daotao.css', array('theme-styles'), uniqid());
 	}
 
+	if (is_page_template('page-su-kien.php') || is_singular('su-kien')) {
+		wp_enqueue_style('page-su-kien', get_template_directory_uri() . '/dist/css/page-su-kien.css', array('theme-styles'), uniqid());
+	}
+
 	if (is_page_template('page-thanks.php')) {
 		wp_enqueue_style('page-thanks', get_template_directory_uri() . '/dist/css/page-thanks.css', array('theme-styles'), uniqid());
 	}

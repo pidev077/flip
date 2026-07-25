@@ -276,3 +276,84 @@ if (!function_exists('flip_register_sanpham_post_type')) {
 	add_action('init', 'flip_register_sanpham_post_type', 0);
 }
 
+if (!function_exists('flip_register_su_kien_post_type')) {
+	function flip_register_su_kien_post_type()
+	{
+		register_post_type('su-kien', [
+			'labels' => [
+				'name'          => 'Sự kiện',
+				'singular_name' => 'Sự kiện',
+				'add_new'       => 'Thêm mới',
+				'add_new_item'  => 'Thêm sự kiện mới',
+				'edit_item'     => 'Chỉnh sửa sự kiện',
+				'new_item'      => 'Sự kiện mới',
+				'view_item'     => 'Xem sự kiện',
+				'search_items'  => 'Tìm sự kiện',
+				'not_found'     => 'Không tìm thấy sự kiện',
+				'menu_name'     => 'Sự kiện',
+			],
+			'description'        => 'Workshop, talkshow, lễ ra mắt và các hoạt động hiển thị trên trang Sự Kiện',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'menu_position'      => 25,
+			'menu_icon'          => 'dashicons-calendar-alt',
+			'supports'           => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'rewrite'            => ['slug' => 'su-kien'],
+			'show_in_rest'       => true,
+		]);
+	}
+	add_action('init', 'flip_register_su_kien_post_type', 0);
+}
+
+if (!function_exists('flip_register_su_kien_taxonomy')) {
+	function flip_register_su_kien_taxonomy()
+	{
+		register_taxonomy('danh-muc-su-kien', ['su-kien'], [
+			'labels' => [
+				'name'              => 'Danh mục sự kiện',
+				'singular_name'     => 'Danh mục sự kiện',
+				'search_items'      => 'Tìm danh mục',
+				'all_items'         => 'Tất cả danh mục',
+				'edit_item'         => 'Sửa danh mục',
+				'update_item'       => 'Cập nhật danh mục',
+				'add_new_item'      => 'Thêm danh mục mới',
+				'new_item_name'     => 'Tên danh mục mới',
+				'menu_name'         => 'Danh mục sự kiện',
+			],
+			'hierarchical'      => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => false,
+			'show_in_rest'      => true,
+		]);
+	}
+	add_action('init', 'flip_register_su_kien_taxonomy', 0);
+}
+
+if (!function_exists('flip_seed_danh_muc_su_kien_terms')) {
+	// Danh mục dùng làm badge trên thẻ sự kiện + tab lọc trên trang Sự Kiện.
+	// Một sự kiện có thể gắn nhiều danh mục, ví dụ vừa "Lễ ra mắt" vừa "Sắp diễn ra".
+	function flip_seed_danh_muc_su_kien_terms()
+	{
+		if (!taxonomy_exists('danh-muc-su-kien')) {
+			return;
+		}
+
+		$defaults = ['Sắp diễn ra', 'Đã diễn ra', 'Nội bộ', 'Vì Cộng đồng', 'Lễ ra mắt', 'Talkshow', 'Tri ân'];
+
+		foreach ($defaults as $term_name) {
+			if (!term_exists($term_name, 'danh-muc-su-kien')) {
+				wp_insert_term($term_name, 'danh-muc-su-kien');
+			}
+		}
+	}
+	add_action('init', 'flip_seed_danh_muc_su_kien_terms', 5);
+}
+

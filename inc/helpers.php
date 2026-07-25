@@ -101,6 +101,90 @@ if (!function_exists('__get_field')) {
 		return false;
 	}
 }
+if (!function_exists('flip_event_date_badge')) {
+	/**
+	 * Chuyển ngày dạng "d.m.Y" (ACF date_picker) thành mảng ['day' => '28', 'month' => 'THG 6']
+	 * dùng cho khối ngày/tháng đè lên ảnh sự kiện.
+	 */
+	function flip_event_date_badge($date_dmY)
+	{
+		if (empty($date_dmY)) {
+			return null;
+		}
+
+		$dt = DateTime::createFromFormat('d.m.Y', $date_dmY);
+		if (!$dt) {
+			return null;
+		}
+
+		return [
+			'day'   => $dt->format('d'),
+			'month' => 'THG ' . (int) $dt->format('n'),
+		];
+	}
+}
+
+if (!function_exists('flip_su_kien_type_badge')) {
+	/**
+	 * Lấy danh mục dùng làm nhãn hiển thị trên thẻ sự kiện (VD: "Lễ ra mắt", "Vì Cộng đồng").
+	 * Ưu tiên danh mục loại sự kiện, bỏ qua "Sắp diễn ra" / "Đã diễn ra" vì 2 nhãn đó chỉ dùng cho tab lọc.
+	 */
+	function flip_su_kien_type_badge($post_id)
+	{
+		$terms = get_the_terms($post_id, 'danh-muc-su-kien');
+		if (!$terms || is_wp_error($terms)) {
+			return null;
+		}
+
+		$status_slugs = ['sap-dien-ra', 'da-dien-ra'];
+		foreach ($terms as $term) {
+			if (!in_array($term->slug, $status_slugs, true)) {
+				return $term;
+			}
+		}
+
+		return $terms[0];
+	}
+}
+
+if (!function_exists('flip_su_kien_badge_color')) {
+	// Nhãn "Lễ ra mắt" / "Talkshow" dùng tông xanh, các nhãn còn lại (Vì Cộng đồng / Tri ân / Nội bộ) dùng tông vàng đồng.
+	// Đây chỉ là màu mặc định — admin có thể ghi đè riêng cho từng danh mục qua flip_su_kien_tag_color().
+	function flip_su_kien_badge_color($slug)
+	{
+		$gold_slugs = ['vi-cong-dong', 'tri-an', 'noi-bo'];
+		return in_array($slug, $gold_slugs, true) ? 'gold' : 'green';
+	}
+}
+
+if (!function_exists('flip_su_kien_tag_color')) {
+	// Màu tuỳ chỉnh admin đặt riêng cho 1 danh mục (field "tag_color" trên trang sửa Term).
+	// Trả về '' nếu admin chưa chọn màu — khi đó dùng fallback flip_su_kien_badge_color().
+	function flip_su_kien_tag_color($term)
+	{
+		if (!$term || !function_exists('get_field')) {
+			return '';
+		}
+
+		$color = get_field('tag_color', $term->taxonomy . '_' . $term->term_id);
+		return $color ?: '';
+	}
+}
+
+if (!function_exists('flip_su_kien_tag_text_color')) {
+	// Màu chữ tuỳ chỉnh cho nhãn — chỉ dùng ở khối "Sự kiện nổi bật" (field "tag_text_color" trên trang sửa Term).
+	// Trả về '' nếu admin chưa chọn màu — khi đó dùng màu chữ mặc định (trắng).
+	function flip_su_kien_tag_text_color($term)
+	{
+		if (!$term || !function_exists('get_field')) {
+			return '';
+		}
+
+		$color = get_field('tag_text_color', $term->taxonomy . '_' . $term->term_id);
+		return $color ?: '';
+	}
+}
+
 if (!function_exists('__get_fields')) {
 	function __get_fields($post_id = false, $format_value = true)
 	{

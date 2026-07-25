@@ -1,0 +1,684 @@
+// ── Page Sự Kiện – Tamya ─────────────────────────────────────
+// Bảng màu / font đồng bộ với page-daotao.scss
+
+$font-sans:   'be-vietnam-pro', sans-serif;
+$font-serif:  'Playfair Display', serif;
+$green-dark:  #406028;
+$green-soft:  #5A7A47;
+$card-title:  #406028;
+$accent-gold: #E0A000;
+$text-dark:   #2C3E2A;
+$text-body:   #5C5C5C;
+$text-muted:  #888;
+$border-line: #D9D4CC;
+$bg-page:     #F6F5EF;
+$bg-tabs:     #F1ECDF;
+$bg-card:     #D9D2C4;
+
+.page-su-kien {
+    background: $bg-page;
+    font-family: $font-sans;
+
+    // ── Shared eyebrow label ─────────────────────────────────
+    .psk-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: #7A9B76;
+        margin: 0 0 14px;
+    }
+
+    .psk-dot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $green-soft;
+        flex-shrink: 0;
+    }
+
+    .psk-btn-outline {
+        display: inline-block;
+        padding: 11px 32px;
+        border: 1.5px solid #aaa;
+        border-radius: 3px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #555;
+        text-decoration: none;
+        background: transparent;
+        cursor: pointer;
+        transition: border-color 0.2s, color 0.2s;
+
+        &:hover {
+            border-color: $green-dark;
+            color: $green-dark;
+        }
+    }
+
+    // Ngày/tháng dạng khối trắng đè lên ảnh (VD: "28 / THG 6")
+    .psk-date-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 63px;
+        padding: 10px 0px 10px;
+        background: #fff;
+        border-radius: 10px;
+        line-height: 1.1;
+        box-shadow: 0 2px 6px rgba(0,0,0,.12);
+
+        .psk-date-badge__day {
+            font-size: 26px;
+            font-weight: 500;
+            color: #406028;
+            font-family: "Playfair Display", serif;
+        }
+
+        .psk-date-badge__month {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: #789850;
+            margin-top: 2px;
+        }
+    }
+
+    // Nhãn danh mục đè lên ảnh (Lễ ra mắt / Vì cộng đồng / ...)
+    .psk-tag {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 12px;
+        background: #789850;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .02em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        white-space: nowrap;
+
+        &--green { background: #789850; }
+        &--gold  { background: #BFA06A; }
+    }
+
+    // Trong thẻ lưới sự kiện, nhãn nằm trong luồng nội dung (không đè tuyệt đối trên ảnh)
+    .psk-card__content .psk-tag {
+        position: static;
+    }
+
+    // Nhãn trạng thái dạng chip (Sắp diễn ra) dùng trong thẻ nội dung
+    .psk-status-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 14px;
+        background: #789850;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        width: fit-content;
+    }
+
+    .psk-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 6px 10px;
+        font-size: 15px;
+        color: #4A4E46;
+        font-weight: 500;
+
+        svg { flex-shrink: 0; opacity: .7; margin-left: 0;}
+
+        .psk-meta__sep {
+            opacity: .5;
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // HERO
+    // ─────────────────────────────────────────────────────────
+    .psk-hero {
+        background: $green-dark;
+        padding: 64px 0;
+    }
+
+    .psk-hero__inner {
+        display: grid;
+        grid-template-columns: 8fr 7fr;
+        gap: 48px;
+        align-items: stretch;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .psk-hero__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .psk-hero .psk-eyebrow {
+        color: #BFA06A;
+    }
+
+    .psk-hero__title {
+        font-family: $font-serif;
+        font-size: clamp(34px, 4vw, 76px);
+        line-height: 1.3;
+        color: #fff;
+        margin: 0 0 16px;
+    }
+
+    .psk-hero__desc {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #DEE3DC;
+        margin: 0;
+        max-width: 640px;
+    }
+
+    // Thẻ sự kiện nổi bật hiển thị bên phải hero
+    .psk-hero-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,.18);
+        text-decoration: none;
+    }
+
+    .psk-hero-card__img {
+        position: relative;
+        aspect-ratio: 700/290;
+        overflow: hidden;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .psk-hero-card__body {
+        padding: 24px 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .psk-hero-card__title {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1.35;
+        color: #406028;
+        margin: 0;
+
+        a { color: inherit; text-decoration: none; }
+        a:hover { color: $green-dark; }
+    }
+
+    .psk-hero-card__btn {
+        width: fit-content;
+        gap: 8px;
+        margin-top: 4px;
+        padding: 12px 22px;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        background: #406028;
+        transition: background .2s, color .2s;
+
+        &:hover {
+            background: $green-dark;
+            color: #fff;
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // TABS LỌC
+    // ─────────────────────────────────────────────────────────
+    .psk-tabs {
+        background: $bg-tabs;
+        padding: 20px 0;
+    }
+
+    .psk-tabs__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .psk-tab {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 20px;
+        border: 1px solid transparent;
+        border-radius: 30px;
+        background: transparent;
+        color: #406028;
+        font-size: 17px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background .2s, color .2s, border-color .2s;
+
+        &:hover { border-color: $border-line; }
+
+        &.is-active {
+            background: #789850;
+            color: #fff;
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // LƯỚI SỰ KIỆN
+    // ─────────────────────────────────────────────────────────
+    .psk-grid-section {
+        padding: 56px 0 88px;
+
+        @media (max-width: 767px) { padding: 40px 0 56px; }
+    }
+
+    .psk-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 24px;
+
+        @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 560px) { grid-template-columns: 1fr; }
+    }
+
+    .psk-card {
+        grid-column: span 2;
+        border-radius: 16px;
+        overflow: hidden;
+
+        // Thẻ đầu tiên rộng gấp đôi thẻ thứ 2 (cùng hàng, cùng chiều cao) — chỉ trên desktop
+        &:nth-child(1) {
+            grid-column: span 4;
+
+            .psk-card__media { aspect-ratio: 1054 / 520; }
+
+            @media (min-width: 901px) {
+                h3.psk-card__title { font-size: 40px; }
+            }
+
+            @media (max-width: 900px) {
+                grid-column: span 1;
+                .psk-card__media { aspect-ratio: 4 / 3; }
+            }
+        }
+
+        &:nth-child(2) {
+            .psk-card__media { aspect-ratio: 526 / 520; }
+
+            @media (max-width: 900px) {
+                .psk-card__media { aspect-ratio: 4 / 3; }
+            }
+        }
+
+        &:nth-child(n+3) {
+            .psk-card__media { aspect-ratio: 517 / 360; }
+
+            @media (max-width: 900px) {
+                .psk-card__media { aspect-ratio: 4 / 3; }
+            }
+        }
+
+        @media (max-width: 900px) { grid-column: span 1; }
+
+        &.is-hidden { display: none; }
+        &.is-filtered-out { display: none; }
+    }
+
+    // Ảnh phủ toàn bộ thẻ, chữ đè trực tiếp lên ảnh (giống khối bento Khoảnh khắc đào tạo)
+    .psk-card__media {
+        position: relative;
+        display: block;
+        aspect-ratio: 517 / 360;
+        overflow: hidden;
+        background: $bg-card;
+        border-radius: 16px;
+
+        img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        &:hover img { transform: scale(1.04); }
+    }
+
+    .psk-card__gradient {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(10, 20, 5, .82) 0%, rgba(10, 20, 5, .38) 42%, rgba(10, 20, 5, 0) 68%);
+        pointer-events: none;
+    }
+
+    .psk-card__content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 20px 22px 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .psk-card__title {
+        margin: 0;
+        font-family: $font-serif;
+        font-size: clamp(24px, 2vw, 30px);
+        font-weight: 600;
+        line-height: 1.3;
+        color: #fff;
+    }
+
+    .psk-card__meta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        color: #E8EEDD;
+        margin: 0;
+    }
+
+    .psk-card__dot {
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.85);
+        flex-shrink: 0;
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // SỰ KIỆN NỔI BẬT
+    // ─────────────────────────────────────────────────────────
+    .psk-featured {
+        padding: 0 0 96px;
+
+        @media (max-width: 767px) { padding: 0 0 56px; }
+    }
+
+    .psk-featured__head {
+        max-width: 680px;
+        margin: 0 0 36px;
+    }
+
+    .psk-featured__title {
+        font-family: $font-serif;
+        font-size: clamp(28px, 3.5vw, 40px);
+        line-height: 1.15;
+        color: $text-dark;
+        margin: 0;
+    }
+
+    .psk-featured__list {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .psk-featured__item {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        background: #F5EEE7;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        border: 1px solid #D6DAD0;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .psk-featured__img {
+        position: relative;
+        aspect-ratio: 720 / 336;
+        overflow: hidden;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 900px) { aspect-ratio: 16 / 9; }
+    }
+
+    .psk-featured__body {
+        padding: 30px 34px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 767px) { padding: 24px 22px; }
+    }
+
+    // Dùng chung style .psk-tag (chip màu theo danh mục), chỉ đổi vị trí từ đè-ảnh sang nằm trong luồng nội dung
+    .psk-featured__tag {
+        position: static;
+        margin: 0 0 10px;
+        font-size: 12px;
+        width: fit-content;
+        padding: 6px 10px 3px 10px;
+    }
+
+    .psk-featured__title-item {
+        font-family: $font-serif;
+        font-size: clamp(20px, 2.2vw, 32px);
+        line-height: 1.3;
+        color: #406028;
+        margin: 0 0 12px;
+
+        a { color: inherit; text-decoration: none; }
+        a:hover { color: $green-dark; }
+    }
+
+    .psk-featured__meta {
+        margin-bottom: 14px;
+        font-size: 15px;
+        color: #789850;
+    }
+
+    .psk-featured__desc {
+        font-size: 17px;
+        line-height: 1.5;
+        color: #24341E;
+        margin: 0 0 20px;
+    }
+
+    .psk-featured__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 11px 24px;
+        background: $green-dark;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background .2s;
+
+        &:hover { background: #1c2e10; color: #fff; }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // XEM THÊM
+    // ─────────────────────────────────────────────────────────
+    .psk-loadmore {
+        text-align: center;
+        padding-bottom: 88px;
+
+        @media (max-width: 767px) { padding-bottom: 56px; }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // RESPONSIVE — MOBILE (thu nhỏ text/nút, đồng nhất kích thước thẻ)
+    // ─────────────────────────────────────────────────────────
+    @media (max-width: 767px) {
+        .psk-eyebrow { font-size: 13px; gap: 6px; }
+        .psk-meta { font-size: 12px; gap: 4px 8px; }
+
+        // Hero
+        .psk-hero { padding: 40px 0; }
+        .psk-hero__inner { gap: 24px; }
+        .psk-hero__desc { font-size: 14px; }
+
+        .psk-hero-card__img { aspect-ratio: 4 / 3; }
+        .psk-hero-card__body { padding: 16px 18px 18px; gap: 8px; }
+        .psk-hero-card__title { font-size: 18px; }
+        .psk-hero-card__btn { padding: 9px 16px; font-size: 13px; }
+        .psk-status-chip { font-size: 11px; padding: 5px 12px; }
+
+        // Tabs
+        .psk-tabs { padding: 12px 0; }
+        .psk-tabs__list { gap: 6px; }
+        .psk-tab { font-size: 13px; padding: 7px 14px; }
+
+        // Lưới sự kiện — đồng nhất kích thước ảnh + text trên mọi thẻ
+        .psk-card__title { font-size: 17px; }
+        .psk-card__meta { font-size: 12px; gap: 6px; }
+        .psk-card__content { padding: 14px 16px 16px; gap: 6px; }
+        .psk-date-badge { width: 48px; padding: 6px 0; }
+        .psk-date-badge__day { font-size: 18px; }
+        .psk-date-badge__month { font-size: 9px; }
+        .psk-tag { font-size: 11px; padding: 4px 10px; }
+
+        // Sự kiện nổi bật
+        .psk-featured__head { margin-bottom: 20px; }
+        .psk-featured__title { font-size: 24px; }
+        .psk-featured__title-item { font-size: 18px; margin-bottom: 8px; }
+        .psk-featured__desc { font-size: 13px; margin-bottom: 14px; }
+        .psk-featured__meta { font-size: 12px; margin-bottom: 10px; }
+        .psk-featured__btn { font-size: 13px; padding: 8px 18px; }
+        .psk-featured__tag { font-size: 10px; padding: 4px 9px 3px; }
+
+        // Nút "Xem thêm sự kiện"
+        .psk-btn-outline { padding: 9px 22px; font-size: 10px; }
+    }
+}
+
+// ═════════════════════════════════════════════════════════════
+// SINGLE — Chi tiết Sự kiện (single-su-kien.php)
+// ═════════════════════════════════════════════════════════════
+.psk-single {
+    background: $bg-page;
+    font-family: $font-sans;
+
+    .psk-crumb {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 24px 20px;
+        font-size: 12px;
+        color: $text-muted;
+
+        a {
+            color: $text-muted;
+            text-decoration: none;
+
+            &:hover { color: $green-dark; }
+        }
+
+        svg { flex-shrink: 0; opacity: 0.6; }
+    }
+
+    .psk-single-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        padding: 0 20px 88px;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+    }
+
+    .psk-single-hero__img {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .psk-single-hero__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .psk-single-hero__title {
+        font-family: $font-serif;
+        font-size: clamp(28px, 3.5vw, 42px);
+        line-height: 1.2;
+        color: $text-dark;
+        margin: 16px 0;
+    }
+
+    .psk-single-hero__content {
+        font-size: 14px;
+        line-height: 1.85;
+        color: $text-body;
+        margin: 20px 0 28px;
+
+        p { margin: 0 0 16px; }
+    }
+
+    .psk-single-cta {
+        margin-bottom: 20px;
+    }
+
+    .psk-single-back {
+        align-self: flex-start;
+    }
+}
