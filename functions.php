@@ -22,6 +22,7 @@ require get_template_directory() . '/inc/acf-fields-dichvu.php';
 require get_template_directory() . '/inc/acf-fields-sanpham.php';
 require get_template_directory() . '/inc/acf-fields-post.php';
 require get_template_directory() . '/inc/acf-fields-daotao.php';
+require get_template_directory() . '/inc/acf-fields-su-kien-dao-tao.php';
 require get_template_directory() . '/inc/booking-form.php';
 require get_template_directory() . '/inc/contact-form.php';
 

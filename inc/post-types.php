@@ -162,6 +162,86 @@ if (!function_exists('flip_register_dichvu_post_type')) {
 	add_action('init', 'flip_register_dichvu_post_type', 0);
 }
 
+if (!function_exists('flip_register_su_kien_dao_tao_post_type')) {
+	function flip_register_su_kien_dao_tao_post_type()
+	{
+		register_post_type('su-kien-dao-tao', [
+			'labels' => [
+				'name'          => 'Sự kiện đào tạo',
+				'singular_name' => 'Sự kiện đào tạo',
+				'add_new'       => 'Thêm mới',
+				'add_new_item'  => 'Thêm sự kiện đào tạo mới',
+				'edit_item'     => 'Chỉnh sửa sự kiện đào tạo',
+				'new_item'      => 'Sự kiện đào tạo mới',
+				'view_item'     => 'Xem sự kiện đào tạo',
+				'search_items'  => 'Tìm sự kiện đào tạo',
+				'not_found'     => 'Không tìm thấy sự kiện đào tạo',
+				'menu_name'     => 'Đào tạo',
+			],
+			'description'        => 'Các buổi đào tạo / workshop hiển thị trên trang Đào Tạo',
+			'public'             => true,
+			'publicly_queryable' => true,
+			'show_ui'            => true,
+			'show_in_menu'       => true,
+			'query_var'          => true,
+			'capability_type'    => 'post',
+			'has_archive'        => false,
+			'hierarchical'       => false,
+			'menu_position'      => 24,
+			'menu_icon'          => 'dashicons-welcome-learn-more',
+			'supports'           => ['title', 'editor', 'excerpt', 'thumbnail', 'revisions'],
+			'rewrite'            => ['slug' => 'su-kien-dao-tao'],
+			'show_in_rest'       => true,
+		]);
+	}
+	add_action('init', 'flip_register_su_kien_dao_tao_post_type', 0);
+}
+
+if (!function_exists('flip_register_su_kien_dao_tao_taxonomy')) {
+	function flip_register_su_kien_dao_tao_taxonomy()
+	{
+		register_taxonomy('loai-su-kien', ['su-kien-dao-tao'], [
+			'labels' => [
+				'name'              => 'Loại chuyên gia',
+				'singular_name'     => 'Loại chuyên gia',
+				'search_items'      => 'Tìm loại chuyên gia',
+				'all_items'         => 'Tất cả loại chuyên gia',
+				'edit_item'         => 'Sửa loại chuyên gia',
+				'update_item'       => 'Cập nhật loại chuyên gia',
+				'add_new_item'      => 'Thêm loại chuyên gia mới',
+				'new_item_name'     => 'Tên loại chuyên gia mới',
+				'menu_name'         => 'Loại chuyên gia',
+			],
+			'hierarchical'      => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => false,
+			'show_in_rest'      => true,
+		]);
+	}
+	add_action('init', 'flip_register_su_kien_dao_tao_taxonomy', 0);
+}
+
+if (!function_exists('flip_seed_loai_su_kien_terms')) {
+	// Nhãn badge mặc định hiển thị trên card sự kiện đào tạo.
+	function flip_seed_loai_su_kien_terms()
+	{
+		if (!taxonomy_exists('loai-su-kien')) {
+			return;
+		}
+
+		$defaults = ['Chuyên gia Hàn Quốc', 'Chuyên gia Việt Nam'];
+
+		foreach ($defaults as $term_name) {
+			if (!term_exists($term_name, 'loai-su-kien')) {
+				wp_insert_term($term_name, 'loai-su-kien');
+			}
+		}
+	}
+	add_action('init', 'flip_seed_loai_su_kien_terms', 5);
+}
+
 if (!function_exists('flip_register_sanpham_post_type')) {
 	function flip_register_sanpham_post_type()
 	{

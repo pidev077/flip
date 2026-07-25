@@ -13,7 +13,7 @@ add_action('wp_enqueue_scripts', function () {
 		wp_enqueue_style('page-lien-he', get_template_directory_uri() . '/dist/css/page-lien-he.css', array('theme-styles'), uniqid());
 	}
 
-	if (is_page_template('page-daotao.php')) {
+	if (is_page_template('page-daotao.php') || is_singular('su-kien-dao-tao')) {
 		wp_enqueue_style('page-daotao', get_template_directory_uri() . '/dist/css/page-daotao.css', array('theme-styles'), uniqid());
 	}
 

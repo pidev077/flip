@@ -4,8 +4,8 @@ $font-sans:   'be-vietnam-pro', sans-serif;
 $font-serif:  'Playfair Display', serif;
 $green-dark:  #2A4318;
 $green-soft:  #5A7A47;
-$text-dark:   #1A2E0A;
-$text-body:   #555;
+$text-dark:   #2C3E2A;
+$text-body:   #5C5C5C;
 $text-muted:  #888;
 $border-line: #D9D4CC;
 $bg-page:     #F6F5EF;
@@ -21,11 +21,10 @@ $bg-card:     #D9D2C4;
         display: flex;
         align-items: center;
         gap: 7px;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-size: 18px;
+        font-weight: 400;
         text-transform: uppercase;
-        color: $text-muted;
+        color: #7A9B76;
         margin-bottom: 14px;
     }
 
@@ -44,9 +43,12 @@ $bg-card:     #D9D2C4;
     // ZOOM TRAINING SECTION
     // ─────────────────────────────────────────────────────────
     .pdt-zoom {
+        padding: 20px 0;
+    }
+
+    .pdt-zoom__inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: #fff;
         min-height: 520px;
 
         @media (max-width: 900px) {
@@ -85,45 +87,44 @@ $bg-card:     #D9D2C4;
 
     .pdt-zoom__title {
         font-family: $font-serif;
-        font-size: clamp(30px, 3.5vw, 50px);
+        font-size: clamp(30px, 3.5vw, 44px);
         line-height: 1.15;
         color: $text-dark;
         margin: 0 0 16px;
     }
 
     .pdt-zoom__desc {
-        font-size: 14px;
-        line-height: 1.85;
+        font-size: 18px;
+        line-height: 1.5;
         color: $text-body;
         margin: 0 0 28px;
-        max-width: 440px;
     }
 
     // Schedule block
     .pdt-schedule {
-        border-top: 1px solid $border-line;
-        border-bottom: 1px solid $border-line;
-        padding: 18px 0;
+        border: 1px solid #E8E4DD;
+        padding: 25px;
+        background: #fff;
         margin-bottom: 24px;
+        border-radius: 12px;
     }
 
     .pdt-schedule__label {
         display: flex;
         align-items: center;
         gap: 6px;
-        font-size: 9px;
-        font-weight: 700;
-        letter-spacing: 0.14em;
+        font-size: 13px;
+        font-weight: 400;
         text-transform: uppercase;
-        color: $text-muted;
+        color: #7A9B76;
         margin: 0 0 8px;
     }
 
     .pdt-schedule__day {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 700;
-        color: $text-dark;
-        margin: 0 0 3px;
+        color: #5C5C5C;
+        margin: 10px 0 3px;
     }
 
     .pdt-schedule__time {
@@ -136,22 +137,26 @@ $bg-card:     #D9D2C4;
     .pdt-zoom__actions {
         display: flex;
         align-items: stretch;
-        gap: 12px;
+        gap: 24px;
         margin-bottom: 14px;
         flex-wrap: wrap;
+        flex-direction: column;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #E8E4DD;
     }
 
     .pdt-tag-free {
-        display: inline-flex;
         align-items: center;
         padding: 0 18px;
-        border: 1.5px solid $green-soft;
-        border-radius: 3px;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-        color: $green-soft;
+        text-align: center;
+        border: 1.5px solid #5a7a47;
+        border-radius: 50px;
+        font-size: 19px;
+        font-weight: 600;
+        letter-spacing: .06em;
+        color: #5a7a47;
         white-space: nowrap;
+        line-height: 40px;
     }
 
     .pdt-btn-cta {
@@ -160,15 +165,17 @@ $bg-card:     #D9D2C4;
         align-items: center;
         justify-content: center;
         gap: 8px;
-        padding: 13px 24px;
-        background: $green-dark;
+        padding: 2px 24px 0px 24px;
+        line-height: 38px;
+        background: #47622B;
         color: #fff;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
+        font-size: 18px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: .05em;
         text-decoration: none;
-        border-radius: 3px;
-        transition: background 0.2s;
+        border-radius: 50px;
+        transition: background .2s;
 
         &:hover {
             background: #1c2e10;
@@ -178,7 +185,7 @@ $bg-card:     #D9D2C4;
 
     .pdt-zoom__note {
         font-size: 11px;
-        color: #aaa;
+        color: #9B8B7A;
         margin: 0;
     }
 
@@ -193,7 +200,7 @@ $bg-card:     #D9D2C4;
 
     .pdt-workshop__head {
         text-align: center;
-        max-width: 560px;
+        max-width: 840px;
         margin: 0 auto 52px;
     }
 
@@ -206,9 +213,9 @@ $bg-card:     #D9D2C4;
     }
 
     .pdt-workshop__desc {
-        font-size: 14px;
-        line-height: 1.8;
-        color: #777;
+        font-size: 17px;
+        line-height: 1.5;
+        color: #24341E;
         margin: 0;
     }
 
@@ -289,5 +296,327 @@ $bg-card:     #D9D2C4;
             border-color: $green-dark;
             color: $green-dark;
         }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // Shared section head (dùng chung cho Sự kiện & Gallery)
+    // ─────────────────────────────────────────────────────────
+    .pdt-workshop__head {
+        text-align: center;
+        max-width: 840px;
+        margin: 0 auto 52px;
+    }
+
+    .pdt-workshop__title {
+        font-family: $font-serif;
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1.15;
+        color: $text-dark;
+        margin: 0 0 14px;
+    }
+
+    .pdt-workshop__desc {
+        font-size: 17px;
+        line-height: 1.5;
+        color: #24341E;
+        margin: 0;
+    }
+
+    // Badge nhãn (chuyên gia Hàn Quốc / Việt Nam) đè lên ảnh
+    .pdt-badge {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 12px;
+        background: rgba(64, 96, 40, 0.94);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 30px;
+        white-space: nowrap;
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // SỰ KIỆN ĐÀO TẠO (custom post type: su-kien-dao-tao)
+    // ─────────────────────────────────────────────────────────
+    .pdt-events {
+        padding: 88px 0 96px;
+
+        @media (max-width: 767px) { padding: 56px 0 60px; }
+    }
+
+    .pdt-events__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+
+        @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 600px) { grid-template-columns: 1fr; }
+    }
+
+    .pdt-event-card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+
+    .pdt-event-card__img {
+        position: relative;
+        display: block;
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        &:hover img { transform: scale(1.04); }
+    }
+
+    .pdt-event-card__body {
+        padding: 20px 22px 24px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .pdt-event-card__meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        color: #406028;
+        margin: 0 0 10px;
+         background: rgba(120, 152, 80, 0.22);
+         padding: 8px 13px;
+         border-radius: 8px;
+         border: 1px solid #EFF2EA;
+         width: fit-content;
+         span.meta-space {
+            background: #E0A000;
+            width: 3px;
+            height: 18px;
+            border-radius: 5px;
+        }
+    }
+
+    .pdt-event-card__title {
+        margin: 0 0 8px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 1.35;
+
+        a {
+            color: #406028;
+            text-decoration: none;
+
+            &:hover { color: $green-dark; }
+        }
+    }
+
+    .pdt-event-card__desc {
+        font-size: 14px;
+        line-height: 1.7;
+        color: #24341E;
+        margin: 0 0 20px;
+        flex: 1;
+    }
+
+    .pdt-event-card__foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .pdt-event-card__price {
+        font-size: 15px;
+        font-weight: 700;
+
+        &.pdt-event-card__price--mien_phi { color: #789850; }
+        &.pdt-event-card__price--co_phi   { color: #E0A000; }
+    }
+
+    .pdt-event-card__btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 20px;
+        background: #406028;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 30px;
+        white-space: nowrap;
+        transition: background 0.2s;
+
+        &:hover {
+            background: #1c2e10;
+            color: #fff;
+        }
+    }
+
+    // ─────────────────────────────────────────────────────────
+    // HÌNH ẢNH ĐÀO TẠO (bento gallery)
+    // ─────────────────────────────────────────────────────────
+    .pdt-gallery {
+        padding: 0 0 88px;
+
+        @media (max-width: 767px) { padding: 0 0 56px; }
+    }
+
+    .pdt-bento {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    .pdt-bento__item {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: 8px;
+        background: $bg-card;
+        grid-column: span 2;
+        aspect-ratio: 4 / 3;
+
+        &:nth-child(1),
+        &:nth-child(2) {
+            grid-column: span 3;
+            aspect-ratio: 16 / 10;
+        }
+
+        @media (max-width: 767px) {
+            grid-column: span 1 !important;
+            aspect-ratio: 4 / 3 !important;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        &:hover img { transform: scale(1.04); }
+    }
+
+    .pdt-bento__caption {
+        position: absolute;
+        left: 12px;
+        bottom: 12px;
+        right: 12px;
+        padding: 8px 12px;
+        background: rgba(64, 96, 40, 0.62);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 30px;
+        width: fit-content;
+    }
+}
+
+// ═════════════════════════════════════════════════════════════
+// SINGLE — Chi tiết Sự kiện đào tạo (single-su-kien-dao-tao.php)
+// ═════════════════════════════════════════════════════════════
+.skdt-single {
+    background: $bg-page;
+    font-family: $font-sans;
+
+    .skdt-crumb {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 24px 20px;
+        font-size: 12px;
+        color: $text-muted;
+
+        a {
+            color: $text-muted;
+            text-decoration: none;
+
+            &:hover { color: $green-dark; }
+        }
+
+        svg { flex-shrink: 0; opacity: 0.6; }
+    }
+
+    .skdt-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        padding: 0 20px 88px;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+            gap: 28px;
+        }
+    }
+
+    .skdt-hero__img {
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        aspect-ratio: 4 / 3;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .skdt-hero__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .skdt-hero__meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: $text-muted;
+        margin: 0 0 12px;
+    }
+
+    .skdt-hero__title {
+        font-family: $font-serif;
+        font-size: clamp(28px, 3.5vw, 42px);
+        line-height: 1.2;
+        color: $text-dark;
+        margin: 0 0 16px;
+    }
+
+    .skdt-hero__content {
+        font-size: 14px;
+        line-height: 1.85;
+        color: $text-body;
+        margin: 20px 0 28px;
+
+        p { margin: 0 0 16px; }
+    }
+
+    .skdt-back {
+        align-self: flex-start;
     }
 }

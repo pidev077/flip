@@ -70,33 +70,36 @@ add_action('acf/init', function () {
                 'placeholder'  => 'Thông tin Zoom sẽ được gửi qua email sau khi đăng ký',
             ],
 
-            // ── Workshop images ──────────────────────────────────
+            // ── Gallery ảnh đào tạo (bento grid) ─────────────────
             [
-                'key'          => 'field_workshop_items',
-                'label'        => 'Workshop Offline – Danh sách ảnh',
-                'name'         => 'workshop_items',
+                'key'          => 'field_gallery_items',
+                'label'        => 'Hình Ảnh Đào Tạo – Bento Gallery (5 ảnh)',
+                'name'         => 'gallery_items',
                 'type'         => 'repeater',
                 'layout'       => 'block',
-                'button_label' => 'Thêm workshop',
+                'min'          => 0,
+                'max'          => 5,
+                'button_label' => 'Thêm ảnh',
+                'instructions' => 'Thêm tối đa 5 ảnh: 2 ảnh đầu hiển thị lớn (hàng trên), 3 ảnh sau hiển thị nhỏ (hàng dưới).',
                 'sub_fields'   => [
                     [
-                        'key'           => 'field_ws_image',
+                        'key'           => 'field_gallery_image',
                         'label'         => 'Ảnh',
                         'name'          => 'image',
                         'type'          => 'image',
                         'return_format' => 'array',
                         'preview_size'  => 'medium',
-                        'instructions'  => 'Tỉ lệ 4:3 hoặc vuông.',
+                        'instructions'  => 'Ảnh chất lượng cao, tỉ lệ ngang.',
                     ],
                     [
-                        'key'         => 'field_ws_title',
-                        'label'       => 'Tên (tuỳ chọn)',
-                        'name'        => 'title',
+                        'key'         => 'field_gallery_caption',
+                        'label'       => 'Chú thích',
+                        'name'        => 'caption',
                         'type'        => 'text',
-                        'placeholder' => 'VD: Workshop Trị Nám',
+                        'placeholder' => 'VD: Workshop kỹ thuật chăm sóc da chuyên sâu',
                     ],
                     [
-                        'key'   => 'field_ws_link',
+                        'key'   => 'field_gallery_link',
                         'label' => 'Link (tuỳ chọn)',
                         'name'  => 'link',
                         'type'  => 'url',
