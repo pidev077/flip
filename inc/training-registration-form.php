@@ -1,54 +1,63 @@
 <?php
 /**
- * Auto-create Contact Form 7 contact/message form for Tamya.
+ * Auto-create Contact Form 7 form dùng chung cho toàn bộ đăng ký đào tạo
+ * (cả "Zoom Training Định Kỳ" lẫn từng "Sự kiện đào tạo"). Ngữ cảnh
+ * (tên khoá, thời gian, chi phí, loại luồng zoom/event) được JS ghi vào
+ * các trường ẩn ngay trước khi gửi — xem script trong page-daotao.php.
+ *
  * Runs once per environment (keyed by version number).
- * Bump $version to force-update the form body.
+ * Safe to keep in codebase — does nothing after first successful run.
+ * Bump $version to force-update the form body everywhere.
  */
 add_action('init', function () {
     if (!class_exists('WPCF7_ContactForm')) return;
 
-    $version = 2;
-    $form_id = get_option('tamya_contact_form_id');
-    $db_ver  = (int) get_option('tamya_contact_form_version', 0);
+    $version = 1;
+    $form_id = get_option('tamya_training_form_id');
+    $db_ver  = (int) get_option('tamya_training_form_version', 0);
 
     if ($form_id && $db_ver >= $version) return;
 
     $form_body = '
-<div class="ct-row">
-  <div class="ct-col">
-    <label class="ct-label">HỌ VÀ TÊN</label>
-    [text* your-name placeholder "Nguyễn Văn A"]
+<div class="dtform-row">
+  <div class="dtform-col">
+    <label class="dtform-label">HỌ VÀ TÊN</label>
+    [text* your-name placeholder "Nguyễn Minh Anh"]
   </div>
-  <div class="ct-col">
-    <label class="ct-label">SỐ ĐIỆN THOẠI</label>
+  <div class="dtform-col">
+    <label class="dtform-label">SỐ ĐIỆN THOẠI</label>
     [tel* your-phone placeholder "0901 234 567"]
   </div>
 </div>
 
-<div class="ct-field ct-field--last">
-  <label class="ct-label">TÌNH TRẠNG DA CẦN TƯ VẤN</label>
-  [text tinh-trang placeholder "VD: nám, mụn, da khô, lão hóa..."]
+<div class="dtform-field">
+  <label class="dtform-label">EMAIL</label>
+  [email* your-email placeholder "email@vidu.com"]
 </div>
 
-<div class="ct-submit-wrap">
-  [submit "Đặt lịch tư vấn →"]
-  <p class="ct-submit-note">Bảo mật thông tin · tư vấn miễn phí · không áp lực mua liệu trình</p>
+[hidden loai-dang-ky ""]
+[hidden thoi-gian ""]
+[hidden chi-phi ""]
+[hidden loai-flow "event"]
+
+<div class="dtform-submit-wrap">
+  [submit "Xác Nhận Đăng Ký"]
 </div>
 ';
 
     $mail = [
-        'subject'            => 'Tin nhắn mới từ [your-name] – Tamya Liên Hệ',
+        'subject'            => 'Đăng ký đào tạo: [loai-dang-ky] – [your-name]',
         'sender'             => 'Tamya Clinic <wordpressuser@' . parse_url(home_url(), PHP_URL_HOST) . '>',
-        'body'               => "Tin nhắn mới từ website:\n\nHọ tên: [your-name]\nSố ĐT: [your-phone]\nTình trạng da: [tinh-trang]",
+        'body'               => "Có đăng ký đào tạo mới:\n\nHọ tên: [your-name]\nSố ĐT: [your-phone]\nEmail: [your-email]\nKhoá/Buổi: [loai-dang-ky]\nThời gian: [thoi-gian]\nChi phí: [chi-phi]",
         'recipient'          => get_option('admin_email'),
-        'additional_headers' => '',
+        'additional_headers' => 'Reply-To: [your-email]',
         'attachments'        => '',
         'use_html'           => 0,
         'exclude_blank'      => 0,
     ];
 
     $messages = [
-        'mail_sent_ok'             => 'Tamya đã nhận tin nhắn của bạn. Chuyên gia sẽ liên hệ lại trong vòng 2 giờ làm việc.',
+        'mail_sent_ok'             => 'Đăng ký thành công.',
         'mail_sent_ng'             => 'Có lỗi xảy ra. Vui lòng thử lại sau.',
         'validation_error'         => 'Vui lòng kiểm tra lại thông tin.',
         'spam'                     => 'Có lỗi xảy ra.',
@@ -74,15 +83,15 @@ add_action('init', function () {
 
     if ($form_id) {
         update_post_meta($form_id, '_form', $form_body);
-        update_option('tamya_contact_form_version', $version);
+        update_option('tamya_training_form_version', $version);
         return;
     }
 
     $post_id = wp_insert_post([
         'post_type'   => 'wpcf7_contact_form',
-        'post_title'  => 'Tamya – Liên Hệ',
+        'post_title'  => 'Tamya – Đăng Ký Đào Tạo',
         'post_status' => 'publish',
-        'post_name'   => 'tamya-lien-he',
+        'post_name'   => 'tamya-dang-ky-dao-tao',
     ]);
 
     if ($post_id && !is_wp_error($post_id)) {
@@ -91,7 +100,7 @@ add_action('init', function () {
         update_post_meta($post_id, '_mail_2', ['active' => false, 'subject' => '', 'sender' => '', 'body' => '', 'recipient' => '', 'additional_headers' => '', 'attachments' => '', 'use_html' => 0, 'exclude_blank' => 0]);
         update_post_meta($post_id, '_messages', $messages);
         update_post_meta($post_id, '_additional_settings', '');
-        update_option('tamya_contact_form_id', $post_id);
-        update_option('tamya_contact_form_version', $version);
+        update_option('tamya_training_form_id', $post_id);
+        update_option('tamya_training_form_version', $version);
     }
 }, 20);

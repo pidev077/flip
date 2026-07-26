@@ -276,6 +276,51 @@ if (!function_exists('flip_register_sanpham_post_type')) {
 	add_action('init', 'flip_register_sanpham_post_type', 0);
 }
 
+if (!function_exists('flip_register_buoc_cham_soc_taxonomy')) {
+	function flip_register_buoc_cham_soc_taxonomy()
+	{
+		register_taxonomy('buoc-cham-soc', ['sanpham'], [
+			'labels' => [
+				'name'              => 'Bước chăm sóc',
+				'singular_name'     => 'Bước chăm sóc',
+				'search_items'      => 'Tìm bước chăm sóc',
+				'all_items'         => 'Tất cả bước chăm sóc',
+				'edit_item'         => 'Sửa bước chăm sóc',
+				'update_item'       => 'Cập nhật bước chăm sóc',
+				'add_new_item'      => 'Thêm bước chăm sóc mới',
+				'new_item_name'     => 'Tên bước chăm sóc mới',
+				'menu_name'         => 'Bước chăm sóc',
+			],
+			'hierarchical'      => true,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => false,
+			'show_in_rest'      => true,
+		]);
+	}
+	add_action('init', 'flip_register_buoc_cham_soc_taxonomy', 0);
+}
+
+if (!function_exists('flip_seed_buoc_cham_soc_terms')) {
+	// 7 bước quy trình dưỡng da — dùng làm badge trên thẻ sản phẩm + tab lọc trên trang Sản Phẩm.
+	function flip_seed_buoc_cham_soc_terms()
+	{
+		if (!taxonomy_exists('buoc-cham-soc')) {
+			return;
+		}
+
+		$defaults = ['Làm sạch', 'Cân bằng', 'Tinh chất', 'Đặc trị', 'Sữa dưỡng', 'Kem dưỡng', 'Chống nắng'];
+
+		foreach ($defaults as $term_name) {
+			if (!term_exists($term_name, 'buoc-cham-soc')) {
+				wp_insert_term($term_name, 'buoc-cham-soc');
+			}
+		}
+	}
+	add_action('init', 'flip_seed_buoc_cham_soc_terms', 5);
+}
+
 if (!function_exists('flip_register_su_kien_post_type')) {
 	function flip_register_su_kien_post_type()
 	{

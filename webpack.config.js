@@ -10,8 +10,10 @@ module.exports = {
     'page-lien-he': './assets/scss/page-lien-he.scss',
     'page-daotao':  './assets/scss/page-daotao.scss',
     'page-su-kien': './assets/scss/page-su-kien.scss',
+    'page-chuyen-muc': './assets/scss/page-chuyen-muc.scss',
     'page-thanks':  './assets/scss/page-thanks.scss',
     'page-chinh-sach-bao-mat': './assets/scss/page-chinh-sach-bao-mat.scss',
+    'page-san-pham': './assets/scss/page-san-pham.scss',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

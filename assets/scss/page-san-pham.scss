@@ -1,0 +1,238 @@
+// ── Page Sản Phẩm – Tamya ────────────────────────────────────
+// Bảng màu / font đồng bộ với page-su-kien.scss
+
+$font-sans:   'be-vietnam-pro', sans-serif;
+$font-serif:  'Playfair Display', serif;
+$green-dark:  #406028;
+$green-soft:  #5A7A47;
+$text-dark:   #2C3E2A;
+$text-body:   #5C5C5C;
+$bg-page:     #FAF8F2;
+$bg-steps:    #EEF2E4;
+
+.page-san-pham {
+    background: $bg-page;
+    font-family: $font-sans;
+
+    .container { max-width: 1400px; }
+
+    // ── Hero ─────────────────────────────────────────────────
+    .sp-hero {
+        padding: 56px 0 32px;
+    }
+
+    .sp-eyebrow {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: #789850;
+        margin: 0 0 14px;
+    }
+
+    .sp-hero__title {
+        font-family: $font-serif;
+        font-size: clamp(35px, 3.4vw, 56px);
+        font-weight: 500;
+        line-height: 1.25;
+        color: $green-dark;
+        margin: 0 0 14px;
+    }
+
+    .sp-hero__desc {
+        font-size: 20px;
+        line-height: 1.6;
+        color: #4A4E46;
+        margin: 0 0 28px;
+    }
+
+    .sp-tab--all {
+        display: inline-flex;
+        align-items: center;
+        padding: 13px 26px;
+        border: none;
+        border-radius: 30px;
+        background: $green-dark;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background .2s ease;
+
+        &:hover { background: $green-soft; }
+    }
+
+    // ── Thanh bước quy trình ─────────────────────────────────
+    .sp-steps {
+        padding: 8px 0 40px;
+    }
+
+    .sp-steps__list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 24px 32px;
+        background: #F1F5E9;
+        border-radius: 18px;
+        overflow-x: auto;
+    }
+
+    // Nút số + label — kích thước cố định theo nội dung, không co giãn
+    .sp-steps__item {
+        display: flex;
+        flex: 0 0 auto;
+    }
+
+    // Đường nối giữa 2 bước — chiều rộng cố định, đều nhau
+    .sp-steps__line {
+        flex: 0 0 46px;
+        width: 46px;
+        height: 1px;
+        margin-top: 17px; // canh ngang tâm vòng tròn số (34px / 2)
+        background: rgba(64, 96, 40, .25);
+    }
+
+    .sp-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        white-space: nowrap;
+        padding: 0;
+
+        &__num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #789850;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 500;
+            font-family: "Playfair Display", serif;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        &__label {
+            font-size: 20px;
+            font-weight: 500;
+            color: #406028;
+        }
+
+        &.is-active &__num,
+        &:hover &__num {
+            background: $green-soft;
+            transform: scale(1.08);
+        }
+    }
+
+    // ── Lưới sản phẩm ─────────────────────────────────────────
+    .sp-grid-section {
+        padding-bottom: 80px;
+    }
+
+    .product-card.is-filtered-out {
+        display: none;
+    }
+
+    // ── Thẻ "sắp ra mắt" ──────────────────────────────────────
+    .product-card--soon {
+        cursor: default;
+
+        &:hover .product-card__image-wrap::before,
+        &:hover .product-card__image-wrap::after {
+            opacity: 0;
+        }
+    }
+
+    .product-card__image-wrap--soon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1.5px dashed rgba(64, 96, 40, .35);
+        background: transparent;
+    }
+
+    .sp-soon-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(64, 96, 40, .1);
+        color: $green-dark;
+        font-size: 22px;
+        line-height: 1;
+    }
+
+    .sp-soon-text {
+        font-family: $font-sans;
+        font-size: 16px;
+        font-weight: 600;
+        color: $green-dark;
+    }
+}
+
+body.sp-popup-open { overflow: hidden; }
+
+@media (max-width: 768px) {
+    .page-san-pham {
+        .sp-hero { padding: 32px 0 20px; }
+        .sp-hero__desc { font-size: 15px; }
+        .sp-tab--all { font-size: 14px; padding: 11px 20px; }
+
+        // Mobile: bỏ kiểu "vòng tròn số + gạch nối" (dễ chật/scroll ngang),
+        // chuyển thành các nút pill viền xanh tự xuống dòng.
+        .sp-steps { padding: 4px 0 24px; }
+
+        .sp-steps__list {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 10px 12px;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            overflow: visible;
+        }
+
+        .sp-steps__line { display: none; }
+
+        .sp-step {
+            flex-direction: row;
+            gap: 0;
+            padding: 10px 18px;
+            border: 1.5px solid $green-dark;
+            border-radius: 30px;
+            background: transparent;
+            transition: background .2s ease, color .2s ease;
+
+            &__num { display: none; }
+
+            &__label {
+                font-size: 14px;
+                font-weight: 500;
+                color: $green-dark;
+            }
+
+            &.is-active,
+            &:hover {
+                background: $green-dark;
+
+                .sp-step__label { color: #fff; }
+            }
+        }
+
+        .sp-grid-section { padding-bottom: 40px; }
+    }
+}

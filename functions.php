@@ -25,6 +25,8 @@ require get_template_directory() . '/inc/acf-fields-daotao.php';
 require get_template_directory() . '/inc/acf-fields-su-kien-dao-tao.php';
 require get_template_directory() . '/inc/acf-fields-su-kien.php';
 require get_template_directory() . '/inc/acf-fields-trang-su-kien.php';
+require get_template_directory() . '/inc/acf-fields-trang-chuyen-muc.php';
 require get_template_directory() . '/inc/booking-form.php';
 require get_template_directory() . '/inc/contact-form.php';
+require get_template_directory() . '/inc/training-registration-form.php';
 

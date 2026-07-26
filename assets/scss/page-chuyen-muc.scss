@@ -1,0 +1,386 @@
+// ── Page Chuyên Mục – Kiến thức & Cảm hứng ─────────────────────
+// Bảng màu / font đồng bộ với page-su-kien.scss
+
+$font-sans:   'be-vietnam-pro', sans-serif;
+$font-serif:  'Playfair Display', serif;
+$green-dark:  #406028;
+$green-soft:  #789850;
+$text-dark:   #406028;
+$text-body:   #5C5C5C;
+$text-muted:  #9B8B7A;
+$border-line: #E8E4DD;
+$bg-page:     #FAF7F1;
+$bg-card:     #EDE7DB;
+$bg-highlight:#F2ECE0;
+
+.page-chuyen-muc {
+    background: $bg-page;
+    font-family: $font-sans;
+    padding-bottom: 40px;
+
+    // ── Shared bits ───────────────────────────────────────────
+    .pcm-eyebrow {
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: $green-soft;
+        margin: 0 0 14px;
+
+        &--sm { margin-bottom: 10px; }
+    }
+
+    .pcm-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 14px;
+        border-radius: 100px;
+        background: #F1F5E9;
+        color: #789850;
+        font-size: 13px;
+        font-weight: 600;
+        border-radius: 4px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        width: fit-content;
+    }
+
+    .pcm-meta__sep { opacity: .55; margin: 0 2px; }
+
+    .pcm-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 17px;
+        font-weight: 600;
+        color: #789850;
+        transition: gap .2s;
+    }
+
+    a:hover .pcm-cta { gap: 10px; }
+
+    .pcm-btn-outline {
+        display: inline-block;
+        padding: 15px 40px;
+        border: 1.5px solid $green-dark;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: $green-dark;
+        text-decoration: none;
+        background: transparent;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+
+        &:hover { background: $green-dark; color: #fff; }
+    }
+
+    // ── Hero ────────────────────────────────────────────────
+    .pcm-hero {
+        padding-top: 64px;
+        padding-bottom: 32px;
+    }
+
+    .pcm-hero__title {
+        font-family: $font-serif;
+        font-size: clamp(34px, 4.5vw, 76px);
+        font-weight: 500;
+        line-height: 1.2;
+        color: $text-dark;
+        margin: 0 0 16px;
+    }
+
+    .pcm-hero__desc {
+        font-size: 20px;
+        line-height: 1.65;
+        color: #4A4E46;
+        max-width: 880px;
+        margin: 0;
+    }
+
+    // ── Tabs lọc ────────────────────────────────────────────
+    .pcm-tabs { 
+        padding: 15px 0;
+        background-color: #F5EEE7;
+        margin-bottom: 56px;
+     }
+
+    .pcm-tabs__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pcm-tab {
+        display: inline-flex;
+        align-items: center;
+        padding: 9px 22px;
+        border: none;
+        border-radius: 30px;
+        background: transparent;
+        color: #406028;
+        font-size: 17px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background .2s, color .2s, border-color .2s;
+
+        &:hover { border-color: $green-soft; }
+
+        &.is-active {
+            background: #789850;
+            color: #fff;
+        }
+    }
+
+    // ── Bài viết nổi bật ────────────────────────────────────
+    // Mỗi tab lọc render 1 bản riêng (data-pcm-featured); JS chỉ hiện bản khớp tab đang chọn.
+    .pcm-featured {
+        display: none;
+        padding-bottom: 56px;
+
+        &.is-active { display: block; }
+    }
+
+    .pcm-featured__card {
+        display: grid;
+        grid-template-columns: 1fr 0.95fr;
+        gap: 56px;
+        text-decoration: none;
+        color: inherit;
+
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+    }
+
+    .pcm-featured__img {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        border-radius: 16px;
+        overflow: hidden;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+
+        .pcm-featured__card:hover & img { transform: scale(1.03); }
+    }
+
+    .pcm-featured__body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .pcm-featured__title {
+        font-family: $font-serif;
+        font-size: clamp(30px, 3vw, 48px);
+        font-weight: 500;
+        line-height: 1.28;
+        color: $text-dark;
+        margin: 0;
+    }
+
+    .pcm-featured__excerpt {
+        font-size: 19px;
+        line-height: 1.7;
+        color: #4A4E46;
+        margin: 0;
+    }
+
+    .pcm-featured__meta {
+        font-size: 15px;
+        color: #96988E;
+        margin: 0px 0 4px;
+    }
+
+    // ── Lưới bài viết ───────────────────────────────────────
+    .pcm-grid-section { padding-bottom: 64px; }
+
+    .pcm-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 32px;
+
+        @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 560px) { grid-template-columns: 1fr; }
+    }
+
+    .pcm-card {
+        &.is-hidden { display: none; }
+        &.is-filtered-out { display: none; }
+        &.is-featured-dup { display: none; }
+    }
+
+    .pcm-card__link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .pcm-card__img {
+        aspect-ratio: 4 / 3;
+        border-radius: 14px;
+        overflow: hidden;
+        background: $bg-card;
+        margin-bottom: 18px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+
+        .pcm-card__link:hover & img { transform: scale(1.05); }
+    }
+
+    .pcm-card__body { display: flex; flex-direction: column; gap: 8px; }
+
+    .pcm-card__title {
+        font-family: $font-serif;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.35;
+        color: #406028;
+        margin: 2px 0 0;
+    }
+
+    .pcm-card__excerpt {
+        font-size: 17px;
+        line-height: 1.6;
+        color: #4A4E46;
+        margin: 0;
+    }
+
+    .pcm-card__meta {
+        font-size: 15px;
+        color: #96988E;
+        margin: 4px 0 0;
+    }
+
+    // ── Đọc nhiều ───────────────────────────────────────────
+    .pcm-highlight { padding-bottom: 56px; }
+
+    .pcm-highlight__title {
+        font-family: $font-serif;
+        font-size: clamp(30px, 3vw, 42px);
+        font-weight: 500;
+        color: $text-dark;
+        margin: 0 0 28px;
+    }
+
+    .pcm-highlight__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pcm-hcard__link {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 0;
+        text-decoration: none;
+        color: inherit;
+        background: $bg-highlight;
+        border-radius: 18px;
+        overflow: hidden;
+        transition: box-shadow .25s ease;
+
+        &:hover { box-shadow: 0 10px 28px rgba(44, 62, 42, .1); }
+
+        @media (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .pcm-hcard__img {
+        aspect-ratio: 720 / 361;
+        overflow: hidden;
+        background: $bg-card;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .4s ease;
+        }
+
+        .pcm-hcard__link:hover & img { transform: scale(1.05); }
+    }
+
+    .pcm-hcard__body {
+        padding: 28px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        justify-content: center;
+
+        @media (max-width: 767px) { padding: 20px 22px; }
+    }
+
+    .pcm-hcard__title {
+        font-family: $font-serif;
+        font-size: clamp(24px, 2vw, 32px);
+        font-weight: 500;
+        line-height: 1.35;
+        color: $text-dark;
+        margin: 0;
+    }
+
+    .pcm-hcard__excerpt {
+        font-size: 17px;
+        line-height: 1.65;
+        color: #24341E;
+        margin: 0;
+    }
+
+    .pcm-hcard__meta {
+        font-size: 14px;
+        color: #4A4E46;
+        margin: 0px 0 4px;
+    }
+
+    // ── Xem thêm ────────────────────────────────────────────
+    .pcm-loadmore {
+        text-align: center;
+        padding: 8px 0 40px;
+    }
+
+    // ── Responsive — mobile ─────────────────────────────────
+    @media (max-width: 767px) {
+        .pcm-hero { padding-top: 36px; padding-bottom: 20px; }
+        .pcm-hero__desc { font-size: 14px; }
+
+        .pcm-tabs { padding-bottom: 24px; }
+        .pcm-tab { font-size: 12px; padding: 7px 16px; }
+
+        .pcm-featured { padding-bottom: 36px; }
+        .pcm-featured__excerpt { font-size: 13px; }
+        .pcm-featured__meta { font-size: 12px; }
+
+        .pcm-grid-section { padding-bottom: 40px; }
+        .pcm-grid { gap: 28px 20px; }
+        .pcm-card__title { font-size: 17px; }
+        .pcm-card__excerpt { font-size: 13px; }
+
+        .pcm-highlight { padding-bottom: 36px; }
+        .pcm-hcard__excerpt { font-size: 13px; }
+
+        .pcm-btn-outline { padding: 11px 28px; font-size: 14px; }
+    }
+}

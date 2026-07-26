@@ -69,6 +69,28 @@ add_action('acf/init', function () {
                 'type'         => 'text',
                 'placeholder'  => 'Thông tin Zoom sẽ được gửi qua email sau khi đăng ký',
             ],
+            [
+                'key'           => 'field_zoom_room_link',
+                'label'         => 'Link phòng Zoom (cố định)',
+                'name'          => 'zoom_room_link',
+                'type'          => 'link',
+                'return_format' => 'array',
+                'instructions'  => 'Hiển thị cho học viên ngay sau khi đăng ký thành công (phòng Zoom định kỳ dùng chung hàng tuần).',
+            ],
+            [
+                'key'          => 'field_zoom_room_id',
+                'label'        => 'Mã phòng Zoom',
+                'name'         => 'zoom_room_id',
+                'type'         => 'text',
+                'placeholder'  => '892 1234 5678',
+            ],
+            [
+                'key'          => 'field_zoom_room_password',
+                'label'        => 'Mật khẩu phòng Zoom',
+                'name'         => 'zoom_room_password',
+                'type'         => 'text',
+                'placeholder'  => 'TAMYA2026',
+            ],
 
             // ── Gallery ảnh đào tạo (bento grid) ─────────────────
             [

@@ -9,7 +9,7 @@ add_action('wp_enqueue_scripts', function () {
 		wp_enqueue_style('page-booking', get_template_directory_uri() . '/dist/css/page-booking.css', array('theme-styles'), uniqid());
 	}
 
-	if (is_page_template('page-lien-he.php')) {
+	if (is_page_template('page-lien-he.php') || is_page('lien-he')) {
 		wp_enqueue_style('page-lien-he', get_template_directory_uri() . '/dist/css/page-lien-he.css', array('theme-styles'), uniqid());
 	}
 
@@ -21,12 +21,20 @@ add_action('wp_enqueue_scripts', function () {
 		wp_enqueue_style('page-su-kien', get_template_directory_uri() . '/dist/css/page-su-kien.css', array('theme-styles'), uniqid());
 	}
 
+	if (is_page_template('page-chuyen-muc.php')) {
+		wp_enqueue_style('page-chuyen-muc', get_template_directory_uri() . '/dist/css/page-chuyen-muc.css', array('theme-styles'), uniqid());
+	}
+
 	if (is_page_template('page-thanks.php')) {
 		wp_enqueue_style('page-thanks', get_template_directory_uri() . '/dist/css/page-thanks.css', array('theme-styles'), uniqid());
 	}
 
 	if (is_page_template('page-chinh-sach-bao-mat.php')) {
 		wp_enqueue_style('page-chinh-sach-bao-mat', get_template_directory_uri() . '/dist/css/page-chinh-sach-bao-mat.css', array('theme-styles'), uniqid());
+	}
+
+	if (is_page_template('page-san-pham.php') || is_singular('sanpham')) {
+		wp_enqueue_style('page-san-pham', get_template_directory_uri() . '/dist/css/page-san-pham.css', array('theme-styles'), uniqid());
 	}
 
 	wp_localize_script('app-scripts', 'php_data', [
