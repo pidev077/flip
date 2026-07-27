@@ -22,14 +22,8 @@ foreach ($all_cats as $term) {
     $cat_slugs[]       = $term->slug;
 }
 
-// Đọc nhiều — bài được gắn cờ nổi bật (custom field _flip_trending), tách riêng khỏi lưới chính
-$trending_query = new WP_Query([
-    'post_type'      => 'post',
-    'posts_per_page' => 2,
-    'meta_key'       => '_flip_trending',
-    'meta_value'     => 1,
-]);
-$trending_ids = wp_list_pluck($trending_query->posts, 'ID');
+// Đọc nhiều — bài được chọn thủ công qua field "trending_posts" trên trang này, tách riêng khỏi lưới chính
+$trending_ids = get_field('trending_posts') ?: [];
 
 // Bài viết nổi bật — mỗi tab lọc có bài mới nhất riêng: Tất cả = mới nhất trong 3 chuyên mục,
 // từng chuyên mục = bài mới nhất của riêng chuyên mục đó. Không tính các bài đã lên "Đọc nhiều".

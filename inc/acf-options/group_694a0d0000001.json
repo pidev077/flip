@@ -1,0 +1,52 @@
+{
+    "key": "group_694a0d0000001",
+    "title": "Chuyên Mục - Đọc nhiều",
+    "fields": [
+        {
+            "key": "field_694a0d0000002",
+            "label": "Bài viết Đọc nhiều / Nổi bật",
+            "name": "trending_posts",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Chọn các bài viết muốn hiển thị trong khối \"Đọc nhiều\" ở trang Chuyên Mục. Kéo thả để sắp xếp thứ tự hiển thị.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": 0,
+            "max": 4,
+            "return_format": "id",
+            "allow_in_bindings": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-chuyen-muc.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1784420000
+}
