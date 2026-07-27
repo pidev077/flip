@@ -1,1 +1,450 @@
-.page-lien-he{background:#f5efe4}.ct-section-label{font-family:"be-vietnam-pro",sans-serif;font-size:14px;font-weight:600;letter-spacing:.1em;color:#789850;text-transform:uppercase;margin:0 0 12px}.ct-hero{padding:72px 0 48px;text-align:center}.ct-hero__eyebrow{display:inline-block;font-family:"be-vietnam-pro",sans-serif;font-size:15px;font-weight:600;letter-spacing:.18em;color:#789850;text-transform:uppercase;margin-bottom:20px}.ct-hero__title{font-family:"Playfair Display",serif;font-size:clamp(36px,7vw,64px);font-weight:500;line-height:1.25;color:#406028;margin:0 0 20px}.ct-hero__desc{font-family:"be-vietnam-pro",sans-serif;font-size:19px;color:#4a4e46;line-height:1.7;margin:0}.ct-contact-section{padding-bottom:64px}.ct-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}@media(max-width: 900px){.ct-contact-grid{grid-template-columns:1fr}}.ct-form-card,.ct-hotline-card{border-radius:16px;padding:40px}@media(max-width: 576px){.ct-form-card,.ct-hotline-card{padding:28px 24px}}.ct-form-card{background:#fff;border:1px solid #e0d8c8}.ct-form-card__desc{font-family:"be-vietnam-pro",sans-serif;font-size:16px;color:#4a4e46;line-height:1.6;margin:0 0 28px}.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:10px}@media(max-width: 480px){.ct-row{grid-template-columns:1fr}}.ct-col,.ct-field{display:flex;flex-direction:column;gap:8px}.ct-col--last,.ct-field--last{margin-bottom:0}.ct-label{display:block;font-size:15px;font-weight:500;color:#406028;font-family:"be-vietnam-pro",sans-serif;margin-bottom:5px}.page-lien-he .wpcf7-form{font-family:"be-vietnam-pro",sans-serif}.page-lien-he .wpcf7-form input[type=text],.page-lien-he .wpcf7-form input[type=tel]{width:100%;background:#fff;border:1px solid #d6cebc;border-radius:12px;outline:none;padding:15px 14px;font-family:"be-vietnam-pro",sans-serif;font-size:14px;color:#406028;line-height:1.5;box-shadow:none;transition:border-color .18s}.page-lien-he .wpcf7-form input[type=text]::placeholder,.page-lien-he .wpcf7-form input[type=tel]::placeholder{color:#b0a88a}.page-lien-he .wpcf7-form input[type=text]:focus,.page-lien-he .wpcf7-form input[type=tel]:focus{border-color:#406028}.page-lien-he .wpcf7-form input[type=submit]{display:inline-block;width:100%;padding:15px 32px;background:#406028;color:#fff;border:none;border-radius:12px;font-family:"be-vietnam-pro",sans-serif;font-size:18px;font-weight:600;cursor:pointer;transition:background .2s,transform .1s}.page-lien-he .wpcf7-form input[type=submit]:hover{background:#3d4a2e}.page-lien-he .wpcf7-form input[type=submit]:active{transform:scale(0.98)}.page-lien-he .wpcf7-form .wpcf7-not-valid-tip{font-size:11px;color:#c0392b;display:block;margin-top:4px}.page-lien-he .wpcf7-form .wpcf7-response-output{margin:16px 0 0 !important;padding:10px 16px !important;border-radius:8px !important;font-size:13px !important;border:1px solid currentColor !important}.ct-submit-wrap{margin-top:4px;text-align:center}.ct-submit-wrap span.wpcf7-spinner{display:none}.ct-submit-note{margin-top:14px;font-size:14px;color:#96988e;line-height:1.5;font-family:"be-vietnam-pro",sans-serif;text-align:left}.ct-hotline-card{background:#406028;color:#fff;display:flex;flex-direction:column}.ct-hotline-card__label{font-family:"be-vietnam-pro",sans-serif;font-size:14px;font-weight:600;letter-spacing:.2em;color:#ffdf7f;text-transform:uppercase;margin:0 0 14px}.ct-hotline-card__number{font-family:"be-vietnam-pro",sans-serif;font-size:clamp(30px,5vw,46px);font-weight:600;letter-spacing:.02em;color:#ffdf7f;line-height:1;margin-bottom:12px;text-decoration:none;display:block}.ct-hotline-card__number:hover{color:#fff;text-decoration:underline}.ct-hotline-card__hours{font-family:"be-vietnam-pro",sans-serif;font-size:15px;color:#cbd8b4;margin:0;letter-spacing:.02em}.ct-hotline-card__divider{border:none;border-top:1px solid hsla(0,0%,100%,.15);margin:26px 0}.ct-hotline-card__email{font-family:"be-vietnam-pro",sans-serif;font-size:20px;font-weight:500;color:#fff;text-decoration:none}.ct-hotline-card__email:hover{text-decoration:underline}.ct-social-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.ct-social-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 16px 7px 7px;border-radius:999px;background:hsla(0,0%,100%,.06);border:1px solid hsla(0,0%,100%,.18);font-family:"be-vietnam-pro",sans-serif;font-size:15px;font-weight:400;color:#fff;text-decoration:none;transition:background .18s}.ct-social-pill:hover{background:hsla(0,0%,100%,.16);color:#fff;text-decoration:none}.ct-social-pill__icon{width:28px;height:28px;border-radius:50%;background:#ffdf7f;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;flex-shrink:0;color:#406028}.ct-branch-section{padding-bottom:72px}.ct-branch-section__title{font-family:"Playfair Display",serif;font-size:clamp(30px,4vw,42px);font-weight:500;color:#406028;margin:0 0 32px}.ct-clinic-cards{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px}@media(max-width: 900px){.ct-clinic-cards{grid-template-columns:repeat(2, 1fr)}}@media(max-width: 600px){.ct-clinic-cards{grid-template-columns:1fr}}.ct-clinic-card{background:#fff;border:1px solid #e0d8c8;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}.ct-clinic-card__image{height:180px;background:#e4eadc}.ct-clinic-card__body{padding:22px}.ct-clinic-card__name{display:block;font-family:"Playfair Display",serif;font-size:24px;font-weight:500;color:#406028;margin-bottom:6px}.ct-clinic-card__addr{font-family:"be-vietnam-pro",sans-serif;font-size:16px;color:#4a4e46;line-height:1.5;margin:0 0 16px}.ct-clinic-card__meta-label{font-family:"be-vietnam-pro",sans-serif;font-size:13px;color:#96988e;margin:0 0 2px}.ct-clinic-card__hotline{display:block;font-family:"be-vietnam-pro",sans-serif;font-size:19px;font-weight:600;color:#406028;text-decoration:none;margin-bottom:10px}.ct-clinic-card__hotline:hover{text-decoration:underline}.ct-clinic-card__hours{font-family:"be-vietnam-pro",sans-serif;font-size:15px;color:#4a4e46;margin:0 0 10px}.ct-clinic-card__directions{font-family:"be-vietnam-pro",sans-serif;font-size:15px;font-weight:600;color:#789850;text-decoration:none}.ct-clinic-card__directions:hover{text-decoration:underline}.ct-faq-section{padding-bottom:80px}.ct-faq-section__title{font-family:"Playfair Display",serif;font-size:clamp(30px,4vw,42px);font-weight:500;color:#406028;margin:0 0 28px}.ct-faq{border-top:1px solid #d6cebc}.ct-faq-item{border-bottom:1px solid #d6cebc}.ct-faq-item.is-open .ct-faq-toggle{color:#406028}.ct-faq-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:20px 0;background:rgba(0,0,0,0);border:none;outline:none;cursor:pointer;font-family:"be-vietnam-pro",sans-serif;font-size:20px;font-weight:500;color:#406028;text-align:left;gap:16px;transition:color .18s}.ct-faq-toggle:hover{color:#6b7a5a}.ct-faq-icon{font-size:22px;font-weight:400;color:#789850;flex-shrink:0;line-height:1;width:20px;text-align:center;transition:transform .25s}.ct-faq-content{max-height:0;overflow:hidden;transition:max-height .35s ease}.ct-faq-content p{font-family:"be-vietnam-pro",sans-serif;font-size:18px;color:#6b7a5a;line-height:1.7;padding:0 0 20px;margin:0}
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/scss/page-lien-he.scss ***!
+  \***********************************************************************************************************************************************************************************************/
+.page-lien-he {
+  background: #F5EFE4;
+}
+
+.ct-section-label {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #789850;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.ct-hero {
+  padding: 72px 0 48px;
+  text-align: center;
+}
+.ct-hero__eyebrow {
+  display: inline-block;
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #789850;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.ct-hero__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #406028;
+  margin: 0 0 20px;
+}
+.ct-hero__desc {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 19px;
+  color: #4A4E46;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ct-contact-section {
+  padding-bottom: 64px;
+}
+
+.ct-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .ct-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ct-form-card,
+.ct-hotline-card {
+  border-radius: 16px;
+  padding: 40px;
+}
+@media (max-width: 576px) {
+  .ct-form-card,
+  .ct-hotline-card {
+    padding: 28px 24px;
+  }
+}
+
+.ct-form-card {
+  background: #fff;
+  border: 1px solid #E0D8C8;
+}
+.ct-form-card__desc {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 16px;
+  color: #4A4E46;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+@media (max-width: 480px) {
+  .ct-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ct-col,
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ct-col--last,
+.ct-field--last {
+  margin-bottom: 0;
+}
+
+.ct-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: #406028;
+  font-family: "be-vietnam-pro", sans-serif;
+  margin-bottom: 5px;
+}
+
+.page-lien-he .wpcf7-form {
+  font-family: "be-vietnam-pro", sans-serif;
+}
+.page-lien-he .wpcf7-form input[type=text],
+.page-lien-he .wpcf7-form input[type=tel] {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #D6CEBC;
+  border-radius: 12px;
+  outline: none;
+  padding: 15px 14px;
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 14px;
+  color: #406028;
+  line-height: 1.5;
+  box-shadow: none;
+  transition: border-color 0.18s;
+}
+.page-lien-he .wpcf7-form input[type=text]::placeholder,
+.page-lien-he .wpcf7-form input[type=tel]::placeholder {
+  color: #B0A88A;
+}
+.page-lien-he .wpcf7-form input[type=text]:focus,
+.page-lien-he .wpcf7-form input[type=tel]:focus {
+  border-color: #406028;
+}
+.page-lien-he .wpcf7-form input[type=submit] {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 32px;
+  background: #406028;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.page-lien-he .wpcf7-form input[type=submit]:hover {
+  background: #3D4A2E;
+}
+.page-lien-he .wpcf7-form input[type=submit]:active {
+  transform: scale(0.98);
+}
+.page-lien-he .wpcf7-form .wpcf7-not-valid-tip {
+  font-size: 11px;
+  color: #c0392b;
+  display: block;
+  margin-top: 4px;
+}
+.page-lien-he .wpcf7-form .wpcf7-response-output {
+  margin: 16px 0 0 !important;
+  padding: 10px 16px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  border: 1px solid currentColor !important;
+}
+
+.ct-submit-wrap {
+  margin-top: 4px;
+  text-align: center;
+}
+.ct-submit-wrap span.wpcf7-spinner {
+  display: none;
+}
+
+.ct-submit-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #96988E;
+  line-height: 1.5;
+  font-family: "be-vietnam-pro", sans-serif;
+  text-align: left;
+}
+
+.ct-hotline-card {
+  background: #406028;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.ct-hotline-card__label {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: #FFDF7F;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.ct-hotline-card__number {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #FFDF7F;
+  line-height: 1;
+  margin-bottom: 12px;
+  text-decoration: none;
+  display: block;
+}
+.ct-hotline-card__number:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.ct-hotline-card__hours {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 15px;
+  color: #CBD8B4;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.ct-hotline-card__divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 26px 0;
+}
+.ct-hotline-card__email {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+.ct-hotline-card__email:hover {
+  text-decoration: underline;
+}
+
+.ct-social-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.ct-social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px 7px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.18s;
+}
+.ct-social-pill:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  text-decoration: none;
+}
+.ct-social-pill__icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFDF7F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+  color: #406028;
+}
+
+.ct-branch-section {
+  padding-bottom: 72px;
+}
+.ct-branch-section__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 500;
+  color: #406028;
+  margin: 0 0 32px;
+}
+
+.ct-clinic-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .ct-clinic-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .ct-clinic-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ct-clinic-card {
+  background: #fff;
+  border: 1px solid #E0D8C8;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ct-clinic-card__image {
+  height: 180px;
+  background: #E4EADC;
+}
+.ct-clinic-card__body {
+  padding: 22px;
+}
+.ct-clinic-card__name {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #406028;
+  margin-bottom: 6px;
+}
+.ct-clinic-card__addr {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 16px;
+  color: #4A4E46;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+.ct-clinic-card__meta-label {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 13px;
+  color: #96988E;
+  margin: 0 0 2px;
+}
+.ct-clinic-card__hotline {
+  display: block;
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #406028;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.ct-clinic-card__hotline:hover {
+  text-decoration: underline;
+}
+.ct-clinic-card__hours {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 15px;
+  color: #4A4E46;
+  margin: 0 0 10px;
+}
+.ct-clinic-card__directions {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #789850;
+  text-decoration: none;
+}
+.ct-clinic-card__directions:hover {
+  text-decoration: underline;
+}
+
+.ct-faq-section {
+  padding-bottom: 80px;
+}
+.ct-faq-section__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 500;
+  color: #406028;
+  margin: 0 0 28px;
+}
+
+.ct-faq {
+  border-top: 1px solid #D6CEBC;
+}
+
+.ct-faq-item {
+  border-bottom: 1px solid #D6CEBC;
+}
+.ct-faq-item.is-open .ct-faq-toggle {
+  color: #406028;
+}
+
+.ct-faq-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #406028;
+  text-align: left;
+  gap: 16px;
+  transition: color 0.18s;
+}
+.ct-faq-toggle:hover {
+  color: #6B7A5A;
+}
+
+.ct-faq-icon {
+  font-size: 22px;
+  font-weight: 400;
+  color: #789850;
+  flex-shrink: 0;
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+  transition: transform 0.25s;
+}
+
+.ct-faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.ct-faq-content p {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 18px;
+  color: #6B7A5A;
+  line-height: 1.7;
+  padding: 0 0 20px;
+  margin: 0;
+}

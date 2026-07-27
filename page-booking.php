@@ -14,7 +14,7 @@ $form_id   = get_option('tamya_booking_form_id');
 
     <!-- ── Hero ──────────────────────────────────────────── -->
     <section class="bk-hero">
-        <div class="container container--630 bk-hero__inner">
+        <div class="container container--860 bk-hero__inner">
 
             <span class="bk-hero__eyebrow">ĐẶT HẸN</span>
             <h1 class="bk-hero__title">Bắt đầu hành trình<br><em>chăm sóc da.</em></h1>
@@ -40,7 +40,7 @@ $form_id   = get_option('tamya_booking_form_id');
 
     <!-- ── Form Section ──────────────────────────────────── -->
     <section class="bk-form-section">
-        <div class="container container--630 bk-form-section__inner">
+        <div class="container container--860 bk-form-section__inner">
 
             <hr class="bk-divider">
             <p class="bk-section-label">THÔNG TIN ĐẶT HẸN</p>

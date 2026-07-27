@@ -2,17 +2,20 @@
 //  PAGE BOOKING – Tamya
 // =============================================================
 
-$color-bg:        #F0EBE0;
-$color-dark:      #2C3320;
+$color-bg:        #F5EFE4;
+$color-dark:      #406028;
 $color-dark-hover:#3D4A2E;
+$color-green:     #789850;
+$color-accent:    #FFDF7F;
+$color-text:      #4A4E46;
 $color-muted:     #6B7A5A;
-$color-label:     #8B6F47;
+$color-label:     $color-green;
 $color-border:    #C8BFA8;
 $color-border-lt: #D6CEBC;
 $color-border-card:#E0D8C8;
 $color-placeholder:#B0A88A;
-$color-optional:  #A09070;
-$color-note:      #8B8070;
+$color-optional:  $color-muted;
+$color-note:      #96988E;
 $color-error:     #c0392b;
 $font-sans:       'be-vietnam-pro', sans-serif;
 $font-serif:      'Playfair Display', serif;
@@ -30,33 +33,36 @@ $font-serif:      'Playfair Display', serif;
     &__eyebrow {
         display: inline-block;
         font-family: $font-sans;
-        font-size: 11px;
+        font-size: 15px;
         font-weight: 600;
         letter-spacing: .18em;
-        color: $color-muted;
+        color: $color-green;
         text-transform: uppercase;
         margin-bottom: 20px;
     }
 
     &__title {
         font-family: $font-serif;
-        font-size: clamp(2rem, 5vw, 2.8rem);
-        font-weight: normal;
-        font-style: italic;
-        line-height: 1.2;
+        font-size: clamp(32px, 5.5vw, 52px);
+        font-weight: 500;
+        line-height: 1.25;
         color: $color-dark;
         margin: 0 0 20px;
+
+        em {
+            font-style: italic;
+        }
     }
 
     &__desc {
         font-family: $font-sans;
-        font-size: 13px;
-        color: $color-muted;
+        font-size: 16px;
+        color: $color-text;
         line-height: 1.7;
         margin: 0 0 36px;
     }
 
-    &__badges {
+    &__badges { 
         display: flex;
         align-items: center;
         justify-content: center;
@@ -96,7 +102,7 @@ $font-serif:      'Playfair Display', serif;
 
 .bk-section-label {
     font-family: $font-sans;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: .2em;
     color: $color-label;
@@ -139,7 +145,7 @@ $font-serif:      'Playfair Display', serif;
 
 .bk-label {
     display: block;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: .15em;
     color: $color-label;
@@ -167,7 +173,7 @@ $font-serif:      'Playfair Display', serif;
         outline: none;
         padding: 4px 0;
         font-family: $font-sans;
-        font-size: 15px;
+        font-size: 16px;
         color: $color-dark;
         line-height: 1.5;
         box-shadow: none;
@@ -191,7 +197,7 @@ $font-serif:      'Playfair Display', serif;
         outline: none;
         padding: 4px 0;
         font-family: $font-sans;
-        font-size: 15px;
+        font-size: 16px;
         color: $color-placeholder;
         cursor: pointer;
         -webkit-appearance: none;
@@ -234,7 +240,7 @@ $font-serif:      'Playfair Display', serif;
         border: none;
         border-radius: 6px;
         font-family: $font-sans;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 600;
         letter-spacing: .14em;
         text-transform: uppercase;
@@ -247,7 +253,7 @@ $font-serif:      'Playfair Display', serif;
 
     // CF7 validation
     .wpcf7-not-valid-tip {
-        font-size: 11px;
+        font-size: 14px;
         color: $color-error;
         display: block;
         margin-top: 3px;
@@ -257,7 +263,7 @@ $font-serif:      'Playfair Display', serif;
         margin: 16px 0 0 !important;
         padding: 10px 16px !important;
         border-radius: 6px !important;
-        font-size: 13px !important;
+        font-size: 14px !important;
         border: 1px solid currentColor !important;
     }
 }
@@ -313,7 +319,7 @@ $font-serif:      'Playfair Display', serif;
     border: 1px solid $color-border;
     border-radius: 6px;
     font-family: $font-sans;
-    font-size: 12px;
+    font-size: 16px;
     color: $color-dark;
     background: transparent;
     cursor: pointer;
@@ -342,7 +348,7 @@ $font-serif:      'Playfair Display', serif;
 
 .bk-submit-note {
     margin-top: 12px;
-    font-size: 12px;
+    font-size: 14px;
     color: $color-note;
     line-height: 1.5;
 
@@ -360,7 +366,7 @@ $font-serif:      'Playfair Display', serif;
 
     &__label {
         font-family: $font-sans;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 600;
         letter-spacing: .2em;
         color: $color-label;
@@ -399,6 +405,9 @@ $font-serif:      'Playfair Display', serif;
 
         &--fb   { background: #1877F2; }
         &--zalo { background: #0068FF; }
+        svg{
+            margin-left: 0;
+        }
     }
 
     &__text {
