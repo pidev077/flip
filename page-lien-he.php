@@ -19,6 +19,17 @@ $hours_value = get_field('hours_value', 'option') ?: '08:30 – 17:30 (T2–CN)'
 
 $form_id   = get_option('tamya_contact_form_id');
 
+$faq_items = get_field('faq_items') ?: [];
+if (!$faq_items) {
+    $faq_items = [
+        ['question' => 'Tôi có cần đặt lịch trước không?', 'answer' => 'Bạn nên đặt lịch trước để được phục vụ nhanh chóng và đúng giờ. Tamya cũng nhận khách không hẹn tùy theo tình hình lịch của phòng khám.'],
+        ['question' => 'Buổi tư vấn đầu tiên có mất phí không?', 'answer' => 'Hoàn toàn miễn phí. Buổi tư vấn đầu tiên tại Tamya là cơ hội để chuyên gia đánh giá tình trạng da và tư vấn phác đồ phù hợp nhất cho bạn.'],
+        ['question' => 'Tôi cần chuẩn bị gì trước khi đến?', 'answer' => 'Bạn không cần chuẩn bị gì đặc biệt. Nếu da bạn đang sử dụng sản phẩm nào đó, hãy ghi chú lại để chia sẻ với chuyên gia khi tư vấn.'],
+        ['question' => 'Tamya có hỗ trợ tư vấn online không?', 'answer' => 'Có. Bạn có thể nhắn tin qua Fanpage Facebook hoặc Zalo của Tamya để được tư vấn sơ bộ. Tuy nhiên, để được đánh giá chính xác nhất, nên đến trực tiếp phòng khám.'],
+        ['question' => 'Tôi có thể đổi hoặc hủy lịch như thế nào?', 'answer' => 'Bạn vui lòng thông báo trước ít nhất 2 giờ qua hotline {hotline} hoặc nhắn tin Zalo để chúng tôi sắp xếp lại lịch cho bạn.'],
+    ];
+}
+
 // Flatten footer's branch groups (region + locations) into a single list of clinic cards.
 $branch_groups = get_field('branch_groups', 'option') ?: [];
 $clinics = [];
@@ -34,7 +45,7 @@ foreach ($branch_groups as $group) {
 
     <!-- ── Hero ──────────────────────────────────────────── -->
     <section class="ct-hero">
-        <div class="container ct-hero__inner">
+        <div class="container container--860 ct-hero__inner">
             <span class="ct-hero__eyebrow">LIÊN HỆ</span>
             <h1 class="ct-hero__title">Hãy để Tamya đồng hành</h1>
             <p class="ct-hero__desc">Mọi cuộc tư vấn đều miễn phí và bảo mật. Chuyên gia sẽ liên hệ lại trong vòng 2 giờ làm việc.</p>
@@ -135,55 +146,21 @@ foreach ($branch_groups as $group) {
 
             <div class="ct-faq">
 
-                <div class="ct-faq-item">
-                    <button class="ct-faq-toggle" aria-expanded="false">
-                        <span>Tôi có cần đặt lịch trước không?</span>
-                        <span class="ct-faq-icon">+</span>
-                    </button>
-                    <div class="ct-faq-content">
-                        <p>Bạn nên đặt lịch trước để được phục vụ nhanh chóng và đúng giờ. Tamya cũng nhận khách không hẹn tùy theo tình hình lịch của phòng khám.</p>
+                <?php foreach ($faq_items as $item) :
+                    $question = $item['question'] ?? '';
+                    $answer   = str_replace('{hotline}', $hotline, $item['answer'] ?? '');
+                    if (!$question || !$answer) continue;
+                    ?>
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-toggle" aria-expanded="false">
+                            <span><?= esc_html($question) ?></span>
+                            <span class="ct-faq-icon">+</span>
+                        </button>
+                        <div class="ct-faq-content">
+                            <p><?= esc_html($answer) ?></p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="ct-faq-item">
-                    <button class="ct-faq-toggle" aria-expanded="false">
-                        <span>Buổi tư vấn đầu tiên có mất phí không?</span>
-                        <span class="ct-faq-icon">+</span>
-                    </button>
-                    <div class="ct-faq-content">
-                        <p>Hoàn toàn miễn phí. Buổi tư vấn đầu tiên tại Tamya là cơ hội để chuyên gia đánh giá tình trạng da và tư vấn phác đồ phù hợp nhất cho bạn.</p>
-                    </div>
-                </div>
-
-                <div class="ct-faq-item">
-                    <button class="ct-faq-toggle" aria-expanded="false">
-                        <span>Tôi cần chuẩn bị gì trước khi đến?</span>
-                        <span class="ct-faq-icon">+</span>
-                    </button>
-                    <div class="ct-faq-content">
-                        <p>Bạn không cần chuẩn bị gì đặc biệt. Nếu da bạn đang sử dụng sản phẩm nào đó, hãy ghi chú lại để chia sẻ với chuyên gia khi tư vấn.</p>
-                    </div>
-                </div>
-
-                <div class="ct-faq-item">
-                    <button class="ct-faq-toggle" aria-expanded="false">
-                        <span>Tamya có hỗ trợ tư vấn online không?</span>
-                        <span class="ct-faq-icon">+</span>
-                    </button>
-                    <div class="ct-faq-content">
-                        <p>Có. Bạn có thể nhắn tin qua Fanpage Facebook hoặc Zalo của Tamya để được tư vấn sơ bộ. Tuy nhiên, để được đánh giá chính xác nhất, nên đến trực tiếp phòng khám.</p>
-                    </div>
-                </div>
-
-                <div class="ct-faq-item">
-                    <button class="ct-faq-toggle" aria-expanded="false">
-                        <span>Tôi có thể đổi hoặc hủy lịch như thế nào?</span>
-                        <span class="ct-faq-icon">+</span>
-                    </button>
-                    <div class="ct-faq-content">
-                        <p>Bạn vui lòng thông báo trước ít nhất 2 giờ qua hotline <?= $hotline ?> hoặc nhắn tin Zalo để chúng tôi sắp xếp lại lịch cho bạn.</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
 

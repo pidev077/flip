@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Chính Sách Bảo Mật
+ * Template Name: Điều Khoản Dịch Vụ
  */
 
 get_header();
@@ -12,15 +12,15 @@ $hotline_url = $phone ? esc_url($phone['url']) : 'tel:0964202040';
 $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
 ?>
 
-<main id="primary" class="site-main page-privacy">
+<main id="primary" class="site-main page-terms">
 
     <!-- ── Hero ──────────────────────────────────────────── -->
     <section class="lp-hero">
         <div class="container container--860">
-            <span class="lp-hero__eyebrow">BẢO MẬT</span>
-            <h1 class="lp-hero__title">Thông tin bảo mật</h1>
+            <span class="lp-hero__eyebrow">PHÁP LÝ</span>
+            <h1 class="lp-hero__title">Điều khoản &amp; chính sách dịch vụ</h1>
             <p class="lp-hero__meta">Cập nhật lần cuối: 24.06.2026</p>
-            <p class="lp-hero__desc">Tamya tôn trọng và cam kết bảo vệ thông tin cá nhân của bạn. Trang này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu khi bạn liên hệ và sử dụng dịch vụ của Tamya.</p>
+            <p class="lp-hero__desc">Các điều khoản dưới đây áp dụng khi bạn truy cập website và sử dụng dịch vụ tư vấn, chăm sóc da tại Tamya. Vui lòng đọc kỹ trước khi đặt lịch và sử dụng dịch vụ.</p>
         </div>
     </section>
 
@@ -32,13 +32,13 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
             <aside class="lp-toc">
                 <p class="lp-toc__label">MỤC LỤC</p>
                 <ol class="lp-toc__list">
-                    <li><a href="#lp-s1" class="is-active">01. Thông tin chúng tôi thu thập</a></li>
-                    <li><a href="#lp-s2">02. Mục đích sử dụng thông tin</a></li>
-                    <li><a href="#lp-s3">03. Cơ sở pháp lý &amp; sự đồng ý</a></li>
-                    <li><a href="#lp-s4">04. Chia sẻ thông tin</a></li>
-                    <li><a href="#lp-s5">05. Lưu trữ &amp; bảo mật dữ liệu</a></li>
-                    <li><a href="#lp-s6">06. Quyền của khách hàng</a></li>
-                    <li><a href="#lp-s7">07. Cookie &amp; công nghệ theo dõi</a></li>
+                    <li><a href="#lp-s1" class="is-active">01. Giới thiệu &amp; phạm vi áp dụng</a></li>
+                    <li><a href="#lp-s2">02. Dịch vụ &amp; tư vấn</a></li>
+                    <li><a href="#lp-s3">03. Đặt lịch, thay đổi &amp; hủy lịch</a></li>
+                    <li><a href="#lp-s4">04. Chi phí &amp; thanh toán</a></li>
+                    <li><a href="#lp-s5">05. Cam kết của Tamya</a></li>
+                    <li><a href="#lp-s6">06. Trách nhiệm của khách hàng</a></li>
+                    <li><a href="#lp-s7">07. Quyền sở hữu nội dung</a></li>
                 </ol>
             </aside>
 
@@ -49,11 +49,10 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s1">
                     <div class="lp-section__head">
                         <span class="lp-section__num">01</span>
-                        <h2 class="lp-section__title">Thông tin chúng tôi thu thập</h2>
+                        <h2 class="lp-section__title">Giới thiệu &amp; phạm vi áp dụng</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Tamya thu thập thông tin bạn chủ động cung cấp khi đặt lịch, đăng ký tư vấn hoặc liên hệ: họ tên, số điện thoại, email và tình trạng da mong muốn cải thiện.</p>
-                        <p>Chúng tôi cũng có thể ghi nhận dữ liệu truy cập website (loại thiết bị, trình duyệt, trang đã xem) nhằm cải thiện trải nghiệm sử dụng.</p>
+                        <p>Các điều khoản này áp dụng cho việc bạn truy cập website và sử dụng dịch vụ của Tamya. Khi đặt lịch hoặc sử dụng dịch vụ, bạn được xem là đã đồng ý với các điều khoản dưới đây.</p>
                     </div>
                 </article>
 
@@ -61,15 +60,13 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s2">
                     <div class="lp-section__head">
                         <span class="lp-section__num">02</span>
-                        <h2 class="lp-section__title">Mục đích sử dụng thông tin</h2>
+                        <h2 class="lp-section__title">Dịch vụ &amp; tư vấn</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Thông tin của bạn được sử dụng cho các mục đích sau:</p>
+                        <p>Tamya cung cấp dịch vụ chăm sóc da chuyên sâu và tư vấn bởi đội ngũ chuyên gia. Thông tin trên website mang tính tham khảo, không thay thế cho thăm khám chuyên môn trực tiếp.</p>
                         <ul>
-                            <li>Liên hệ xác nhận lịch hẹn và tư vấn chăm sóc da.</li>
-                            <li>Cá nhân hóa phác đồ và gợi ý phù hợp với làn da của bạn.</li>
-                            <li>Gửi thông tin ưu đãi, sự kiện — chỉ khi bạn đồng ý nhận.</li>
-                            <li>Cải thiện chất lượng dịch vụ và nội dung website.</li>
+                            <li>Phác đồ được cá nhân hóa theo tình trạng da thực tế.</li>
+                            <li>Kết quả có thể khác nhau tùy cơ địa mỗi người.</li>
                         </ul>
                     </div>
                 </article>
@@ -78,10 +75,10 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s3">
                     <div class="lp-section__head">
                         <span class="lp-section__num">03</span>
-                        <h2 class="lp-section__title">Cơ sở pháp lý &amp; sự đồng ý</h2>
+                        <h2 class="lp-section__title">Đặt lịch, thay đổi &amp; hủy lịch</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Việc thu thập và xử lý dữ liệu dựa trên sự đồng ý của bạn khi để lại thông tin cho Tamya. Bạn có thể rút lại sự đồng ý bất cứ lúc nào bằng cách liên hệ với chúng tôi.</p>
+                        <p>Bạn có thể đặt lịch qua website, hotline hoặc các kênh mạng xã hội của Tamya. Vui lòng thông báo trước ít nhất 24 giờ nếu cần thay đổi hoặc hủy lịch để chúng tôi sắp xếp phù hợp.</p>
                     </div>
                 </article>
 
@@ -89,11 +86,10 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s4">
                     <div class="lp-section__head">
                         <span class="lp-section__num">04</span>
-                        <h2 class="lp-section__title">Chia sẻ thông tin</h2>
+                        <h2 class="lp-section__title">Chi phí &amp; thanh toán</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Tamya không bán, không trao đổi thông tin cá nhân của bạn cho bên thứ ba vì mục đích thương mại.</p>
-                        <p>Dữ liệu chỉ được chia sẻ trong nội bộ đội ngũ chuyên môn phục vụ việc tư vấn, hoặc khi pháp luật có yêu cầu hợp lệ.</p>
+                        <p>Chi phí dịch vụ được tư vấn minh bạch trước khi thực hiện. Buổi tư vấn ban đầu hoàn toàn miễn phí và không có áp lực mua liệu trình.</p>
                     </div>
                 </article>
 
@@ -101,10 +97,10 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s5">
                     <div class="lp-section__head">
                         <span class="lp-section__num">05</span>
-                        <h2 class="lp-section__title">Lưu trữ &amp; bảo mật dữ liệu</h2>
+                        <h2 class="lp-section__title">Cam kết của Tamya</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Thông tin được lưu trữ an toàn với quyền truy cập giới hạn trong nội bộ. Chúng tôi áp dụng các biện pháp kỹ thuật và quản lý hợp lý nhằm bảo vệ dữ liệu khỏi truy cập, thay đổi hoặc tiết lộ trái phép.</p>
+                        <p>Tamya cam kết minh bạch, an toàn và tôn trọng quyết định của bạn. Chúng tôi không sử dụng các tuyên bố phóng đại về hiệu quả và luôn ưu tiên sự an tâm của khách hàng.</p>
                     </div>
                 </article>
 
@@ -112,14 +108,14 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s6">
                     <div class="lp-section__head">
                         <span class="lp-section__num">06</span>
-                        <h2 class="lp-section__title">Quyền của khách hàng</h2>
+                        <h2 class="lp-section__title">Trách nhiệm của khách hàng</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Đối với thông tin cá nhân của mình, bạn có quyền:</p>
+                        <p>Để đảm bảo an toàn và hiệu quả, bạn vui lòng:</p>
                         <ul>
-                            <li>Yêu cầu xem và chỉnh sửa thông tin đã cung cấp.</li>
-                            <li>Yêu cầu xóa dữ liệu khi không còn cần thiết.</li>
-                            <li>Từ chối nhận thông tin tiếp thị bất cứ lúc nào.</li>
+                            <li>Cung cấp thông tin chính xác về tình trạng da và tiền sử.</li>
+                            <li>Tuân thủ hướng dẫn chăm sóc trước và sau liệu trình.</li>
+                            <li>Thông báo kịp thời nếu có phản ứng bất thường.</li>
                         </ul>
                     </div>
                 </article>
@@ -128,10 +124,10 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
                 <article class="lp-section" id="lp-s7">
                     <div class="lp-section__head">
                         <span class="lp-section__num">07</span>
-                        <h2 class="lp-section__title">Cookie &amp; công nghệ theo dõi</h2>
+                        <h2 class="lp-section__title">Quyền sở hữu nội dung</h2>
                     </div>
                     <div class="lp-section__body">
-                        <p>Website sử dụng cookie để ghi nhớ tùy chọn của bạn và phân tích lưu lượng truy cập. Bạn có thể tắt cookie trong cài đặt trình duyệt; tuy nhiên một số tính năng có thể bị ảnh hưởng.</p>
+                        <p>Toàn bộ nội dung, hình ảnh và thương hiệu trên website thuộc quyền sở hữu của Tamya. Vui lòng không sao chép hoặc sử dụng lại khi chưa có sự đồng ý bằng văn bản.</p>
                     </div>
                 </article>
 
@@ -143,9 +139,9 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
     <section class="lp-cta-section">
         <div class="container container--1000">
             <div class="lp-cta">
-                <p class="lp-cta__label">LIÊN HỆ VỀ BẢO MẬT</p>
-                <h2 class="lp-cta__title">Câu hỏi về dữ liệu của bạn?</h2>
-                <p class="lp-cta__text">Mọi thắc mắc liên quan đến bảo mật thông tin, vui lòng liên hệ Email <a href="mailto:<?= esc_attr($email) ?>"><?= esc_html($email) ?></a> hoặc Hotline <a href="<?= esc_url($hotline_url) ?>"><?= esc_html($hotline) ?></a>.</p>
+                <p class="lp-cta__label">CẦN HỖ TRỢ?</p>
+                <h2 class="lp-cta__title">Còn thắc mắc về điều khoản?</h2>
+                <p class="lp-cta__text">Liên hệ Tamya qua Email <a href="mailto:<?= esc_attr($email) ?>"><?= esc_html($email) ?></a> hoặc Hotline <a href="<?= esc_url($hotline_url) ?>"><?= esc_html($hotline) ?></a> để được giải đáp.</p>
             </div>
         </div>
     </section>

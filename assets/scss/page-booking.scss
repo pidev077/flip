@@ -27,10 +27,6 @@ $font-serif:      'Playfair Display', serif;
     padding: 72px 0 56px;
     text-align: center;
 
-    &__inner {
-        max-width:630px!important;
-    }
-
     &__eyebrow {
         display: inline-block;
         font-family: $font-sans;
@@ -86,10 +82,6 @@ $font-serif:      'Playfair Display', serif;
 // ── Form Section ──────────────────────────────
 .bk-form-section {
     padding-bottom: 80px;
-
-    &__inner {
-        max-width: 630px !important;
-    }
 }
 
 .bk-divider {

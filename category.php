@@ -15,7 +15,7 @@ $bg      = $bg ?: '#799852';
 <main id="primary" class="site-main page-archive">
 
     <!-- ── Hero ──────────────────────────────────────────── -->
-    <section class="container arc-hero">
+    <section class="container container--1280 arc-hero">
         <div class="arc-hero__left">
             <span class="arc-hero__eyebrow">Tin tức &amp; Sự kiện</span>
             <h1 class="arc-hero__title"><em><?php echo esc_html($title); ?></em></h1>
@@ -24,7 +24,7 @@ $bg      = $bg ?: '#799852';
     </section>
 
     <!-- ── Grid ──────────────────────────────────────────── -->
-    <section class="container arc-grid-wrap">
+    <section class="container container--1280 arc-grid-wrap">
 
         <?php if (have_posts()) : ?>
         <div class="pbt-grid">

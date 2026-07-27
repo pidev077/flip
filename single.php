@@ -43,7 +43,7 @@ $related_query = $related_ids ? new WP_Query([
 <main id="primary" class="site-main sp-single">
 
     <!-- ── Tiêu đề bài viết ───────────────────────────────────── -->
-    <header class="sp-article-hero container">
+    <header class="sp-article-hero container container--860">
         <?php if ($primary_cat) : ?>
         <a href="<?= esc_url(get_category_link($primary_cat->term_id)) ?>" class="sp-badge"><?= esc_html($primary_cat->name) ?></a>
         <?php endif; ?>
@@ -59,13 +59,13 @@ $related_query = $related_ids ? new WP_Query([
 
     <!-- ── Ảnh đại diện ───────────────────────────────────────── -->
     <?php if (has_post_thumbnail()) : ?>
-    <div class="sp-article-hero__img container">
+    <div class="sp-article-hero__img container container--1200">
         <?php the_post_thumbnail('large'); ?>
     </div>
     <?php endif; ?>
 
     <!-- ── Nội dung bài viết ──────────────────────────────────── -->
-    <article class="sp-article container">
+    <article class="sp-article container container--720">
         <div class="sp-content entry-content">
             <?php the_content(); ?>
         </div>

@@ -590,7 +590,6 @@ body {
 	.sp-article-hero {
 		padding-top: 56px;
 		padding-bottom: 32px;
-		max-width: 860px !important;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -614,7 +613,6 @@ body {
 
 	// ── Ảnh đại diện ──────────────────────────────────────────
 	.sp-article-hero__img {
-		max-width: 1200px !important;
 		margin-bottom: 48px;
 
 		img {
@@ -628,7 +626,6 @@ body {
 
 	// ── Nội dung bài viết ─────────────────────────────────────
 	.sp-article {
-		max-width: 720px !important;
 		margin-bottom: 64px;
 	}
 

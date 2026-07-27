@@ -36,7 +36,7 @@ $featured_query = new WP_Query([
 <main id="primary" class="site-main page-blog-tamya">
 
     <!-- ── Hero ──────────────────────────────────────────── -->
-    <section class="pbt-hero container">
+    <section class="pbt-hero container container--1280">
         <div class="pbt-hero__left">
             <span class="pbt-hero__eyebrow">Tin tức &amp; Sự kiện</span>
             <h1 class="pbt-hero__title">Góc nhìn<br><em>Tamya</em></h1>
@@ -47,7 +47,7 @@ $featured_query = new WP_Query([
     </section>
 
     <!-- ── Filter tabs (anchor scroll) ─────────────────────── -->
-    <nav class="pbt-filters container">
+    <nav class="pbt-filters container container--1280">
         <?php foreach ($filter_links as $anchor => $label) : ?>
         <a class="pbt-filter-btn" href="<?= esc_attr($anchor) ?>">
             <?= esc_html($label) ?>
@@ -57,7 +57,7 @@ $featured_query = new WP_Query([
 
     <!-- ── Featured post ─────────────────────────────────── -->
     <?php if ($featured_query->have_posts()) : $featured_query->the_post(); ?>
-    <section id="featured" class="pbt-featured container">
+    <section id="featured" class="pbt-featured container container--1280">
         <a href="<?= esc_url(get_permalink()) ?>" class="pbt-featured__card">
             <?php if (has_post_thumbnail()) : ?>
             <div class="pbt-featured__img">
@@ -97,7 +97,7 @@ $featured_query = new WP_Query([
         $cat_obj  = get_category_by_slug($cat['slug']);
         $cat_link = $cat_obj ? get_category_link($cat_obj->term_id) : '#';
     ?>
-    <section id="<?= esc_attr($cat['slug']) ?>" class="pbt-section container">
+    <section id="<?= esc_attr($cat['slug']) ?>" class="pbt-section container container--1280">
         <div class="pbt-section__head">
             <h2 class="pbt-section__title"><?= esc_html($cat['label']) ?></h2>
             <a href="<?= esc_url($cat_link) ?>" class="pbt-section__more">

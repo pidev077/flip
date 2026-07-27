@@ -29,7 +29,7 @@ add_action('wp_enqueue_scripts', function () {
 		wp_enqueue_style('page-thanks', get_template_directory_uri() . '/dist/css/page-thanks.css', array('theme-styles'), uniqid());
 	}
 
-	if (is_page_template('page-chinh-sach-bao-mat.php')) {
+	if (is_page_template('page-chinh-sach-bao-mat.php') || is_page_template('page-dieu-khoan-dich-vu.php')) {
 		wp_enqueue_style('page-chinh-sach-bao-mat', get_template_directory_uri() . '/dist/css/page-chinh-sach-bao-mat.css', array('theme-styles'), uniqid());
 	}
 

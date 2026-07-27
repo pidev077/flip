@@ -1,0 +1,13 @@
+// ── Shared container width variants ───────────────────────────
+// Dùng chung cho toàn site: mỗi khi một section cần bó hẹp .container
+// lại (VD: hero căn giữa, khối nội dung đọc, gallery...), gắn thêm
+// một trong các class dưới đây thay vì tự khai báo `max-width` riêng
+// trong SCSS của từng trang.
+//
+// VD: <div class="container container--760">...</div>
+
+@each $width in (630, 640, 680, 720, 760, 860, 1000, 1040, 1180, 1200, 1280, 1400) {
+    .container--#{$width} {
+        max-width: #{$width}px !important;
+    }
+}
