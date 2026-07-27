@@ -1,1 +1,208 @@
-.page-san-pham{background:#faf8f2;font-family:"be-vietnam-pro",sans-serif}.page-san-pham .container{max-width:1400px}.page-san-pham .sp-hero{padding:56px 0 32px}.page-san-pham .sp-eyebrow{font-size:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#789850;margin:0 0 14px}.page-san-pham .sp-hero__title{font-family:"Playfair Display",serif;font-size:clamp(35px,3.4vw,56px);font-weight:500;line-height:1.25;color:#406028;margin:0 0 14px}.page-san-pham .sp-hero__desc{font-size:20px;line-height:1.6;color:#4a4e46;margin:0 0 28px}.page-san-pham .sp-tab--all{display:inline-flex;align-items:center;padding:13px 26px;border:none;border-radius:30px;background:#406028;color:#fff;font-size:18px;font-weight:600;cursor:pointer;transition:background .2s ease}.page-san-pham .sp-tab--all:hover{background:#5a7a47}.page-san-pham .sp-steps{padding:8px 0 40px}.page-san-pham .sp-steps__list{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;list-style:none;margin:0;padding:24px 32px;background:#f1f5e9;border-radius:18px;overflow-x:auto}.page-san-pham .sp-steps__item{display:flex;flex:0 0 auto}.page-san-pham .sp-steps__line{flex:0 0 46px;width:46px;height:1px;margin-top:17px;background:rgba(64,96,40,.25)}.page-san-pham .sp-step{display:flex;flex-direction:column;align-items:center;gap:10px;border:none;background:rgba(0,0,0,0);cursor:pointer;white-space:nowrap;padding:0}.page-san-pham .sp-step__num{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#789850;color:#fff;font-size:20px;font-weight:500;font-family:"Playfair Display",serif;transition:background .2s ease,transform .2s ease}.page-san-pham .sp-step__label{font-size:20px;font-weight:500;color:#406028}.page-san-pham .sp-step.is-active .page-san-pham .sp-step__num,.page-san-pham .sp-step:hover .page-san-pham .sp-step__num{background:#5a7a47;transform:scale(1.08)}.page-san-pham .sp-grid-section{padding-bottom:80px}.page-san-pham .product-card.is-filtered-out{display:none}.page-san-pham .product-card--soon{cursor:default}.page-san-pham .product-card--soon:hover .product-card__image-wrap::before,.page-san-pham .product-card--soon:hover .product-card__image-wrap::after{opacity:0}.page-san-pham .product-card__image-wrap--soon{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:1.5px dashed rgba(64,96,40,.35);background:rgba(0,0,0,0)}.page-san-pham .sp-soon-icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(64,96,40,.1);color:#406028;font-size:22px;line-height:1}.page-san-pham .sp-soon-text{font-family:"be-vietnam-pro",sans-serif;font-size:16px;font-weight:600;color:#406028}body.sp-popup-open{overflow:hidden}@media(max-width: 768px){.page-san-pham .sp-hero{padding:32px 0 20px}.page-san-pham .sp-hero__desc{font-size:15px}.page-san-pham .sp-tab--all{font-size:14px;padding:11px 20px}.page-san-pham .sp-steps{padding:4px 0 24px}.page-san-pham .sp-steps__list{flex-wrap:wrap;justify-content:flex-start;gap:10px 12px;background:none;padding:0;border-radius:0;overflow:visible}.page-san-pham .sp-steps__line{display:none}.page-san-pham .sp-step{flex-direction:row;gap:0;padding:10px 18px;border:1.5px solid #406028;border-radius:30px;background:rgba(0,0,0,0);transition:background .2s ease,color .2s ease}.page-san-pham .sp-step__num{display:none}.page-san-pham .sp-step__label{font-size:14px;font-weight:500;color:#406028}.page-san-pham .sp-step.is-active,.page-san-pham .sp-step:hover{background:#406028}.page-san-pham .sp-step.is-active .sp-step__label,.page-san-pham .sp-step:hover .sp-step__label{color:#fff}.page-san-pham .sp-grid-section{padding-bottom:40px}}
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./assets/scss/page-san-pham.scss ***!
+  \************************************************************************************************************************************************************************************************/
+.page-san-pham {
+  background: #FAF8F2;
+  font-family: "be-vietnam-pro", sans-serif;
+}
+.page-san-pham .container {
+  max-width: 1400px;
+}
+.page-san-pham .sp-hero {
+  padding: 56px 0 32px;
+}
+.page-san-pham .sp-eyebrow {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #789850;
+  margin: 0 0 14px;
+}
+.page-san-pham .sp-hero__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(35px, 3.4vw, 56px);
+  font-weight: 500;
+  line-height: 1.25;
+  color: #406028;
+  margin: 0 0 14px;
+}
+.page-san-pham .sp-hero__desc {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #4A4E46;
+  margin: 0 0 28px;
+}
+.page-san-pham .sp-tab--all {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 26px;
+  border: none;
+  border-radius: 30px;
+  background: #406028;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.page-san-pham .sp-tab--all:hover {
+  background: #5A7A47;
+}
+.page-san-pham .sp-steps {
+  padding: 8px 0 40px;
+}
+.page-san-pham .sp-steps__list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 24px 32px;
+  background: #F1F5E9;
+  border-radius: 18px;
+  overflow-x: auto;
+}
+.page-san-pham .sp-steps__item {
+  display: flex;
+  flex: 0 0 auto;
+}
+.page-san-pham .sp-steps__line {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 1px;
+  margin-top: 17px;
+  background: rgba(64, 96, 40, 0.25);
+}
+.page-san-pham .sp-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+}
+.page-san-pham .sp-step__num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #789850;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Playfair Display", serif;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.page-san-pham .sp-step__label {
+  font-size: 20px;
+  font-weight: 500;
+  color: #406028;
+}
+.page-san-pham .sp-step.is-active .page-san-pham .sp-step__num, .page-san-pham .sp-step:hover .page-san-pham .sp-step__num {
+  background: #5A7A47;
+  transform: scale(1.08);
+}
+.page-san-pham .sp-grid-section {
+  padding-bottom: 80px;
+}
+.page-san-pham .product-card.is-filtered-out {
+  display: none;
+}
+.page-san-pham .product-card--soon {
+  cursor: default;
+}
+.page-san-pham .product-card--soon:hover .product-card__image-wrap::before, .page-san-pham .product-card--soon:hover .product-card__image-wrap::after {
+  opacity: 0;
+}
+.page-san-pham .product-card__image-wrap--soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1.5px dashed rgba(64, 96, 40, 0.35);
+  background: transparent;
+}
+.page-san-pham .sp-soon-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(64, 96, 40, 0.1);
+  color: #406028;
+  font-size: 22px;
+  line-height: 1;
+}
+.page-san-pham .sp-soon-text {
+  font-family: "be-vietnam-pro", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #406028;
+}
+
+body.sp-popup-open {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .page-san-pham .sp-hero {
+    padding: 32px 0 20px;
+  }
+  .page-san-pham .sp-hero__desc {
+    font-size: 15px;
+  }
+  .page-san-pham .sp-tab--all {
+    font-size: 14px;
+    padding: 11px 20px;
+  }
+  .page-san-pham .sp-steps {
+    padding: 4px 0 24px;
+  }
+  .page-san-pham .sp-steps__list {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px 12px;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    overflow: visible;
+  }
+  .page-san-pham .sp-steps__line {
+    display: none;
+  }
+  .page-san-pham .sp-step {
+    flex-direction: row;
+    gap: 0;
+    padding: 10px 18px;
+    border: 1.5px solid #406028;
+    border-radius: 30px;
+    background: transparent;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .page-san-pham .sp-step__num {
+    display: none;
+  }
+  .page-san-pham .sp-step__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #406028;
+  }
+  .page-san-pham .sp-step.is-active, .page-san-pham .sp-step:hover {
+    background: #406028;
+  }
+  .page-san-pham .sp-step.is-active .sp-step__label, .page-san-pham .sp-step:hover .sp-step__label {
+    color: #fff;
+  }
+  .page-san-pham .sp-grid-section {
+    padding-bottom: 40px;
+  }
+}

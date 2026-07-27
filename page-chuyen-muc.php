@@ -9,13 +9,18 @@ get_header();
 $hero_title = get_field('hero_title') ?: 'Kiến thức & Cảm hứng';
 $hero_desc  = get_field('hero_desc')  ?: 'Góc chia sẻ của Tamya về chăm sóc da, xu hướng làm đẹp và lối sống cân bằng — để hành trình chữa lành tiếp nối mỗi ngày.';
 
-$cats = [
-    ''                  => 'Tất cả',
-    'kien-thuc-lam-dep' => 'Kiến thức làm đẹp',
-    'trend'             => 'Trend',
-    'phong-cach-song'   => 'Phong cách sống',
-];
-$cat_slugs = ['kien-thuc-lam-dep', 'trend', 'phong-cach-song'];
+// Tab lọc = toàn bộ chuyên mục đang có bài viết, trừ "Uncategorized" mặc định
+$all_cats = get_categories([
+    'hide_empty' => true,
+    'exclude'    => [get_option('default_category')],
+]);
+
+$cats      = ['' => 'Tất cả'];
+$cat_slugs = [];
+foreach ($all_cats as $term) {
+    $cats[$term->slug] = $term->name;
+    $cat_slugs[]       = $term->slug;
+}
 
 // Đọc nhiều — bài được gắn cờ nổi bật (custom field _flip_trending), tách riêng khỏi lưới chính
 $trending_query = new WP_Query([
@@ -79,7 +84,7 @@ function pcm_reading_time($post_id)
         <ul class="pcm-tabs__list" data-pcm-tabs>
             <?php foreach ($cats as $slug => $label) : ?>
             <li>
-                <button type="button" class="pcm-tab <?= $slug === '' ? 'is-active' : '' ?>" data-filter="<?= esc_attr($slug) ?>" data-featured-id="<?= esc_attr($featured_ids_by_tab[$slug]) ?>">
+                <button type="button" class="pcm-tab cc <?= $slug === '' ? 'is-active' : '' ?>" data-filter="<?= esc_attr($slug) ?>" data-featured-id="<?= esc_attr($featured_ids_by_tab[$slug]) ?>">
                     <?= esc_html($label) ?>
                 </button>
             </li>

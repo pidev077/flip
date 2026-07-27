@@ -25,7 +25,6 @@ add_action('acf/init', function () {
                 'rows'        => 3,
                 'placeholder' => 'Góc chia sẻ của Tamya về chăm sóc da, xu hướng làm đẹp và lối sống cân bằng — để hành trình chữa lành tiếp nối mỗi ngày.',
             ],
-
         ],
         'location' => [
             [
