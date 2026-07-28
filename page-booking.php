@@ -42,14 +42,16 @@ $form_id   = get_option('tamya_booking_form_id');
     <section class="bk-form-section">
         <div class="container container--860 bk-form-section__inner">
 
-            <hr class="bk-divider">
-            <p class="bk-section-label">THÔNG TIN ĐẶT HẸN</p>
+            <div class="bk-form-card">
+                <p class="bk-section-label">THÔNG TIN ĐẶT HẸN</p>
+                <p class="bk-form-card__desc">Điền đầy đủ thông tin bên dưới, Tamya sẽ gọi xác nhận lịch hẹn trong vòng 2 giờ làm việc.</p>
 
-            <?php if ($form_id) : ?>
-                <?php echo do_shortcode('[contact-form-7 id="' . intval($form_id) . '" title="Tamya – Đặt Hẹn"]'); ?>
-            <?php else : ?>
-                <p style="text-align:center;padding:2rem 0;color:#888;">Form đang khởi tạo. Vui lòng tải lại trang sau vài giây.</p>
-            <?php endif; ?>
+                <?php if ($form_id) : ?>
+                    <?php echo do_shortcode('[contact-form-7 id="' . intval($form_id) . '" title="Tamya – Đặt Hẹn"]'); ?>
+                <?php else : ?>
+                    <p style="text-align:center;padding:2rem 0;color:#888;">Form đang khởi tạo. Vui lòng tải lại trang sau vài giây.</p>
+                <?php endif; ?>
+            </div>
 
             <hr class="bk-divider bk-divider--social">
 

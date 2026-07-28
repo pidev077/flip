@@ -8,7 +8,7 @@
 add_action('init', function () {
     if (!class_exists('WPCF7_ContactForm')) return;
 
-    $version = 2;
+    $version = 4;
     $form_id = get_option('tamya_booking_form_id');
     $db_ver  = (int) get_option('tamya_booking_form_version', 0);
 
@@ -17,22 +17,22 @@ add_action('init', function () {
     $form_body = '
 <div class="bk-row">
   <div class="bk-col">
-    <label class="bk-label">HỌ VÀ TÊN</label>
+    <label class="bk-label">Họ và tên</label>
     [text* your-name placeholder "Nguyễn Minh Anh"]
   </div>
   <div class="bk-col">
-    <label class="bk-label">SỐ ĐIỆN THOẠI</label>
+    <label class="bk-label">Số điện thoại</label>
     [tel* your-phone placeholder "0901 234 567"]
   </div>
 </div>
 
 <div class="bk-field">
-  <label class="bk-label">DỊCH VỤ QUAN TÂM</label>
+  <label class="bk-label">Dịch vụ quan tâm</label>
   [select* dich-vu "Chọn dịch vụ..." "Trẻ hóa da" "Điều trị mụn" "Nâng cơ" "Xóa nám tàn nhang" "Chăm sóc da cơ bản" "Điều trị nám" "Làm trắng da" "Peel da" "RF Nâng cơ"]
 </div>
 
 <div class="bk-field">
-  <label class="bk-label">CHI NHÁNH</label>
+  <label class="bk-label">Chi nhánh</label>
   <div class="bk-branch-wrap">
     <button type="button" class="bk-branch-btn is-active" data-value="Hồ Chí Minh">Hồ Chí Minh</button>
     <button type="button" class="bk-branch-btn" data-value="Hà Nội">Hà Nội</button>
@@ -41,12 +41,12 @@ add_action('init', function () {
 </div>
 
 <div class="bk-field">
-  <label class="bk-label">NGÀY MONG MUỐN</label>
+  <label class="bk-label">Ngày mong muốn</label>
   [date* ngay-hen]
 </div>
 
 <div class="bk-field">
-  <label class="bk-label">KHUNG GIỜ</label>
+  <label class="bk-label">Khung giờ</label>
   <div class="bk-timeslot-wrap">
     <button type="button" class="bk-slot-btn" data-value="08:00 - 09:00">08:00 – 09:00</button>
     <button type="button" class="bk-slot-btn" data-value="09:00 - 10:00">09:00 – 10:00</button>
@@ -62,7 +62,7 @@ add_action('init', function () {
 </div>
 
 <div class="bk-field bk-field--last">
-  <label class="bk-label">GHI CHÚ THÊM <span class="bk-optional">(Tùy chọn)</span></label>
+  <label class="bk-label">Ghi chú thêm <span class="bk-optional">(Tùy chọn)</span></label>
   [textarea ghi-chu placeholder "Tình trạng da, câu hỏi, hoặc yêu cầu đặc biệt...."]
 </div>
 
