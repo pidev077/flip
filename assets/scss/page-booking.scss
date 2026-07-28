@@ -309,10 +309,6 @@ $font-serif:      'Playfair Display', serif;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-
-    // CF7 thêm <p> và <br> — loại bỏ ảnh hưởng layout
-    p  { display: contents; }
-    br { display: none; }
 }
 
 .bk-branch-btn {
@@ -339,10 +335,6 @@ $font-serif:      'Playfair Display', serif;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-
-    // CF7 thêm <p> và <br> — loại bỏ ảnh hưởng layout
-    p  { display: contents; }
-    br { display: none; }
 
     @media (max-width: 400px) {
         grid-template-columns: repeat(2, 1fr);

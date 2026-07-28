@@ -7,7 +7,7 @@
 add_action('init', function () {
     if (!class_exists('WPCF7_ContactForm')) return;
 
-    $version = 2;
+    $version = 3;
     $form_id = get_option('tamya_contact_form_id');
     $db_ver  = (int) get_option('tamya_contact_form_version', 0);
 

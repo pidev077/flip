@@ -27,6 +27,9 @@ require get_template_directory() . '/inc/acf-fields-su-kien.php';
 require get_template_directory() . '/inc/acf-fields-trang-su-kien.php';
 require get_template_directory() . '/inc/acf-fields-trang-chuyen-muc.php';
 require get_template_directory() . '/inc/acf-fields-lien-he.php';
+// Tắt wpautop của Contact Form 7 — không tự chèn thẻ <p>/<br> vào markup form
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 require get_template_directory() . '/inc/booking-form.php';
 require get_template_directory() . '/inc/contact-form.php';
 require get_template_directory() . '/inc/training-registration-form.php';

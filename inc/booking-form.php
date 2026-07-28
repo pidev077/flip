@@ -8,7 +8,7 @@
 add_action('init', function () {
     if (!class_exists('WPCF7_ContactForm')) return;
 
-    $version = 4;
+    $version = 5;
     $form_id = get_option('tamya_booking_form_id');
     $db_ver  = (int) get_option('tamya_booking_form_version', 0);
 
