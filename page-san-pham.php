@@ -115,7 +115,10 @@ $products_query = new WP_Query([
                 >
                     <div class="product-card__image-wrap">
                         <?php if (has_post_thumbnail()) : ?>
-                            <?= get_the_post_thumbnail($pid, 'medium', ['class' => 'product-card__image']) ?>
+                            <?= get_the_post_thumbnail($pid, 'large', [
+                                'class' => 'product-card__image',
+                                'sizes' => '(max-width: 576px) 100vw, (max-width: 768px) 50vw, (max-width: 992px) 33vw, 25vw',
+                            ]) ?>
                         <?php endif; ?>
                         <?php if ($hover_video) : ?>
                             <video class="product-card__video" src="<?= esc_url($hover_video) ?>" muted loop playsinline preload="none" data-sp-hover-video></video>
