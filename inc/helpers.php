@@ -185,6 +185,78 @@ if (!function_exists('flip_su_kien_tag_text_color')) {
 	}
 }
 
+if (!function_exists('flip_parse_legal_content')) {
+	/**
+	 * Tách nội dung trang (Điều khoản / Chính sách) thành từng mục theo thẻ <h2>.
+	 * Admin chỉ cần thêm khối "Heading" (cấp độ H2) cho mỗi mục trong block editor —
+	 * số thứ tự, id neo (anchor) và mục lục (TOC) sẽ được tạo tự động theo đúng thứ tự các H2 này.
+	 *
+	 * Nội dung đứng trước H2 đầu tiên (nếu có) được gom vào 1 mục "mở đầu" — id rỗng,
+	 * không hiện trên TOC và không đánh số.
+	 *
+	 * @return array<int, array{id:string, title:string, body:string}>
+	 */
+	function flip_parse_legal_content($html)
+	{
+		$html = trim((string) $html);
+		if ($html === '') {
+			return [];
+		}
+
+		// Bỏ các comment neo khối Gutenberg (<!-- wp:xxx --> / <!-- /wp:xxx -->) — chỉ giữ lại HTML thật.
+		$html = preg_replace('/<!--\s*\/?wp:.*?-->/s', '', $html);
+		$html = trim($html);
+		if ($html === '') {
+			return [];
+		}
+
+		libxml_use_internal_errors(true);
+		$dom = new DOMDocument();
+		$dom->loadHTML('<?xml encoding="utf-8"?><div id="flip-legal-root">' . $html . '</div>');
+		libxml_clear_errors();
+
+		$root = $dom->getElementById('flip-legal-root');
+		if (!$root) {
+			return [];
+		}
+
+		$sections = [];
+		$used_ids = [];
+
+		foreach (iterator_to_array($root->childNodes) as $node) {
+			$is_heading = $node->nodeType === XML_ELEMENT_NODE && strtolower($node->nodeName) === 'h2';
+
+			if ($is_heading) {
+				$title = trim($node->textContent);
+				$slug  = sanitize_title($title) ?: 'muc';
+				$id    = $slug;
+				$n     = 2;
+				while (in_array($id, $used_ids, true)) {
+					$id = $slug . '-' . $n++;
+				}
+				$used_ids[] = $id;
+
+				$sections[] = ['id' => $id, 'title' => $title, 'body' => ''];
+				continue;
+			}
+
+			$node_html = $dom->saveHTML($node);
+			if ($node_html === false) {
+				continue;
+			}
+
+			if (empty($sections)) {
+				$sections[] = ['id' => '', 'title' => '', 'body' => ''];
+			}
+
+			$last = count($sections) - 1;
+			$sections[$last]['body'] .= $node_html;
+		}
+
+		return $sections;
+	}
+}
+
 if (!function_exists('__get_fields')) {
 	function __get_fields($post_id = false, $format_value = true)
 	{

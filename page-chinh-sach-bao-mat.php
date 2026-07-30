@@ -10,6 +10,12 @@ $phone   = $info['phone_number'] ?? null;
 $hotline = $phone ? esc_html($phone['title']) : '0964 202 040';
 $hotline_url = $phone ? esc_url($phone['url']) : 'tel:0964202040';
 $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
+
+$eyebrow     = get_field('eyebrow') ?: 'BẢO MẬT';
+$updated     = get_the_modified_date('d.m.Y');
+$description = get_field('description') ?: 'Tamya tôn trọng và cam kết bảo vệ thông tin cá nhân của bạn. Trang này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu khi bạn liên hệ và sử dụng dịch vụ của Tamya.';
+$sections    = flip_parse_legal_content(apply_filters('the_content', $post->post_content));
+$toc_items   = array_values(array_filter($sections, fn($s) => $s['id'] !== ''));
 ?>
 
 <main id="primary" class="site-main page-privacy">
@@ -17,127 +23,51 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
     <!-- ── Hero ──────────────────────────────────────────── -->
     <section class="lp-hero">
         <div class="container container--860">
-            <span class="lp-hero__eyebrow">BẢO MẬT</span>
-            <h1 class="lp-hero__title">Thông tin bảo mật</h1>
-            <p class="lp-hero__meta">Cập nhật lần cuối: 24.06.2026</p>
-            <p class="lp-hero__desc">Tamya tôn trọng và cam kết bảo vệ thông tin cá nhân của bạn. Trang này giải thích cách chúng tôi thu thập, sử dụng và bảo vệ dữ liệu khi bạn liên hệ và sử dụng dịch vụ của Tamya.</p>
+            <span class="lp-hero__eyebrow"><?= esc_html($eyebrow) ?></span>
+            <h1 class="lp-hero__title"><?= esc_html(get_the_title()) ?></h1>
+            <p class="lp-hero__meta">Cập nhật lần cuối: <?= esc_html($updated) ?></p>
+            <p class="lp-hero__desc"><?= esc_html($description) ?></p>
         </div>
     </section>
 
     <!-- ── Body: TOC + Content ───────────────────────────── -->
+    <?php if ($sections): ?>
     <section class="lp-body">
         <div class="container container--1000 lp-body__wrap">
 
-            <!-- Table of Contents -->
+            <!-- Table of Contents: tự tạo từ các thẻ <h2> trong nội dung -->
+            <?php if ($toc_items): ?>
             <aside class="lp-toc">
                 <p class="lp-toc__label">MỤC LỤC</p>
                 <ol class="lp-toc__list">
-                    <li><a href="#lp-s1" class="is-active">01. Thông tin chúng tôi thu thập</a></li>
-                    <li><a href="#lp-s2">02. Mục đích sử dụng thông tin</a></li>
-                    <li><a href="#lp-s3">03. Cơ sở pháp lý &amp; sự đồng ý</a></li>
-                    <li><a href="#lp-s4">04. Chia sẻ thông tin</a></li>
-                    <li><a href="#lp-s5">05. Lưu trữ &amp; bảo mật dữ liệu</a></li>
-                    <li><a href="#lp-s6">06. Quyền của khách hàng</a></li>
-                    <li><a href="#lp-s7">07. Cookie &amp; công nghệ theo dõi</a></li>
+                    <?php foreach ($toc_items as $i => $s): ?>
+                        <li><a href="#<?= esc_attr($s['id']) ?>"<?= $i === 0 ? ' class="is-active"' : '' ?>><?= sprintf('%02d', $i + 1) ?>. <?= esc_html($s['title']) ?></a></li>
+                    <?php endforeach; ?>
                 </ol>
             </aside>
+            <?php endif; ?>
 
             <!-- Content -->
             <div class="lp-content">
-
-                <!-- 01 -->
-                <article class="lp-section" id="lp-s1">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">01</span>
-                        <h2 class="lp-section__title">Thông tin chúng tôi thu thập</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Tamya thu thập thông tin bạn chủ động cung cấp khi đặt lịch, đăng ký tư vấn hoặc liên hệ: họ tên, số điện thoại, email và tình trạng da mong muốn cải thiện.</p>
-                        <p>Chúng tôi cũng có thể ghi nhận dữ liệu truy cập website (loại thiết bị, trình duyệt, trang đã xem) nhằm cải thiện trải nghiệm sử dụng.</p>
-                    </div>
-                </article>
-
-                <!-- 02 -->
-                <article class="lp-section" id="lp-s2">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">02</span>
-                        <h2 class="lp-section__title">Mục đích sử dụng thông tin</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Thông tin của bạn được sử dụng cho các mục đích sau:</p>
-                        <ul>
-                            <li>Liên hệ xác nhận lịch hẹn và tư vấn chăm sóc da.</li>
-                            <li>Cá nhân hóa phác đồ và gợi ý phù hợp với làn da của bạn.</li>
-                            <li>Gửi thông tin ưu đãi, sự kiện — chỉ khi bạn đồng ý nhận.</li>
-                            <li>Cải thiện chất lượng dịch vụ và nội dung website.</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- 03 -->
-                <article class="lp-section" id="lp-s3">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">03</span>
-                        <h2 class="lp-section__title">Cơ sở pháp lý &amp; sự đồng ý</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Việc thu thập và xử lý dữ liệu dựa trên sự đồng ý của bạn khi để lại thông tin cho Tamya. Bạn có thể rút lại sự đồng ý bất cứ lúc nào bằng cách liên hệ với chúng tôi.</p>
-                    </div>
-                </article>
-
-                <!-- 04 -->
-                <article class="lp-section" id="lp-s4">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">04</span>
-                        <h2 class="lp-section__title">Chia sẻ thông tin</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Tamya không bán, không trao đổi thông tin cá nhân của bạn cho bên thứ ba vì mục đích thương mại.</p>
-                        <p>Dữ liệu chỉ được chia sẻ trong nội bộ đội ngũ chuyên môn phục vụ việc tư vấn, hoặc khi pháp luật có yêu cầu hợp lệ.</p>
-                    </div>
-                </article>
-
-                <!-- 05 -->
-                <article class="lp-section" id="lp-s5">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">05</span>
-                        <h2 class="lp-section__title">Lưu trữ &amp; bảo mật dữ liệu</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Thông tin được lưu trữ an toàn với quyền truy cập giới hạn trong nội bộ. Chúng tôi áp dụng các biện pháp kỹ thuật và quản lý hợp lý nhằm bảo vệ dữ liệu khỏi truy cập, thay đổi hoặc tiết lộ trái phép.</p>
-                    </div>
-                </article>
-
-                <!-- 06 -->
-                <article class="lp-section" id="lp-s6">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">06</span>
-                        <h2 class="lp-section__title">Quyền của khách hàng</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Đối với thông tin cá nhân của mình, bạn có quyền:</p>
-                        <ul>
-                            <li>Yêu cầu xem và chỉnh sửa thông tin đã cung cấp.</li>
-                            <li>Yêu cầu xóa dữ liệu khi không còn cần thiết.</li>
-                            <li>Từ chối nhận thông tin tiếp thị bất cứ lúc nào.</li>
-                        </ul>
-                    </div>
-                </article>
-
-                <!-- 07 -->
-                <article class="lp-section" id="lp-s7">
-                    <div class="lp-section__head">
-                        <span class="lp-section__num">07</span>
-                        <h2 class="lp-section__title">Cookie &amp; công nghệ theo dõi</h2>
-                    </div>
-                    <div class="lp-section__body">
-                        <p>Website sử dụng cookie để ghi nhớ tùy chọn của bạn và phân tích lưu lượng truy cập. Bạn có thể tắt cookie trong cài đặt trình duyệt; tuy nhiên một số tính năng có thể bị ảnh hưởng.</p>
-                    </div>
-                </article>
-
+                <?php $num = 0; foreach ($sections as $s): ?>
+                    <?php if ($s['id'] === ''): ?>
+                        <div class="lp-section lp-section--intro">
+                            <div class="lp-section__body"><?= $s['body'] ?></div>
+                        </div>
+                    <?php else: $num++; ?>
+                        <article class="lp-section" id="<?= esc_attr($s['id']) ?>">
+                            <div class="lp-section__head">
+                                <span class="lp-section__num"><?= sprintf('%02d', $num) ?></span>
+                                <h2 class="lp-section__title"><?= esc_html($s['title']) ?></h2>
+                            </div>
+                            <div class="lp-section__body"><?= $s['body'] ?></div>
+                        </article>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div><!-- .lp-content -->
         </div><!-- .lp-body__wrap -->
     </section>
+    <?php endif; ?>
 
     <!-- ── CTA ─────────────────────────────────────────────── -->
     <section class="lp-cta-section">
@@ -161,7 +91,7 @@ $email   = get_field('email', 'option') ?: 'cskh@tamya.com.vn';
         var scrollY = window.scrollY + 140;
         var current = '';
         sections.forEach(function (sec) {
-            if (sec.offsetTop <= scrollY) current = sec.id;
+            if (sec.id && sec.offsetTop <= scrollY) current = sec.id;
         });
         tocLinks.forEach(function (link) {
             link.classList.toggle('is-active', link.getAttribute('href') === '#' + current);
