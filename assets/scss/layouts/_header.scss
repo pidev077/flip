@@ -40,6 +40,9 @@
 						color: #24341E;
 						font-weight: 500;
 
+						@include media-breakpoint-down(xxl) {
+							font-size: 17px;
+						}
 					}
 				}
 			}
@@ -127,7 +130,7 @@
 					letter-spacing: -0.18px;
 					text-transform: uppercase;
 					@include media-breakpoint-down(xxl) {
-						font-size: 15px;
+						font-size: 17px;
 					}
 					@include media-breakpoint-down(lg) {
 						font-family: $font-primary, serif;

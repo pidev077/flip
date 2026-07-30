@@ -225,6 +225,14 @@ add_action('acf/init', function () {
 							],
 						],
 					],
+					[
+						'key'          => 'field_pricing_col_desc',
+						'label'        => 'Mô tả (dùng khi nhóm không có bảng giá cụ thể)',
+						'name'         => 'col_desc',
+						'type'         => 'textarea',
+						'rows'         => 3,
+						'instructions' => 'Để trống "Mục giá trong nhóm" ở trên và điền mô tả ở đây nếu muốn hiển thị 1 khối tuỳ chỉnh (VD: chi phí theo phác đồ cá nhân hoá) thay vì bảng giá.',
+					],
 				],
 			],
 			[
