@@ -68,6 +68,7 @@ $products_query = new WP_Query([
                     $terms      = get_the_terms($pid, 'buoc-cham-soc');
                     $step_slugs = ($terms && !is_wp_error($terms)) ? wp_list_pluck($terms, 'slug') : [];
                     $gallery    = get_field('product_gallery', $pid);
+                    $hover_video = get_field('product_hover_video', $pid);
                     $type_tag   = get_field('product_type_tag', $pid);
                     $skin_type  = get_field('product_skin_type', $pid);
                     $texture    = get_field('product_texture', $pid);
@@ -94,7 +95,7 @@ $products_query = new WP_Query([
                         ];
                     }, $ingredient_rows));
                 ?>
-                <article class="product-card"
+                <article class="product-card<?= $hover_video ? ' product-card--has-video' : '' ?>"
                     tabindex="0"
                     data-cats="<?= esc_attr(implode(' ', $step_slugs)) ?>"
                     data-sp-popup
@@ -115,6 +116,9 @@ $products_query = new WP_Query([
                     <div class="product-card__image-wrap">
                         <?php if (has_post_thumbnail()) : ?>
                             <?= get_the_post_thumbnail($pid, 'medium', ['class' => 'product-card__image']) ?>
+                        <?php endif; ?>
+                        <?php if ($hover_video) : ?>
+                            <video class="product-card__video" src="<?= esc_url($hover_video) ?>" muted loop playsinline preload="none" data-sp-hover-video></video>
                         <?php endif; ?>
                     </div>
                     <div class="product-card__info">
@@ -386,6 +390,27 @@ document.addEventListener('DOMContentLoaded', function () {
         card.addEventListener('click', function () { openPopup(card); });
         card.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openPopup(card); }
+        });
+    });
+
+    /* ── Video hover ───────────────────────────────────────── */
+    cards.forEach(function (card) {
+        var video = card.querySelector('[data-sp-hover-video]');
+        if (!video) return;
+
+        card.addEventListener('mouseenter', function () {
+            video.currentTime = 0;
+            video.play().catch(function () {});
+        });
+        card.addEventListener('mouseleave', function () {
+            video.pause();
+        });
+        card.addEventListener('focus', function () {
+            video.currentTime = 0;
+            video.play().catch(function () {});
+        });
+        card.addEventListener('blur', function () {
+            video.pause();
         });
     });
 

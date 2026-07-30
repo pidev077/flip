@@ -146,9 +146,10 @@ add_action('acf/init', function () {
 				'choices'       => [
 					'rows'    => 'Dạng hàng (cấp độ + thời gian + giá)',
 					'columns' => 'Dạng cột (nhiều nhóm dịch vụ)',
+					'custom'  => 'Dạng khối văn bản (chi phí theo phác đồ cá nhân hóa)',
 				],
 				'default_value' => 'rows',
-				'instructions'  => 'Chọn "Dạng hàng" cho 1–3 mức giá. Chọn "Dạng cột" khi có nhiều nhóm dịch vụ.',
+				'instructions'  => 'Chọn "Dạng hàng" cho 1–3 mức giá. Chọn "Dạng cột" khi có nhiều nhóm dịch vụ. Chọn "Dạng khối văn bản" khi không có bảng giá cố định (VD: trẻ hóa, điêu khắc — chi phí tư vấn riêng theo từng khách).',
 			],
 			[
 				'key'          => 'field_service_pricing',
@@ -234,6 +235,27 @@ add_action('acf/init', function () {
 						'instructions' => 'Để trống "Mục giá trong nhóm" ở trên và điền mô tả ở đây nếu muốn hiển thị 1 khối tuỳ chỉnh (VD: chi phí theo phác đồ cá nhân hoá) thay vì bảng giá.',
 					],
 				],
+			],
+			[
+				'key'           => 'field_service_pricing_custom_title',
+				'label'         => 'Bảng giá — dạng khối văn bản — Tiêu đề',
+				'name'          => 'service_pricing_custom_title',
+				'type'          => 'text',
+				'default_value' => 'Chi phí theo phác đồ cá nhân hóa',
+				'conditional_logic' => [[
+					['field' => 'field_service_pricing_type', 'operator' => '==', 'value' => 'custom'],
+				]],
+			],
+			[
+				'key'          => 'field_service_pricing_custom_desc',
+				'label'        => 'Bảng giá — dạng khối văn bản — Mô tả',
+				'name'         => 'service_pricing_custom_desc',
+				'type'         => 'textarea',
+				'rows'         => 4,
+				'instructions' => 'VD: Trẻ hóa & điêu khắc không áp dụng bảng giá cố định. Sau khi thăm khám và đánh giá tình trạng da – cơ – mô, chuyên gia sẽ thiết kế lộ trình và tư vấn chi phí cụ thể, minh bạch và cam kết trước khi thực hiện.',
+				'conditional_logic' => [[
+					['field' => 'field_service_pricing_type', 'operator' => '==', 'value' => 'custom'],
+				]],
 			],
 			[
 				'key'   => 'field_service_pricing_note',

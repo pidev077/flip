@@ -76,6 +76,17 @@ add_action('acf/init', function () {
 				'instructions'  => 'Ảnh đầu tiên dùng làm thumbnail card. Có thể thêm nhiều ảnh để tạo slider trong popup.',
 			],
 
+			/* ── Video hover trên card ── */
+			[
+				'key'           => 'field_product_hover_video',
+				'label'         => 'Video hover (chạy khi rê chuột vào card)',
+				'name'          => 'product_hover_video',
+				'type'          => 'file',
+				'return_format' => 'url',
+				'mime_types'    => 'mp4,webm,mov',
+				'instructions'  => 'Video ngắn, không tiếng, sẽ tự phát khi khách rê chuột vào ảnh sản phẩm. Để trống nếu chưa có.',
+			],
+
 			/* ── Thành phần chính (mỗi thành phần 1 thẻ: tên + badge nồng độ tuỳ chọn + mô tả) ── */
 			[
 				'key'          => 'field_product_ingredients_repeater',

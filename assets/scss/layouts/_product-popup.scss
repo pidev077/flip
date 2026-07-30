@@ -102,6 +102,31 @@ $product-text    : #4A4E46;
 	z-index: 0;
 }
 
+.product-card__video {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 0.35s ease;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.product-card:hover .product-card__video,
+.product-card:focus-visible .product-card__video {
+	opacity: 1;
+}
+
+/* video sản phẩm che luôn overlay + nút "XEM CHI TIẾT" khi hover */
+.product-card--has-video:hover .product-card__image-wrap::before,
+.product-card--has-video:focus-visible .product-card__image-wrap::before,
+.product-card--has-video:hover .product-card__image-wrap::after,
+.product-card--has-video:focus-visible .product-card__image-wrap::after {
+	opacity: 0;
+}
+
 .product-card__info {
 	padding: 15px 0;
 	display: flex;

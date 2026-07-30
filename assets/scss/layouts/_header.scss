@@ -98,10 +98,10 @@
 			gap: 32px;
 			border-radius: 15px;
 			@media screen and (max-width: 1620px) {
-						gap: 28px;
+						gap: 20px;
 					}
 			@include media-breakpoint-down(xxl) {
-				gap: 22px;
+				gap: 20px;
 			}
 			@include media-breakpoint-down(xl) {
 				gap: 16px;
@@ -129,6 +129,9 @@
 					line-height: normal;
 					letter-spacing: -0.18px;
 					text-transform: uppercase;
+					@media screen and (max-width: 1620px) {
+						font-size: 18px;
+					}
 					@include media-breakpoint-down(xxl) {
 						font-size: 17px;
 					}
