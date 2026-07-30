@@ -31,7 +31,7 @@ $products_query = new WP_Query([
 
     <!-- ── Hero ─────────────────────────────────────────────── -->
     <section class="sp-hero">
-        <div class="container container--1400">
+        <div class="container">
             <p class="sp-eyebrow">Sản Phẩm</p>
             <h1 class="sp-hero__title"><?= esc_html($hero_title) ?></h1>
             <p class="sp-hero__desc"><?= esc_html($hero_desc) ?></p>
@@ -41,7 +41,7 @@ $products_query = new WP_Query([
 
     <!-- ── Thanh bước quy trình ─────────────────────────────── -->
     <section class="sp-steps">
-        <div class="container container--1400">
+        <div class="container">
             <ul class="sp-steps__list" data-sp-tabs>
                 <?php $i = 0; foreach ($steps as $slug => $step) : $i++; ?>
                 <?php if ($i > 1) : ?><li class="sp-steps__line" aria-hidden="true"></li><?php endif; ?>
@@ -58,7 +58,7 @@ $products_query = new WP_Query([
 
     <!-- ── Lưới sản phẩm ─────────────────────────────────────── -->
     <section class="sp-grid-section">
-        <div class="container container--1400">
+        <div class="container">
             <div class="block-products-list__grid" style="--product-cols:4;" data-sp-grid>
 
                 <?php if ($products_query->have_posts()) : while ($products_query->have_posts()) : $products_query->the_post();
@@ -193,7 +193,7 @@ $products_query = new WP_Query([
                     <div class="product-popup__section-content" data-sp-popup-usage></div>
                 </div>
 
-                <a href="#" class="product-popup__cta" data-sp-popup-cta>
+                <a href="https://tamya.com.vn/lien-he/" class="product-popup__cta" data-sp-popup-cta>
                     <span data-sp-popup-cta-label>Tư vấn sản phẩm này</span>
                     <span aria-hidden="true">&#8594;</span>
                 </a>
